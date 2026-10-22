@@ -1,0 +1,10 @@
+{
+  "format": "medic-postgres-backup-v1",
+  "verified_runtime_version": "medic-runtime-p3-v5",
+  "files": {
+    "deploy/postgres_backup.py": "6270c4abe747e8d3b69d467b0984b2d648160fd5e5255e088c1b0f4492dcf066",
+    "deploy/backup.py": "b1c99382eb2390a15368db7b6ec4208306f5a350e7ce4f1a91caac7622ab170a",
+    "evals/postgres_backup_probe.py": "3c5b3661fd49e89ab9dc45807813c6b51f632a1aaef40ae8520ecc81820359f4",
+    "tests/test_postgres_backup.py": "7b09421ad9fbef6c46032da2c2901a066867db8d0e1e5946fc3a3d7e9696a552"
+  }
+}

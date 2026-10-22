@@ -1,0 +1,150 @@
+{
+  "dataset_id": "synthetic-comparison",
+  "provenance": "synthetic_fixture",
+  "competency_model_version": "synthetic-model-1",
+  "job_matrix_version": "synthetic-jobs-1",
+  "ai_policy_version": "synthetic-policy-1",
+  "parser_version": "synthetic-parser-1",
+  "samples": [
+    {
+      "sample_id": "synthetic-0",
+      "employee_id": "person-0",
+      "event_ids": [
+        "event-0"
+      ],
+      "material_sha256": [
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "split": "development",
+      "job_key": "job-one",
+      "labels": [
+        {
+          "code": "M2",
+          "mode": "suggest",
+          "cap": "C",
+          "observable": true,
+          "grade": "A"
+        },
+        {
+          "code": "I1",
+          "mode": "suggest",
+          "cap": "B",
+          "observable": false,
+          "grade": null
+        },
+        {
+          "code": "C1",
+          "mode": "risk_scan",
+          "cap": null,
+          "observable": true,
+          "grade": null
+        }
+      ]
+    },
+    {
+      "sample_id": "synthetic-1",
+      "employee_id": "person-1",
+      "event_ids": [
+        "event-1"
+      ],
+      "material_sha256": [
+        "1111111111111111111111111111111111111111111111111111111111111111"
+      ],
+      "split": "test",
+      "job_key": "job-one",
+      "labels": [
+        {
+          "code": "M2",
+          "mode": "suggest",
+          "cap": "C",
+          "observable": true,
+          "grade": "B"
+        },
+        {
+          "code": "I1",
+          "mode": "suggest",
+          "cap": "B",
+          "observable": false,
+          "grade": null
+        },
+        {
+          "code": "C1",
+          "mode": "risk_scan",
+          "cap": null,
+          "observable": true,
+          "grade": null
+        }
+      ]
+    },
+    {
+      "sample_id": "synthetic-2",
+      "employee_id": "person-2",
+      "event_ids": [
+        "event-2"
+      ],
+      "material_sha256": [
+        "2222222222222222222222222222222222222222222222222222222222222222"
+      ],
+      "split": "test",
+      "job_key": "job-one",
+      "labels": [
+        {
+          "code": "M2",
+          "mode": "suggest",
+          "cap": "C",
+          "observable": true,
+          "grade": "C"
+        },
+        {
+          "code": "I1",
+          "mode": "suggest",
+          "cap": "B",
+          "observable": false,
+          "grade": null
+        },
+        {
+          "code": "C1",
+          "mode": "risk_scan",
+          "cap": null,
+          "observable": true,
+          "grade": null
+        }
+      ]
+    },
+    {
+      "sample_id": "synthetic-3",
+      "employee_id": "person-3",
+      "event_ids": [
+        "event-3"
+      ],
+      "material_sha256": [
+        "3333333333333333333333333333333333333333333333333333333333333333"
+      ],
+      "split": "test",
+      "job_key": "job-two",
+      "labels": [
+        {
+          "code": "M2",
+          "mode": "suggest",
+          "cap": "C",
+          "observable": true,
+          "grade": "B"
+        },
+        {
+          "code": "I1",
+          "mode": "suggest",
+          "cap": "B",
+          "observable": false,
+          "grade": null
+        },
+        {
+          "code": "C1",
+          "mode": "risk_scan",
+          "cap": null,
+          "observable": true,
+          "grade": null
+        }
+      ]
+    }
+  ]
+}

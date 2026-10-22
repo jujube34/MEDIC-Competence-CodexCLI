@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-10-17T07:08:16.541734+00:00",
+  "status": "pass",
+  "tests": 11,
+  "elapsed_seconds": 8.898,
+  "runtime_version": "medic-runtime-p3-v7",
+  "runtime_manifest_sha256": "d331b70cc688f72e011e10ea88d132d0170f55681a3f58ff29edd24c44f9f9fe",
+  "files": {
+    "evals/dispute_cases.py": "042b72981722ca818fb98bf11af6743c73bfcc52053fd72657a3164435cfff14",
+    "evals/verify_dispute_live.py": "6552c831bdafb1805fbf7396914b21b55a21e1015aa4fb665a5fdc8f97e78ef0",
+    "tests/test_dispute_audit.py": "313599d4330888d5c5d53bdce5b051bf7e566390ec8d6719883a2570138c82e0"
+  },
+  "log_sha256": "5264b25a38dae4faaf3fd1056526b6aff747611fc2fee171631096acff16ded4",
+  "scope": "synthetic_auditor_integrity_contracts_not_live_model_evidence",
+  "real_model_calls": 0,
+  "audit_source_archive_sha256": "bc64c075659d79fd41507fa623be6dd6d6249f041cd3d3226d88e3f3513c6960"
+}

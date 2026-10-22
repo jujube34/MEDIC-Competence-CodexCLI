@@ -1,0 +1,35 @@
+{
+  "provider_profile_version": "medic-deepseek-p0-20261017.1",
+  "model": "deepseek-v4-flash",
+  "upstream_endpoint_sha256": "2cb1bbab83efc97c92b678b590a6a68ac20f1deb79daed4e88334e371267ea3d",
+  "route": "responses_namespace_gateway",
+  "wire_api": "responses",
+  "capabilities": {
+    "responses.tool_roundtrip": "pass",
+    "responses.sse": "pass",
+    "responses.json_schema": "pass",
+    "chat.tool_roundtrip": "pass",
+    "chat.sse": "pass",
+    "chat.json_schema": "pass",
+    "responses.two_tools": "pass",
+    "responses.tool_error_recovery": "pass",
+    "responses.tool_choice": "pass",
+    "responses.namespace_tool": "fail",
+    "responses.bounded_context": "pass"
+  },
+  "native_schema_enforcement": "unproven",
+  "max_context_window": null,
+  "max_concurrency_quota": null,
+  "tested_concurrent_threads": 4,
+  "default_disabled": [
+    "vision",
+    "parallel_tool_calls",
+    "compact",
+    "custom_tools",
+    "tool_search",
+    "deferred_tools",
+    "previous_response_id"
+  ],
+  "usage_missing_policy": "request_utf8_bytes_plus_output_limit_conservative_estimate",
+  "production_approved": false
+}

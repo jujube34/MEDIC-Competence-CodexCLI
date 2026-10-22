@@ -1,0 +1,135 @@
+{
+  "created_at": "2026-10-17T07:30:36.362048+00:00",
+  "status": "partial",
+  "execution_status": "pass",
+  "scope": "prospectively_registered_all_real_initial_roles_two_synthetic_dispute_cases",
+  "planned_cases": 2,
+  "attempted_cases": 2,
+  "seeded_results": false,
+  "runtime_version": "medic-runtime-p3-v7",
+  "runtime_manifest_sha256": "d331b70cc688f72e011e10ea88d132d0170f55681a3f58ff29edd24c44f9f9fe",
+  "prospective_manifest_sha256": "d3ca25afbdb40258b349ae414a61ea81dfc2c47322affdf87fbd0eebce4c17a4",
+  "cases": [
+    {
+      "case_id": "measure-version-attribution",
+      "run_id": "run-e83f82c19f7f49eb98fe6a813da09462",
+      "verification": "p2-dispute-measure-v7-verification.json",
+      "execution_status": "pass",
+      "coverage_status": "partial",
+      "checks_passed": 16,
+      "coverage": {
+        "nonempty_real_challenges": true,
+        "formal_challenge_responses": true,
+        "real_mailbox_question_and_answer": false,
+        "real_coordinator_selected_third_round": false,
+        "four_real_third_round_roles": false,
+        "old_blocking_issue_explicitly_carried": false
+      },
+      "first_grade": null,
+      "second_grade": null,
+      "judge_verdict": "pass",
+      "runtime_gate_passed": false,
+      "runtime_state": "awaiting_human_review",
+      "challenges": 2,
+      "responses": 2,
+      "dispositions": [
+        "accepted",
+        "rejected"
+      ],
+      "criterion_changes": [
+        {
+          "criterion_id": "M2.B1",
+          "before": "met",
+          "after": "partial"
+        }
+      ],
+      "requests": 40,
+      "tokens": 453970,
+      "unsettled_requests": 0,
+      "gateway_admission_rejections": 0,
+      "role_elapsed_seconds": {
+        "coordinator": 34.863,
+        "challenger_scan": 139.443,
+        "evaluator": 248.706,
+        "challenger": 156.88,
+        "reevaluator": 128.856,
+        "judge": 128.027
+      },
+      "run_wall_seconds": 698.14,
+      "finalization_requests": 2,
+      "result_rejections": 3,
+      "initial_task_attempts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "verification_sha256": "bfac9ae7c96b21bc098765a84fd7e17cc09e80c0be5d32cd9004019110245c0a"
+    },
+    {
+      "case_id": "denominator-and-selection",
+      "run_id": "run-ccff96381cff42549d639332544512a6",
+      "verification": "p2-dispute-denominator-v7-verification.json",
+      "execution_status": "pass",
+      "coverage_status": "partial",
+      "checks_passed": 16,
+      "coverage": {
+        "nonempty_real_challenges": true,
+        "formal_challenge_responses": true,
+        "real_mailbox_question_and_answer": false,
+        "real_coordinator_selected_third_round": false,
+        "four_real_third_round_roles": false,
+        "old_blocking_issue_explicitly_carried": false
+      },
+      "first_grade": "B",
+      "second_grade": "B",
+      "judge_verdict": "pass",
+      "runtime_gate_passed": true,
+      "runtime_state": "ready_for_human_review",
+      "challenges": 3,
+      "responses": 3,
+      "dispositions": [
+        "accepted",
+        "accepted",
+        "accepted"
+      ],
+      "criterion_changes": [],
+      "requests": 37,
+      "tokens": 433429,
+      "unsettled_requests": 0,
+      "gateway_admission_rejections": 0,
+      "role_elapsed_seconds": {
+        "coordinator": 48.401,
+        "challenger_scan": 137.499,
+        "evaluator": 192.511,
+        "challenger": 316.503,
+        "reevaluator": 390.953,
+        "judge": 105.506
+      },
+      "run_wall_seconds": 1058.758,
+      "finalization_requests": 3,
+      "result_rejections": 2,
+      "initial_task_attempts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "verification_sha256": "c1c44a014da47c84f9bc55e6ccbc7a5c7d458e03558c9f92ca0dab2821396f07"
+    }
+  ],
+  "full_dispute_case_observed": false,
+  "missing_coverage": [
+    "real_mailbox_exchange_with_all_real_initial_roles",
+    "third_round_with_all_real_initial_roles_and_carried_blocking_issue"
+  ],
+  "total_requests": 77,
+  "total_tokens": 887399,
+  "quality_claim": false,
+  "business_signoff": false,
+  "employee_appeal_features_implemented": false
+}

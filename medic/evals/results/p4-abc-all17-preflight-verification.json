@@ -1,0 +1,40 @@
+{
+  "status": "preflight_only",
+  "experiment_sha256": "c307e25c22c9b9b5a8edcac666b410c607d622df2b76847090ea5c780b9d4608",
+  "slots": 6,
+  "materials": 2,
+  "competencies": 17,
+  "criteria": 68,
+  "common_content_sha256": "7ce65b363739a7247702641745ee86920526606763f905778f58ee90121c8d13",
+  "all_real_arm_identities": true,
+  "model_calls": 0,
+  "runtime_tasks_created": 0,
+  "quality_acceptance": false,
+  "limits_by_arm": {
+    "multi_agent": {
+      "requests": 80,
+      "total_tokens": 500000,
+      "concurrency": 3,
+      "wall_seconds": 900
+    },
+    "single_agent": {
+      "requests": 20,
+      "total_tokens": 500000,
+      "concurrency": 1,
+      "wall_seconds": 900
+    },
+    "linear_workflow": {
+      "requests": 40,
+      "total_tokens": 500000,
+      "concurrency": 3,
+      "wall_seconds": 900,
+      "request_timeout_seconds": 300
+    }
+  },
+  "archive_sha256": "324edcd4737f8831517105a7c087d4ac9f1385c9e5df5a49de2c3176deae9d78",
+  "limitations": [
+    "Reused synthetic tuning inputs, not a held-out or expert dataset.",
+    "Equal total-token caps; request/output/concurrency constraints differ by arm.",
+    "Preflight does not execute any slot or establish comparative quality/cost."
+  ]
+}

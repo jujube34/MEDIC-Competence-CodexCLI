@@ -1,0 +1,22 @@
+{
+  "medic-p1-roles-v2": {
+    "file": "roles-v2.json",
+    "sha256": "13d93768690b6341bf6936026a8be5b5d700e146ac0fed2dadad5d662e731c71"
+  },
+  "medic-p2-roles-v3": {
+    "file": "roles-v3.json",
+    "sha256": "92aed6e38a76b4feba607367c14f9d74926c477a3b5e8b877ec2cb2c18630598"
+  },
+  "medic-p2-roles-v4": {
+    "file": "roles-v4.json",
+    "sha256": "6813c40039d998c1f53b55d96a8cef41af6870294a054d68c4bb5c49620ff54d"
+  },
+  "medic-p2-roles-v5": {
+    "file": "roles-v5.json",
+    "sha256": "ef449485e7b81753e027c81043e2040dd822fe7c0dfe530a143681dd809bf146"
+  },
+  "medic-p2-roles-v6": {
+    "file": "roles-v6.json",
+    "sha256": "162d7760c192d3983f0ba4a0e97d25413b604d3058933a4739c7b81a83db9c21"
+  }
+}

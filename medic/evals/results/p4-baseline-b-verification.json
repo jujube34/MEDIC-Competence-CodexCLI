@@ -1,0 +1,191 @@
+{
+  "status": "partial_b_integration",
+  "checked_on": "2026-10-23",
+  "scope": "six migrated stages, three concurrent extraction batches, 17 competencies, 68 criteria, two synthetic materials",
+  "unique_targeted_tests": 59,
+  "final_b_tests_rerun": 23,
+  "skips": 0,
+  "tests_sha256": {
+    "tests.log": "8404ef07a0a938791d3058a6daec8ecd83f6bff061c98f7c92257cba113b3356",
+    "tests-final.log": "3161ea53ead917022c5f1f68f24df1b5c7433b75516478b13c196962aa4607ab"
+  },
+  "source_sha256": {
+    "baseline_b.py": "7ae9fac6a7755597d03f0d4888941c5af2390a2018fe62741a81f46e8fa6340e",
+    "baseline_a.py": "346a27de08a86ad1e9f6372fd3c8dc663dd0c81d8dd6f06bee5737b3b2287067",
+    "comparison_runtime.py": "7af04c5831853c1ab244dd307167e9ebf072835f2e2b48b199cef0d1489c3996",
+    "comparison.py": "044a9e3606a826b6280df54e6699e00506e3365e95515e2342c2f58bbff6f546",
+    "metrics.py": "506a65611679181dc15c0d208d8c0d3a0e32cfff77dac4cf736cc58e5c9302f6"
+  },
+  "experiment_sha256": "a71dafc3efa3fb8c5ab542339d2e2c44f39a1c40b8aff075aa233b3e4cebab14",
+  "runs": [
+    {
+      "repeat": 1,
+      "status": "failed",
+      "requests": 4,
+      "verified_requests": 3,
+      "total_tokens": null,
+      "reported_subtotal": 30267,
+      "charged_or_reserved_tokens": 118655,
+      "gateway_errors": [
+        "gateway_deadline"
+      ],
+      "elapsed_seconds": 229.73543548583984,
+      "created": 1792704636.1715062,
+      "stage_protocols": [],
+      "peak_reserved_requests": 3,
+      "replay_preserves_tables_and_calls": true,
+      "binding_sha256": "59ef36a18a85fce5367304e86db14c5815649723d8b47692857a93136796af89",
+      "outcome_sha256": "f7a26ddfb425b6ea87ed4d78019c828860ab31601234445d549bba5c1a521160"
+    },
+    {
+      "repeat": 2,
+      "status": "failed",
+      "requests": 4,
+      "verified_requests": 4,
+      "total_tokens": 57116,
+      "reported_subtotal": 57116,
+      "charged_or_reserved_tokens": 57116,
+      "gateway_errors": [],
+      "elapsed_seconds": 271.07936453819275,
+      "created": 1792704865.9849188,
+      "stage_protocols": [],
+      "peak_reserved_requests": 3,
+      "replay_preserves_tables_and_calls": true,
+      "binding_sha256": "804a2cb26708848a7116ddce247b7c258724d4f1d0ea4f30dc009c230a4b2875",
+      "outcome_sha256": "519d6ea452244dcd30020bac82c7d1d426ba164e8b680c6010e5b896bd981f9a"
+    }
+  ],
+  "completed_full_workflows": 0,
+  "current_experiment_requests": 8,
+  "current_experiment_tokens": null,
+  "current_experiment_reported_subtotal": 87383,
+  "current_experiment_charged_or_reserved": 175771,
+  "prior_experiments": [
+    {
+      "experiment_sha256": "4785573ecb22aba264757893b41ffd04ff05217f8222fe7337c61e92d964a33d",
+      "scope_items": 17,
+      "materials": 2,
+      "runs": [
+        {
+          "repeat": 1,
+          "status": "failed",
+          "requests": 3,
+          "total_tokens": 34206,
+          "elapsed_seconds": 141.54114437103271,
+          "created": 1792703951.8646634,
+          "stage_protocols": [],
+          "independent_threads": 0,
+          "peak_reserved_requests": 3,
+          "qc_adjustments": [],
+          "replay_preserves_tables_and_calls": true,
+          "binding_sha256": "63a86503eaf66bdfd27ed71932509a17c633437c4d17775aef20702652473ea2",
+          "outcome_sha256": "3a82f8d3eb7e902db531594a2924ddaaf25c7cf61cb29dfe811173897ba8eaf0"
+        },
+        {
+          "repeat": 2,
+          "status": "failed",
+          "requests": 3,
+          "total_tokens": 26982,
+          "elapsed_seconds": 68.0271384716034,
+          "created": 1792704093.4800913,
+          "stage_protocols": [],
+          "independent_threads": 0,
+          "peak_reserved_requests": 3,
+          "qc_adjustments": [],
+          "replay_preserves_tables_and_calls": true,
+          "binding_sha256": "ec236eeac563982b332cdaa0473fa0a4375b5e3576671a6f1726bf688f3fa813",
+          "outcome_sha256": "810340766e1e7f008ea45ead197539af6b237eeb8a9daa2d99a689b579979747"
+        }
+      ],
+      "source_archive_matches": true,
+      "runtime_identity": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+      "actual_b_order": [
+        1,
+        2
+      ],
+      "planned_b_order": [
+        1,
+        2
+      ],
+      "order_matches": true,
+      "other_arm_slots_missing": 4,
+      "distinct_successful_threads": 0,
+      "interpretation": "migrated_six_step_technical_integration_only_not_quality_comparison"
+    },
+    {
+      "experiment_sha256": "fca25f084413fd8a30de81982bd73911e56d940aeda1f73948f752320beeab42",
+      "scope_items": 17,
+      "materials": 2,
+      "runs": [
+        {
+          "repeat": 1,
+          "status": "failed",
+          "requests": 3,
+          "total_tokens": 28100,
+          "elapsed_seconds": 73.66384720802307,
+          "created": 1792704255.5852516,
+          "stage_protocols": [],
+          "independent_threads": 0,
+          "peak_reserved_requests": 3,
+          "qc_adjustments": [],
+          "replay_preserves_tables_and_calls": true,
+          "binding_sha256": "83f31e76e402449f0d95db617b61648d1e640a3262737b5d750b102f382db4a6",
+          "outcome_sha256": "4916e69f32173b2b32f96fb5c7ffa8af908ba1f07794858ec1741ef10c5ebed6"
+        },
+        {
+          "repeat": 2,
+          "status": "failed",
+          "requests": 3,
+          "total_tokens": 26338,
+          "elapsed_seconds": 61.01326560974121,
+          "created": 1792704329.3221195,
+          "stage_protocols": [],
+          "independent_threads": 0,
+          "peak_reserved_requests": 3,
+          "qc_adjustments": [],
+          "replay_preserves_tables_and_calls": true,
+          "binding_sha256": "caeedeb074967294512c40dabd3c9687c5f26dca8ea406c31cb86c200b820286",
+          "outcome_sha256": "d697e254cf8df99a090ddd3a84382081c9a9234329016a23e0769a80be986d51"
+        }
+      ],
+      "source_archive_matches": true,
+      "runtime_identity": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+      "actual_b_order": [
+        1,
+        2
+      ],
+      "planned_b_order": [
+        1,
+        2
+      ],
+      "order_matches": true,
+      "other_arm_slots_missing": 4,
+      "distinct_successful_threads": 0,
+      "interpretation": "migrated_six_step_technical_integration_only_not_quality_comparison"
+    }
+  ],
+  "all_attempts_model_requests": 20,
+  "all_attempts_total_tokens": null,
+  "all_attempts_reported_subtotal": 203009,
+  "all_attempts_charged_or_reserved": 291397,
+  "source_archive_sha256": "8b5ee6e7b19e4b1cd2528dfa4d8beaf0af89f6614ef0d0b75cbc74e471491b9b",
+  "collector_sha256": "2b35a542aaf6fb93d6b7563c19c8e0137959409f5424f791b706a1d1f0569d26",
+  "publication_oracle_sha256": "4ac10175973cb8223dc3dde55338fbad652f56a3bf5b9bf6be14ffba3c8ee9a9",
+  "frozen_order_matches": true,
+  "terminal_replay_no_extra_calls": true,
+  "preview_historical_baseline_unchanged": true,
+  "application_manifest_unchanged": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "quality_acceptance": false,
+  "missing_ac_slots": 4,
+  "limitations": [
+    "No B run completed the full workflow; request timeout and output validation failures remain unresolved.",
+    "One timed-out request has unknown actual usage; conservative charge is not reported token usage.",
+    "Migrated B, not verbatim legacy execution; source and transport/prompt/citation differences documented.",
+    "Synthetic inputs reused during integration tuning; not an independent held-out quality test.",
+    "A/C are placeholder slots in these B-only experiments; historical A/C runs are not combined as comparators.",
+    "Code/criterion coverage and citation location are mechanical checks, not expert support or attribution judgments.",
+    "The source-event list is not independent third-party validation. Human review time and transport retries remain unknown.",
+    "Six-signal routing is a frozen synthetic B rule, not a signed production policy.",
+    "Local receipts/hashes do not establish provider signatures or distributed exactly-once execution."
+  ]
+}

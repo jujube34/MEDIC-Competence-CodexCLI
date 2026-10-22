@@ -1,0 +1,46 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "role": {
+      "enum": [
+        "evaluator",
+        "challenger_scan",
+        "challenger",
+        "reevaluator",
+        "judge",
+        "aggregator"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "competency_id": {
+      "title": "Competency Id",
+      "type": "string"
+    },
+    "material_id": {
+      "title": "Material Id",
+      "type": "string"
+    },
+    "dependencies": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Dependencies",
+      "type": "array"
+    },
+    "reason": {
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "role",
+    "competency_id",
+    "material_id",
+    "dependencies",
+    "reason"
+  ],
+  "title": "DispatchRequest",
+  "type": "object"
+}

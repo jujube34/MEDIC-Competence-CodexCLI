@@ -1,0 +1,35 @@
+{
+  "status": "pass_reference_and_served_asset_checks",
+  "checked_on": "2026-10-23",
+  "reference_url": "https://img.medsci.cn/tob/moke/UI-v1.02.html",
+  "reference_bytes": 559322,
+  "reference_sha256": "dce9e2f0da10b621384a4caaa47b76aea17dcd98df62526f01e0604a902324f9",
+  "reference_unchanged": true,
+  "runtime_version": "medic-runtime-p3-v14",
+  "manifest_sha256": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "health": {
+    "status": "ok",
+    "synthetic_execution_only": true
+  },
+  "served_assets_match_verified_build": {
+    "alignment.css": "42969e5daaeb5b283e503eeb781a00ac0e39fa3f57eb754a7eee3deadd07ddfc",
+    "app.css": "9ad083eb17cc0462eb35390322e19dc9760c2637de795b735136ecdb49f8b7ee",
+    "app.js": "354c08ea02f7d734cc784b00fc965483a0d339b776a658d36da43d3105fd00f3",
+    "demo-theme.css": "54a013b2639086b96172ce8ed4acd755432ec75fddad90b65267f7b9aebbcdac",
+    "index.html": "88c7dca42eaaea8804e3e9abc755928e22bf7abe130f3ef7a481b3b0cc18880b",
+    "navigation.js": "2ec32df19e9fa40c119920db37908694dc6b3b369fa60ea0d6734c82c1f9aa30",
+    "preview.js": "3ed40227cc65938ae98d779a9d451e33dd22c9e17ef2b847c7cc9e3a24dbe34d",
+    "results.js": "35e24fce6f61f3fb89f1a601beeb864b51eb82988f290db712c984a5d56ba1c2"
+  },
+  "fresh_browser_visual_check": false,
+  "browser_check_limitation": "In-app browser tab binding timed out; existing v14 browser evidence is retained separately.",
+  "alignment_status": "partial",
+  "appeals": "deferred_by_user",
+  "remaining": [
+    "Production login/SSO",
+    "Organization data integration",
+    "Recommendation publication workflow"
+  ],
+  "new_model_requests_from_this_check": 0,
+  "application_source_changed": false
+}

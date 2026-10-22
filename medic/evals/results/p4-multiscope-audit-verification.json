@@ -1,0 +1,27 @@
+{
+  "status": "pass_multiscope_audit_regression",
+  "verified_on": "2026-10-23",
+  "before_fix": "31-node synthetic aggregate graph failed only the hardcoded six-role check",
+  "after_fix": {
+    "tests": 25,
+    "passed": 24,
+    "skipped": 1,
+    "skip_reason": "PostgreSQL measurement test had no explicit test DSN"
+  },
+  "coverage": [
+    "Required initial roles derived from the actual graph including aggregator",
+    "Every initial material/competency/role scope must complete",
+    "Removing one aggregate scope is rejected",
+    "Existing historical-round and receipt-accounting checks retained"
+  ],
+  "protocol_fixture_only": true,
+  "new_model_calls_from_audit_tests": 0,
+  "files": {
+    "medic/evals/verify_dispute_live.py": "19cfc5450801ceb89a4d342dc6199fa376f60b3f874e1947e235be1e8291a3d9",
+    "medic/tests/test_dispute_audit.py": "34a2bfacb0e89453a56ea33aaa4742e8eb85acd119aca54d547a54a8180ca03f",
+    "medic/artifacts/p4/receipt-recovery-01/audit-before.log": "9bb28889f47a8964a9c9912d0035bb94606dc007062357b19acfad2caea3e3d4",
+    "medic/artifacts/p4/receipt-recovery-01/audit-after.log": "227ac3e8cf48586c8b2cc8db4e8f2df659dc001fc943e90d236483b33fa27f51"
+  },
+  "proof_archive_sha256": "f0840dac4e6643b1f7f1aca1e98483b076896c1b964be13b3a4518730f67d292",
+  "historical_runs_use_archived_auditors": true
+}

@@ -1,0 +1,59 @@
+{
+  "status": "pass_suite_request_budget_admission",
+  "checked_on": "2026-10-23",
+  "tests": 15,
+  "new_regressions": 5,
+  "seconds": 6.537,
+  "skipped": 0,
+  "original_full_scope_reproduced_before_and_refused_after": true,
+  "original_required_minimum": 226,
+  "original_configured_requests": 80,
+  "checks": [
+    "Reject before any arm dispatch or campaign directory creation",
+    "Exact lower bound admitted without sufficiency claim",
+    "Human-only scope retains real Coordinator minimum",
+    "Single-material graph and configured cap included in binding",
+    "CLI reports safe numeric diagnostics without private input"
+  ],
+  "controller_sha256": "c5cc69111ec040890b48288bf14f21b7f6c9218ae511b2f42ef119508302c371",
+  "archive_sha256": "b96fe83a526051054ba768d5bc0861f71ae1f9d9a1c2c0886c600dc4883e210c",
+  "logs": {
+    "repro-before.log": "8a13c35adbdfe1d936a394b4fe1d06e7ff038bdf4f5df44303bbde4282b2583a",
+    "repro-after.log": "4f005f43e2c25dfbd5c344da3e8445356d027d1a91604ad3f9bca90f5b40bb1b",
+    "tests-before.log": "8224baefb35ea7c3008266d01df77a66d68b30d28d3259c29db4b5a2d9e2ca9a",
+    "tests-final.log": "774371c49387eae6dac7baf86afe19b2d14d4b2d92406418cf463fcf451fcbcd"
+  },
+  "historical_archived_controller_replay": {
+    "status": "pass_readonly_archived_controller_replay",
+    "experiment_sha256": "763b353a5cce1f73acceedee3e8cf47ca725785d315acd91df781c839386273b",
+    "controller_sha256": "f7c2257125b6330f5ad969ac20fe27980a0e4055d2fe8aa3fb57d1c2b04f9e8b",
+    "replay_modes": [
+      "replay",
+      "replay",
+      "replay",
+      "replay",
+      "replay",
+      "replay"
+    ],
+    "ledger_and_campaign_records_unchanged": true,
+    "new_model_requests": 0,
+    "quality_acceptance": false
+  },
+  "a1_original_output_rejection": {
+    "status": "reproduced_local_output_rejection",
+    "error_code": "baseline_criterion_coverage",
+    "raw_final_sha256": "1154747bf132204e13d3556c96dfeef8896fb41d3ba76a514616acd7f38dc51c",
+    "source_sha256": "dbed6fa281363c1a5757f6b6d5c45a740c9b49720269460fe9b106dfbf6c0023",
+    "new_model_requests": 0
+  },
+  "runtime_version": "medic-runtime-p3-v14",
+  "manifest_sha256": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "new_model_requests_for_fix_and_checks": 0,
+  "quality_acceptance": false,
+  "limitations": [
+    "Guard applies to the unified comparison suite, not general runtime or standalone C prepare.",
+    "Mandatory request floor does not estimate tool continuations, retries, tokens or wall-clock feasibility.",
+    "C Coordinator full-graph planning timeout and full-scope execution remain unresolved.",
+    "Old experiments retain their archived controller and original budgets; no retrospective rebinding."
+  ]
+}

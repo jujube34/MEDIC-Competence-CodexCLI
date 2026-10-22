@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-17T06:55:23.742732+00:00",
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v7",
+  "runtime_manifest_sha256": "d331b70cc688f72e011e10ea88d132d0170f55681a3f58ff29edd24c44f9f9fe",
+  "tests": 252,
+  "postgresql_tests": 83,
+  "new_contention_tests": 10,
+  "elapsed_seconds": 415.027,
+  "test_log_sha256": "e2f09969436cee5f3d03bd27de109bee00656eb2f77704491c923c9abf3614ab",
+  "source_archive_verified": true,
+  "scope": "synthetic_contracts_real_local_postgresql_windows_ownership_and_backup_restore",
+  "production_signoff": false
+}

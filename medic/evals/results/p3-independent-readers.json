@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-10-17T02:33:59.544272+00:00",
+  "scope": "independent_local_reader_comparison_not_visual_or_expert_quality",
+  "cases": [
+    {
+      "format": "xlsx",
+      "source_sha256": "5b8257e0149ae6c842f00d33ac242a0b95e3f4e2893b4dffe771c7fcf65402b6",
+      "independent_text_items": 478,
+      "matched": 478,
+      "all_checked_items_match": true
+    },
+    {
+      "format": "docx",
+      "source_sha256": "4380d2fc26c2565c30b71055dd0a61d0609ea85d26deacff75a675bd541e22ab",
+      "independent_text_items": 46,
+      "matched": 46,
+      "all_checked_items_match": true
+    },
+    {
+      "format": "pptx",
+      "source_sha256": "1a03077863bb2690e2303350909e2ee582f7da8d9f4a89cc68322037936abff8",
+      "independent_text_items": 487,
+      "matched": 487,
+      "all_checked_items_match": true
+    },
+    {
+      "format": "pdf",
+      "source_sha256": "91e498064d046fdeb4878bf062cb31fa96b30255695b44dc3ac70210aafc4924",
+      "independent_text_items": 298,
+      "matched": 297,
+      "all_checked_items_match": false
+    }
+  ],
+  "status": "review_required",
+  "pdf_disagreement_review": {
+    "page": 8,
+    "block_bbox": [
+      348.2449951171875,
+      287.9215393066406,
+      461.79498291015625,
+      372.4240417480469
+    ],
+    "rendered_crop_inspected": true,
+    "visual_text_matches_extracted_block": false,
+    "independent_reader_line_offsets": [
+      732,
+      747,
+      761,
+      774,
+      789,
+      803,
+      818,
+      832
+    ],
+    "finding": "one punctuation U+3001 is present in the independent reader between native block lines; exact equivalence is not established",
+    "manual_review_required": true
+  }
+}

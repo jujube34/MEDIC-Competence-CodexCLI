@@ -1,0 +1,143 @@
+{
+  "$defs": {
+    "Block": {
+      "additionalProperties": false,
+      "properties": {
+        "block_id": {
+          "title": "Block Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "title": "Locator",
+          "type": "object"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "search_text": {
+          "title": "Search Text",
+          "type": "string"
+        },
+        "metadata": {
+          "title": "Metadata",
+          "type": "object"
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "block_id",
+        "kind",
+        "locator",
+        "quote",
+        "search_text",
+        "metadata",
+        "quality_flags"
+      ],
+      "title": "Block",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "locator": {
+          "title": "Locator",
+          "type": "string"
+        },
+        "blocking": {
+          "title": "Blocking",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "locator",
+        "blocking"
+      ],
+      "title": "Issue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "parser_version": {
+      "default": "medic-extraction-v2",
+      "title": "Parser Version",
+      "type": "string"
+    },
+    "source_sha256": {
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "format": {
+      "enum": [
+        "pdf",
+        "docx",
+        "pptx",
+        "xlsx"
+      ],
+      "title": "Format",
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "ready",
+        "needs_review",
+        "empty",
+        "failed"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "engine": {
+      "title": "Engine",
+      "type": "string"
+    },
+    "units": {
+      "items": {
+        "type": "object"
+      },
+      "title": "Units",
+      "type": "array"
+    },
+    "blocks": {
+      "items": {
+        "$ref": "#/$defs/Block"
+      },
+      "title": "Blocks",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source_sha256",
+    "format",
+    "state",
+    "engine",
+    "units",
+    "blocks",
+    "issues"
+  ],
+  "title": "Extraction",
+  "type": "object"
+}

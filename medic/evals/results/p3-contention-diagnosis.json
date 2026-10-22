@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-10-17T06:48:50.798093+00:00",
+  "status": "fixed_in_contracts",
+  "runtime_version": "medic-runtime-p3-v7",
+  "manifest_sha256": "d331b70cc688f72e011e10ea88d132d0170f55681a3f58ff29edd24c44f9f9fe",
+  "red_command": "python -m unittest medic.tests.test_contention -v",
+  "before_fix": {
+    "runs": 2,
+    "tests_per_run": 4,
+    "failures_per_run": 1,
+    "errors_per_run": 3
+  },
+  "controls": {
+    "wal_read_under_writer": true,
+    "no_cleanup_delay_status": 200,
+    "slow_upstream_close_status": 429
+  },
+  "root_causes": [
+    "terminal_exposed_before_upstream_close_and_durable_settlement",
+    "sqlite_read_polling_uses_begin_immediate"
+  ],
+  "original_v6_service_exception_root_cause_confirmed": false,
+  "targeted_after_fix": {
+    "tests_executed": 51,
+    "postgres_tests_deferred_to_full_suite": 7,
+    "new_contention_contracts": 10,
+    "elapsed_seconds": 38.528
+  },
+  "invariants": [
+    "active_requests_still_limited",
+    "failed_accounting_withholds_terminal_and_keeps_reservation",
+    "cancel_rechecked_under_write_lock",
+    "read_snapshot_consistent"
+  ],
+  "evidence_sha256": {
+    "contention-red-v6.log": "0f4dc8d66ae3bce90bc311c8c7b27318b0db10d67cd86edafc0b10283dc19c4b",
+    "contention-red-v6-repeat.log": "ea7fded89e40199857b64e371ba0ef5ec1cff9701701c53a274424b6ca576b3a",
+    "contention-controls-v6.json": "b2641678072338d486efe23ce628773aee0388aa1c2cfce5d400866cc6d3f6be",
+    "contention-targeted-v7.log": "b289975795a0f25da907ae601113318e8c4290bd5449ab794ee1bd93051f0307"
+  },
+  "full_regression_and_live_verification": "separate_records",
+  "production_signoff": false
+}

@@ -1,0 +1,390 @@
+{
+  "created_at": "2026-10-17T01:36:36.222376+00:00",
+  "status": "pass",
+  "run_id": "run-1add0e890ed948339d206bd39ec459c3",
+  "input_hash": "6d60c606bb8c938e966897bf06e6b49361b5b4aaf5a275355a0f3885fc69b9ac",
+  "versions": {
+    "competency_model_version": "synthetic-rubric-v1",
+    "job_matrix_version": "synthetic-no-recommendations-v1",
+    "ai_policy_version": "synthetic-policy-v1",
+    "prompt_bundle_version": "medic-p2-roles-v4",
+    "parser_version": "synthetic-text-v1",
+    "runtime_version": "medic-runtime-p2-v2",
+    "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+    "provider_profile_version": "medic-deepseek-p0-20261017.1"
+  },
+  "checks": {
+    "synthetic_only": true,
+    "required_graph_completed": true,
+    "independent_blind_context": true,
+    "worker_protocol_and_prompt_provenance": true,
+    "live_role_provenance": true,
+    "distinct_role_threads": true,
+    "current_hard_gate": true,
+    "stored_gate_matches": true,
+    "ready_for_human_review": true,
+    "not_final_employee_decision": true
+  },
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "execution_mode": "live",
+    "publication_scope": "synthetic_preview",
+    "final_employee_decision": false
+  },
+  "required_task_count": 31,
+  "role_results": [
+    {
+      "role": "coordinator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "f8b1b23f0a3ed9ab815d32e5de49d277d27258045dab29dad72934166a3c0172",
+      "context_hash": "8c31660637f734360a6ee3bd3b97f315ac8f92d1c518f282a9a117ed2bd5a15d",
+      "read_spans": 0
+    },
+    {
+      "role": "evaluator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "0a9559ba8d19871ecec8ca9e2718e4a1dc926142f5230658ff916e016571df69",
+      "context_hash": "33d9f7aa3a31d1ba396bfc9e73fd5595c096d6f7a58c98532d28db683f082b0e",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "5aab2c5351f998efc4eb86511a58fdb9a638988bb871d145bc9a99c36afda6dc",
+      "context_hash": "608f4f5779cac91acdc79b7b1687f643b52fba1be532c1319d5dda8a4d7e8600",
+      "read_spans": 4
+    },
+    {
+      "role": "evaluator",
+      "material_id": "synthetic-material-2",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "0a9f1b05599bb678d19a5f844e12f728b531b0de11c9773ed192734e3ba19998",
+      "context_hash": "7a1477ded07c847dc9b12ef2a924d4c491dd73ef1fc5322ad002793e7a8f7882",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "synthetic-material-2",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "08c035f64cfab0e8d5f99c498c95e9a0bfa679bd030443d0dfaa8daa726539c5",
+      "context_hash": "5be512fead9336cb10a49f490df303e0acc8210764b96a50d0a81c5da01488df",
+      "read_spans": 4
+    },
+    {
+      "role": "evaluator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "cbd40aa70e2e141f951d2dc82ab5e656e4e7da34ea530f521c8d920f7232e6b8",
+      "context_hash": "f6fdcddb82e89a8cb4e8af6c2187a3db8502ce7eeca56987a8dd7731aec04d8c",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "synthetic-material-1",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "816929bc834d19bbae7fb91d521d771f3af6fd3ed08602e0bf640a3382a70eed",
+      "context_hash": "af9ef70895477f6c174e974e7fdfcc9b51f6a805f04e0a41a997644e392f804f",
+      "read_spans": 4
+    },
+    {
+      "role": "evaluator",
+      "material_id": "synthetic-material-2",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "b5993fabb48348c448f64fdc4e55262d16301505f7ee9b267b3ec5ffb47b3dcb",
+      "context_hash": "fd81116263a3f30feec459f1922114c9c8be05f7a03298113874bc986ff38b5a",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "synthetic-material-2",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "669b7c12517888f3716abee3fa7510303bd1606277505a25ab13104b27a9d111",
+      "context_hash": "c237aeefb810b999d8d8266da7e25294a8a0d85c2c5b63aabcee4903dd104819",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "__aggregate__",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "fa93801a3d04c3f9490748231aaaa83860f0682ecd504fcf082bf87e65bfe061",
+      "context_hash": "2923f458a4be6ccbebae25b45d7fddc1932877b38e3d5e6b33e6848866025a6d",
+      "read_spans": 8
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "__aggregate__",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "e31ea2f73c9ccca606e8742a0abff672263ad7e75a98842ad26a7f777f8e6bc2",
+      "context_hash": "84a2aca99a901e257a048ccd8ac49a31e6db85252354a0797af1f2acb6bf2de9",
+      "read_spans": 8
+    },
+    {
+      "role": "challenger",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "985dc622709026cfcf3c9541c75d09d5f1db589da1ece14004948988dea68bdf",
+      "context_hash": "e9b95de27a3af30f6e0bd30d2b53885ab37deb56b677721589f154657d56a182",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger",
+      "material_id": "synthetic-material-2",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "7ea6deb74309c2b89452de5636940abd2ee507b080b2558733f693682b9a537f",
+      "context_hash": "fcb766164f0761c58dae18c000a2406ca39e860dcbcbb59c594b1bd4167a0c72",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger",
+      "material_id": "synthetic-material-1",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "443ee7dde7813d181ad5b2d7df00696f03b2925bdd24c76723bbea8136afa67f",
+      "context_hash": "65c951fb4cadcfcee00865a0c175cb5267c8c377ab36c034adc761b25a686d39",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger",
+      "material_id": "synthetic-material-2",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "9a64031bc2286cf9af043294825ca58f49bc8927e482e750b9fcca8800ea2878",
+      "context_hash": "fb5cc307a6353ad6656d151d5c2ef44786fb14841541bb10f4415ca8091a1a89",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "2e89f9835de700e394275a3eaa19cce74a2a669275b565244a66e6dddd79a440",
+      "context_hash": "f886898ff460c8f6d7c4df78e6f780684eb5afce85ff86f8c5a1f2ffd24d6204",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "synthetic-material-2",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "da1185d660f381eba9418156a5aab7ed50c7b680d320a804e4718275c19addc1",
+      "context_hash": "2caf6b80bc5ac9e8ba64a5a7926b9a6f064ca33843e4e14a0d843df58c84ef04",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "47b173c324801543aeefbb831b387271050a9754ae9e44a871ca5c0923acafa8",
+      "context_hash": "1d5a8ed6f879b83d371354a34656fd9c0a3174cc37604fc176d46a787c0bf8cf",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "synthetic-material-2",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "e2baa7d0e997a3b3bcd092dbf63fa23fc7df3113fe983cad7c9ee0c3fcca659f",
+      "context_hash": "e7ea6f349c223f4bcb9ccb8410817d6720e1d4537500f8f97d547e0446b779af",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "f60f0c48589db3a4e704fda453fa7760788fc7558b08d9086e846df325c3952a",
+      "context_hash": "5c953559892711684e11661bcb91f3069364298ec79aa544bd4ddd0bc1a2617d",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "material_id": "synthetic-material-2",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "eb40708ca9028f689bf34fae6b01c83b61b6b5908c23c731607a166927a7560e",
+      "context_hash": "4926741e64c8c129e568c39c349e08d9841dd83e7bce8be32b01719838c281d7",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "material_id": "synthetic-material-1",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "03c8bd4197fd6ae99340d8d1acda37d9383436c0f04ab69fda3c3eaffe4ce816",
+      "context_hash": "542e68ee292a3cd1201d031cf39f58d712cb5440c32cc2fc4f663ee399a42ffc",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "material_id": "synthetic-material-2",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "1cb06819b5d199e37b72042738fc0224f1e55104849b155a28a1c8598a4c8a6c",
+      "context_hash": "fa4030d444dc91690c0806930b01766276944349bf26ca29c73c8d69f58fe1f9",
+      "read_spans": 4
+    },
+    {
+      "role": "aggregator",
+      "material_id": "__aggregate__",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "65927c87ec4ed3bf000475d134a5e658dbe74fd0babe1a1a2194b1c88ab432b3",
+      "context_hash": "b2c43d245d76d15f74f95c030ffd95b6881a88b066b91fce332a1ce5ccc70766",
+      "read_spans": 8
+    },
+    {
+      "role": "aggregator",
+      "material_id": "__aggregate__",
+      "competency_id": "D1",
+      "attempt": 2,
+      "status": "completed",
+      "result_hash": "830f7434717312667fda4706f4c7a84cfec5731edd01c977d4687baf07709501",
+      "context_hash": "3e62adc55419b1397da6a181fd005c4b928b56df0e81877b4778b0b77a59caf6",
+      "read_spans": 8
+    },
+    {
+      "role": "challenger",
+      "material_id": "__aggregate__",
+      "competency_id": "M2",
+      "attempt": 2,
+      "status": "completed",
+      "result_hash": "65499dad281c8eef2d2be3f02d0c5db4cfd49237ec23171096e7449b1ce4c698",
+      "context_hash": "3e44bd73c2b14003b68e2ae5826c81ad2bb9487c3df8d51dde642bbc6ac5853d",
+      "read_spans": 8
+    },
+    {
+      "role": "challenger",
+      "material_id": "__aggregate__",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "aba283d7a32e39c80663debafa06e657a0770c225e55a6854eadac52d594da26",
+      "context_hash": "caf56682876056d90f99edd280bb566505bd6cd9dd6042652602e067b5cfed41",
+      "read_spans": 8
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "__aggregate__",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "3ce33b029dce89f166ad358038704f0908fe5958599b5c6ac542758ad5bf987d",
+      "context_hash": "a6d3febaa21560b1dbd807f1b78f8ebad7ae89fe58ae7c05b035ba31cce3f5ab",
+      "read_spans": 8
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "__aggregate__",
+      "competency_id": "D1",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "1c73604bccbb36277a9f93f1243254fc06bbe695b72ac926ecb5ffcc6a48dcac",
+      "context_hash": "0488beab9534103b2b9b722330cdfeb65ea74f7caca9f637bb901c716d75d3fe",
+      "read_spans": 8
+    },
+    {
+      "role": "judge",
+      "material_id": "__aggregate__",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "a743f473b9bc91d5ac7951ec1479de011a4ed8c3d0ece3892130dc1cec5502f8",
+      "context_hash": "a4b400c1bd4162748a087afe5b8dd6c3fd4cf113ff74e188aa59f81884a32c88",
+      "read_spans": 8
+    },
+    {
+      "role": "judge",
+      "material_id": "__aggregate__",
+      "competency_id": "D1",
+      "attempt": 2,
+      "status": "completed",
+      "result_hash": "0840d7a2ea1732afd76239059992b523112a93c7b21d4cd601eb6c389c698670",
+      "context_hash": "0167fd0d921995f9014dba704eb6103e02a2dd5ed8ca3ae3d0731a6dc4516768",
+      "read_spans": 8
+    }
+  ],
+  "gateway_requests": 4,
+  "charged_tokens": 44156,
+  "run_total_requests": 170,
+  "run_charged_or_reserved_tokens": 1739234,
+  "run_estimated_usage_requests": 1,
+  "run_unsettled_requests": 0,
+  "estimated_usage_requests": 0,
+  "private_snapshot_hash": "1eb835367c9ae65fabd92c4d9e13bf388fa0e9af89974b2a412d863c552b427c",
+  "quality_claim": "execution_and_boundary_verification_only_not_expert_accuracy",
+  "final_scopes": [
+    {
+      "material_id": "__aggregate__",
+      "competency_id": "M2",
+      "status": "suggested",
+      "grade": "B"
+    },
+    {
+      "material_id": "__aggregate__",
+      "competency_id": "D1",
+      "status": "suggested",
+      "grade": "B"
+    }
+  ],
+  "aggregation_evidence": [
+    {
+      "competency_id": "M2",
+      "source_result_count": 2,
+      "source_event_count": 1,
+      "attribution": "self_reported",
+      "independent_corroboration_event_count": 0,
+      "challenge_responses": 0
+    },
+    {
+      "competency_id": "D1",
+      "source_result_count": 2,
+      "source_event_count": 1,
+      "attribution": "self_reported",
+      "independent_corroboration_event_count": 0,
+      "challenge_responses": 0
+    }
+  ],
+  "elapsed_wall_seconds_including_debug_and_recovery": 2027.853
+}

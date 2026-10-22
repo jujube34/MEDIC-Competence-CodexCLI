@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "verified_on": "2026-10-23",
+  "runtime_version": "medic-runtime-p3-v14",
+  "manifest_sha256": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "reference_url": "https://img.medsci.cn/tob/moke/UI-v1.02.html",
+  "reference_sha256": "dce9e2f0da10b621384a4caaa47b76aea17dcd98df62526f01e0604a902324f9",
+  "reference_behavior": "Read-only hierarchy browsing; no save or publish control",
+  "families": 5,
+  "jobs_verified": 49,
+  "recommendation_cells_verified": 833,
+  "competency_names_verified": 17,
+  "browser_classification_matches": true,
+  "browser_names_match": true,
+  "independent_workbook_profiles_and_grades_match": true,
+  "source_hashes_unchanged": true,
+  "mobile_viewport_width": 390,
+  "mobile_document_width": 375,
+  "mobile_long_criteria_expands": true,
+  "legacy_without_metadata_shows_explicit_fallback": true,
+  "logout_clears_classification_and_cards": true,
+  "preview_baseline": {
+    "runs": {
+      "previous_rows": 3,
+      "current_rows": 3,
+      "previous_content_unchanged": true
+    },
+    "tasks": {
+      "previous_rows": 3,
+      "current_rows": 3,
+      "previous_content_unchanged": true
+    },
+    "run_limits": {
+      "previous_rows": 3,
+      "current_rows": 3,
+      "previous_content_unchanged": true
+    },
+    "run_builds": {
+      "previous_rows": 3,
+      "current_rows": 3,
+      "previous_content_unchanged": true
+    },
+    "model_requests": {
+      "previous_rows": 0,
+      "current_rows": 0,
+      "previous_content_unchanged": true
+    },
+    "app_assessments": {
+      "previous_rows": 3,
+      "current_rows": 3,
+      "previous_content_unchanged": true
+    },
+    "app_catalogs": {
+      "previous_rows": 2,
+      "current_rows": 3,
+      "previous_content_unchanged": true
+    }
+  },
+  "new_model_requests": 0,
+  "screenshots": {
+    "desktop-model.jpg": "3782694ff77f8543396d4762c1811dbcca8dd0711387060dec808c216399572f",
+    "mobile-filters.jpg": "1a3e8370d654500ba66921ccd0c2cda210d2b08746a158dec3d0bcae3f6bd015",
+    "mobile-expanded.jpg": "cc542f1ae4f4a57144183ae5eb7a4057e33bf61bf5988b43f01c387fe423d8df"
+  },
+  "limitations": [
+    "Candidate standards remain awaiting_business_signoff",
+    "Demo job count and synthetic grades were not imported",
+    "Publication workflow remains pending",
+    "Appeals deferred by user"
+  ]
+}

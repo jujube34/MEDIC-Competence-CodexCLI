@@ -1,0 +1,6 @@
+{
+  "requests": 240,
+  "total_tokens": 3000000,
+  "concurrency": 2,
+  "wall_seconds": 3600
+}

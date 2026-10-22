@@ -1,0 +1,70 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "input_bytes": {
+      "default": 26214400,
+      "maximum": 104857600,
+      "minimum": 1,
+      "title": "Input Bytes",
+      "type": "integer"
+    },
+    "expanded_bytes": {
+      "default": 134217728,
+      "maximum": 536870912,
+      "minimum": 1,
+      "title": "Expanded Bytes",
+      "type": "integer"
+    },
+    "member_bytes": {
+      "default": 16777216,
+      "maximum": 67108864,
+      "minimum": 1,
+      "title": "Member Bytes",
+      "type": "integer"
+    },
+    "members": {
+      "default": 4000,
+      "maximum": 20000,
+      "minimum": 1,
+      "title": "Members",
+      "type": "integer"
+    },
+    "blocks": {
+      "default": 20000,
+      "maximum": 100000,
+      "minimum": 1,
+      "title": "Blocks",
+      "type": "integer"
+    },
+    "text_chars": {
+      "default": 8388608,
+      "maximum": 33554432,
+      "minimum": 1,
+      "title": "Text Chars",
+      "type": "integer"
+    },
+    "pages": {
+      "default": 500,
+      "maximum": 2000,
+      "minimum": 1,
+      "title": "Pages",
+      "type": "integer"
+    },
+    "seconds": {
+      "default": 30,
+      "maximum": 120,
+      "minimum": 1,
+      "title": "Seconds",
+      "type": "integer"
+    },
+    "memory_bytes": {
+      "default": 805306368,
+      "maximum": 2147483648,
+      "minimum": 134217728,
+      "title": "Memory Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "ParseLimits",
+  "type": "object"
+}

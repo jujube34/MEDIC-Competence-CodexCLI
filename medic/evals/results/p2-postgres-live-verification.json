@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-10-17T01:20:28.489355+00:00",
+  "status": "pass",
+  "run_id": "run-b5f3b18908e74642accfcc89064aa255",
+  "input_hash": "3e643655815c8f4da87275ff74b4b1e9953b9fb4bb672645cb28595eb0763f58",
+  "versions": {
+    "competency_model_version": "synthetic-rubric-v1",
+    "job_matrix_version": "synthetic-no-recommendations-v1",
+    "ai_policy_version": "synthetic-policy-v1",
+    "prompt_bundle_version": "medic-p1-roles-v2",
+    "parser_version": "synthetic-text-v1",
+    "runtime_version": "medic-runtime-p1-v1",
+    "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+    "provider_profile_version": "medic-deepseek-p0-20261017.1"
+  },
+  "checks": {
+    "synthetic_only": true,
+    "required_graph_completed": true,
+    "independent_blind_context": true,
+    "worker_protocol_and_prompt_provenance": true,
+    "live_role_provenance": true,
+    "distinct_role_threads": true,
+    "current_hard_gate": true,
+    "stored_gate_matches": true,
+    "ready_for_human_review": true,
+    "not_final_employee_decision": true,
+    "six_distinct_completed_roles": true
+  },
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "execution_mode": "live",
+    "publication_scope": "synthetic_preview",
+    "final_employee_decision": false
+  },
+  "required_task_count": 6,
+  "role_results": [
+    {
+      "role": "coordinator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "acdab7a38545db57c598f99dfc549ebf13ee45e7f4a5948274cc5ce67cb1e956",
+      "context_hash": "a5c50514d7e3225c3e27fe55bbd35a1327148e7287ba26274c72253ecbb6f55b",
+      "read_spans": 0
+    },
+    {
+      "role": "evaluator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "cdf680888b7ad8a5e01b88f27512ea4ab930decb3590ba38570f7137c835c4f7",
+      "context_hash": "b1520729ad52da96afcabcf82474c9aa3bbf62ea45275e298d9ad670b5b238dd",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "e5d2dce4371056f1e36824bb436b1d9322cf80a6dbb5d8c4d86cd2e7974c4cf1",
+      "context_hash": "0a2c89d61ca00c52551f45d336221e29a180a12c964e0f5e775457750d46f71d",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "3eefc1b25b532360ddf3aef042492157ca0bd49c03b61bee7ab96b8e7828b33f",
+      "context_hash": "33513e8f7d5c994af5608d76bc451339a0bfcd22f511dce972915d1df6a03139",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "fb03822e0fb45913f0f6f938c05f5c1844ce07cd814182f8d2a19475a94676aa",
+      "context_hash": "eae20e9b5b173cbfd2dc465adc019cfe538be1e9562b66528ba247e176f80366",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "material_id": "synthetic-material-1",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "a4913712d5fbcff9a6338e4a68d7ccb037db55754ec63902dcdbb8efdc56db02",
+      "context_hash": "16e4c681c1b92daeb82ee3a0c6cc83994837a9317256a181fefc9c28b1ea829e",
+      "read_spans": 4
+    }
+  ],
+  "first_grade": "B",
+  "second_grade": "B",
+  "challenge_count": 0,
+  "responded_challenge_count": 0,
+  "judge_verdict": "pass",
+  "gateway_requests": 28,
+  "charged_tokens": 226472,
+  "run_total_requests": 28,
+  "run_charged_or_reserved_tokens": 226472,
+  "estimated_usage_requests": 0,
+  "private_snapshot_hash": "7fc228fd356e908b0464328e3a9933b01198a3c614d2fd592d3ae0dc1b2722a2",
+  "quality_claim": "execution_and_boundary_verification_only_not_expert_accuracy"
+}

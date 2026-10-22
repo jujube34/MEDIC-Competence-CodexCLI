@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-10-17T02:49:44.351354+00:00",
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v2",
+  "runtime_manifest_sha256": "d14633b25b5d9fb0910fdf15e50682c1b4c07f1dc850ebf50322d92d8ed4e050",
+  "tests": 166,
+  "postgresql_tests": 51,
+  "elapsed_seconds": 276.685,
+  "test_log_sha256": "498a1784948036801ea80981a3c8f9ad991b5bd0e92cf6f728d587b8ee89b0d7",
+  "scope": "synthetic_contracts_and_actual_local_resource_enforcement_not_expert_quality",
+  "repairs": [
+    "Windows venv launcher and interpreter share a two-process job with total memory limit",
+    "plan-only role restriction applied during atomic claim with deterministic stale-snapshot regression",
+    "PDF character coverage disagreement remains a blocking quality issue"
+  ],
+  "prior_failed_regression": {
+    "runtime_version": "medic-runtime-p3-v1",
+    "tests": 163,
+    "failures": 3,
+    "errors": 2,
+    "log_sha256": "41688ad2e9189cb6eb03c4618d660e19d967672a65032a70785bdb72b7032d59"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "status": "pass",
+  "scope": "local_transaction_soak_not_production_service_or_model_throughput",
+  "backend": "postgresql",
+  "config": {
+    "duration_seconds": 300.0,
+    "arrival_interval_seconds": 2.0,
+    "lease_seconds": 3.0,
+    "workers": 4,
+    "max_arrival_lag_seconds": 5,
+    "drain_seconds": 90,
+    "limits": {
+      "requests": 3,
+      "total_tokens": 300,
+      "concurrency": 2,
+      "wall_seconds": 450
+    },
+    "synthetic": true,
+    "model_calls": 0,
+    "workload": "coordinator_lease_transactions_only",
+    "budget_units": "simulated_accounting_units_not_model_tokens",
+    "harness_sha256": "1a8147928b4891006fab9855c37ef7f9f1ba664567e5f328ac90b78917acdea9",
+    "source_sha256": "a492fc661f0e2d0ab877260d6c88262ccd14046985d6726ab4150572234e5ad3"
+  },
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v13",
+    "manifest_sha256": "24e5b90a59e1c9903890bf7a19d5e39bb8bc68b3f22b7acef9c5fe9dc09aaf0c",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "observations_sha256": "dc189e9769a4135b6a642fc046af1d5990aeac1f356c232ce5604a664fb70459",
+  "checks": {
+    "configured_arrivals_completed": true,
+    "sustained_arrival_window": true,
+    "arrival_lag_within_declared_limit": true,
+    "all_runs_cancelled_after_three_attempts": true,
+    "exactly_three_unique_leases_per_run": true,
+    "two_natural_recoveries_per_run": true,
+    "no_early_recovery": true,
+    "attempt_budget_denial_before_cancel": true,
+    "immutable_input_build_limits_and_deadline": true,
+    "idempotent_single_run_and_outbox": true,
+    "no_results_reports_or_execution_identity": true,
+    "no_stale_callback_damage": true,
+    "all_callbacks_including_killed_worker_fenced": true,
+    "budget_preserved_including_killed_reservation": true,
+    "fault_happened_during_load_with_live_lease": true,
+    "actual_process_death_confirmed": true,
+    "fault_reservation_matches_claim_and_ledger": true,
+    "replacement_claimed_work": true,
+    "all_worker_generations_exercised": true,
+    "no_unexpected_worker_or_operation_failures": true,
+    "read_polling_and_cross_run_fencing_observed": true,
+    "build_unchanged_during_probe": true,
+    "harness_unchanged_during_probe": true
+  },
+  "run_count": 150,
+  "lease_count": 450,
+  "simulated_reserved_units": 45000,
+  "unsettled_simulated_reservations": 1,
+  "actual_model_calls": 0,
+  "reports_published": 0,
+  "operation_latency": {
+    "idempotent_create": {
+      "count": 1622,
+      "p50_ms": 72.155,
+      "p95_ms": 164.703,
+      "max_ms": 204.421
+    },
+    "claim": {
+      "count": 1622,
+      "p50_ms": 52.025,
+      "p95_ms": 124.323,
+      "max_ms": 152.41
+    },
+    "reserve": {
+      "count": 450,
+      "p50_ms": 51.202,
+      "p95_ms": 140.187,
+      "max_ms": 169.93
+    },
+    "settle": {
+      "count": 449,
+      "p50_ms": 15.002,
+      "p95_ms": 122.256,
+      "max_ms": 129.675
+    },
+    "settle_replay": {
+      "count": 449,
+      "p50_ms": 14.397,
+      "p95_ms": 121.517,
+      "max_ms": 130.033
+    },
+    "cross_run_authorize": {
+      "count": 448,
+      "p50_ms": 34.732,
+      "p95_ms": 135.638,
+      "max_ms": 151.71
+    },
+    "stale_authorize": {
+      "count": 450,
+      "p50_ms": 35.304,
+      "p95_ms": 141.368,
+      "max_ms": 150.996
+    },
+    "stale_complete": {
+      "count": 450,
+      "p50_ms": 35.365,
+      "p95_ms": 135.434,
+      "max_ms": 153.424
+    },
+    "stale_fail": {
+      "count": 450,
+      "p50_ms": 13.573,
+      "p95_ms": 117.672,
+      "max_ms": 127.875
+    },
+    "queue_pending": {
+      "count": 1611,
+      "p50_ms": 14.12,
+      "p95_ms": 116.202,
+      "max_ms": 129.742
+    },
+    "snapshot": {
+      "count": 1610,
+      "p50_ms": 17.967,
+      "p95_ms": 121.358,
+      "max_ms": 137.204
+    },
+    "budget_snapshot": {
+      "count": 1610,
+      "p50_ms": 13.855,
+      "p95_ms": 118.64,
+      "max_ms": 150.81
+    }
+  },
+  "limitations": [
+    "Only Coordinator lease transactions; no full task DAG or role execution.",
+    "Bounded local duration and arrival rate; no customer capacity/SLO acceptance.",
+    "Queue discovery polled; production serve() and gateway not executed.",
+    "One worker job killed; database and machine remain available."
+  ],
+  "independent_database_audit": {
+    "status": "pass",
+    "backend": "postgresql",
+    "runs": 150,
+    "leases": 450,
+    "current_database_matches_observed_inputs_budgets_builds_and_deadlines": true,
+    "all_tasks_cancelled_after_three_attempts": true,
+    "no_results_or_reports": true,
+    "unsettled_simulated_reservations": 1,
+    "observations_sha256": "dc189e9769a4135b6a642fc046af1d5990aeac1f356c232ce5604a664fb70459"
+  },
+  "independent_audit_source_sha256": "11ad2a13aa09269501b007bd3209adca8c5121687fc418752f413a781fd84188",
+  "observed_claim_races_lost": 1172,
+  "fenced_old_callbacks": 450,
+  "fault_offset_seconds": 105.803,
+  "max_arrival_lag_seconds": 0.395,
+  "prior_probe_failure": {
+    "status": "failed",
+    "phase": "store_initialization",
+    "cause": "Harness URI encoded space as plus, not libpq percent-encoding",
+    "tables_created": 0,
+    "model_calls": 0,
+    "corrected_smoke_status": "pass"
+  },
+  "preview_tables_unchanged": [
+    "runs",
+    "tasks",
+    "model_requests",
+    "run_limits",
+    "run_builds",
+    "app_assessments"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-10-17T02:01:48.138534+00:00",
+  "status": "pass",
+  "tests": 135,
+  "postgresql_tests": 46,
+  "elapsed_seconds": 147.711,
+  "test_log_sha256": "3162fc6f056ceb7a88e32d7a488e35afb3d896943ff45b6cf1fb8bf9263d8300",
+  "scope": "synthetic_contract_tests_not_model_quality",
+  "subsequent_history_result_checks": [
+    "SQLite",
+    "PostgreSQL"
+  ]
+}

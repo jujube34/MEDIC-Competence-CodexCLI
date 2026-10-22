@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-10-17T06:05:12.171592+00:00",
+  "status": "pass",
+  "tests": 13,
+  "duration_seconds": 8.497,
+  "log_sha256": "055b2e10bba80d3fdab90dde814daca7aa519b86bbcf22e4fa7827a5cb528d04",
+  "release": {
+    "format": "medic-sqlite-backup-v1",
+    "runtime_version": "medic-runtime-p3-v5",
+    "files": {
+      "deploy/backup.py": "b1c99382eb2390a15368db7b6ec4208306f5a350e7ce4f1a91caac7622ab170a",
+      "evals/backup_probe.py": "9c3e6c19eb34e95f8a983c65db6bff52ddd17b4486296d84f841cad64c7f76cb",
+      "tests/test_backup.py": "d90375d3f53090b432eb053b097542a893cfeb3112ae0eff0b8ceef0abae5343"
+    }
+  },
+  "execution_manifest_sha256": "e9024941566d5bbae6325f59f102723af53c0d7d0d018ab9800473602649b0bc",
+  "postgresql_tests": 0,
+  "production_recovery_verified": false
+}

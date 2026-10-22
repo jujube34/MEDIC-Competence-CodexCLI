@@ -1,0 +1,30 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "judge_task_id": {
+      "title": "Judge Task Id",
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "rework",
+        "human_review"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "reason": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "judge_task_id",
+    "decision",
+    "reason"
+  ],
+  "title": "ReworkDecision",
+  "type": "object"
+}

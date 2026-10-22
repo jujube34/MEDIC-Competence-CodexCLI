@@ -1,0 +1,268 @@
+{
+  "status": "pass",
+  "ui_alignment_status": "partial",
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v12",
+    "manifest_sha256": "11ee4d2547dc46e28ff851ccaa69375e6712704e8ae51f74db9771897d28cc25",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "upload_snapshot_build": {
+    "runtime_version": "medic-runtime-p3-v12",
+    "manifest_sha256": "869f4d06bca1177c4ab936657a4a8e9fdab122f08e20a44ace2b280a9b8d9bae",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "synthetic": true,
+  "model_calls": 0,
+  "new_assessments": 0,
+  "new_human_decisions": 0,
+  "http_checks": {
+    "three_formats_authenticated_preview": true,
+    "source_downloads_unchanged": true,
+    "derived_pdf_hash_stable_on_cache_hit": true,
+    "unauthenticated_preview_rejected": true,
+    "external_content_rejected": true
+  },
+  "formats": [
+    {
+      "format": "docx",
+      "source_sha256": "b6f6d9bdac225b6da055289e1a76f12985007135f9a02c90a2f2411b0f9b3b1a",
+      "info": {
+        "preview_version": "medic-pdf-preview-v1",
+        "source_sha256": "b6f6d9bdac225b6da055289e1a76f12985007135f9a02c90a2f2411b0f9b3b1a",
+        "page": 1,
+        "page_count": 1,
+        "width": 1200,
+        "height": 1698,
+        "rotation": 0,
+        "highlight": "unique_text",
+        "highlight_pixels": [
+          114.49613009127017,
+          115.32009153674697,
+          649.6850143436278,
+          204.88918291560125
+        ],
+        "image_sha256": "1805f1b08ca9ca313792fe9698c7b96ac23a3828ea6ca2fa3fd046440604be5e",
+        "ocr_applied": false,
+        "quality_state_unchanged": true,
+        "derived": true,
+        "conversion": {
+          "preview_version": "medic-office-preview-v1",
+          "engine": "LibreOffice",
+          "version": "26.8.1.1",
+          "engine_manifest_sha256": "1a2c3007759ec23bfe1190424f7d1dfc1ff753f139a567154ee113fb386735fa",
+          "system_fonts_sha256": "3b687e02f5e81986940041e645e225c931fbcdd1836c4fb1c0e9a6cb8c6c74b9",
+          "pdf_sha256": "48b648c44f5864d5ed5e9d50d6fa6b3556a848d21775a2e7f9da896814ca1b47"
+        }
+      },
+      "first_seconds": 0.5228678999992553,
+      "cached_seconds": 0.4891788000095403
+    },
+    {
+      "format": "pptx",
+      "source_sha256": "d666d28df21b076e8283985f38096bebb8d0a55d43f6e299926580d4cb02f669",
+      "info": {
+        "preview_version": "medic-pdf-preview-v1",
+        "source_sha256": "d666d28df21b076e8283985f38096bebb8d0a55d43f6e299926580d4cb02f669",
+        "page": 2,
+        "page_count": 2,
+        "width": 1200,
+        "height": 676,
+        "rotation": 0,
+        "highlight": "unique_text",
+        "highlight_pixels": [
+          74.95185669303848,
+          116.58408127445277,
+          470.2231762541001,
+          157.09124152445963
+        ],
+        "image_sha256": "bfeb235bdb3216a11daaa9fdeff10d3c1391fe3045292bcd421e794b7713bf57",
+        "ocr_applied": false,
+        "quality_state_unchanged": true,
+        "derived": true,
+        "conversion": {
+          "preview_version": "medic-office-preview-v1",
+          "engine": "LibreOffice",
+          "version": "26.8.1.1",
+          "engine_manifest_sha256": "1a2c3007759ec23bfe1190424f7d1dfc1ff753f139a567154ee113fb386735fa",
+          "system_fonts_sha256": "3b687e02f5e81986940041e645e225c931fbcdd1836c4fb1c0e9a6cb8c6c74b9",
+          "pdf_sha256": "6436dfc1a2e2a92f31a63db1934253b46d161cde09ae5ac9c198d9f210703a57"
+        }
+      },
+      "first_seconds": 0.4765546000126051,
+      "cached_seconds": 0.470925100002205
+    },
+    {
+      "format": "xlsx",
+      "source_sha256": "598b4430c6919c0ad3a018366aa47c8f2e6392c4f66123d1d81105f641b8d789",
+      "info": {
+        "preview_version": "medic-pdf-preview-v1",
+        "source_sha256": "598b4430c6919c0ad3a018366aa47c8f2e6392c4f66123d1d81105f641b8d789",
+        "page": 1,
+        "page_count": 1,
+        "width": 1200,
+        "height": 1698,
+        "rotation": 0,
+        "highlight": "unavailable",
+        "highlight_pixels": null,
+        "image_sha256": "4ea78c9c4b8f4d6d23ab0d6de50ca6925e7204c37b5c7e2fb17bef86359182bc",
+        "ocr_applied": false,
+        "quality_state_unchanged": true,
+        "derived": true,
+        "conversion": {
+          "preview_version": "medic-office-preview-v1",
+          "engine": "LibreOffice",
+          "version": "26.8.1.1",
+          "engine_manifest_sha256": "1a2c3007759ec23bfe1190424f7d1dfc1ff753f139a567154ee113fb386735fa",
+          "system_fonts_sha256": "3b687e02f5e81986940041e645e225c931fbcdd1836c4fb1c0e9a6cb8c6c74b9",
+          "pdf_sha256": "9511eea27bd2220180678d7f7b8fe6efd8a3a588a783ea2e00975fabc18a24be"
+        }
+      },
+      "first_seconds": 16.142858000006527,
+      "cached_seconds": 0.4884559999918565
+    }
+  ],
+  "external_fetch_probe": {
+    "validated_on_build": {
+      "runtime_version": "medic-runtime-p3-v12",
+      "manifest_sha256": "869f4d06bca1177c4ab936657a4a8e9fdab122f08e20a44ace2b280a9b8d9bae",
+      "environment": {
+        "python": "3.13.5",
+        "implementation": "CPython",
+        "platform": "win32",
+        "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+        "packages": {
+          "httpx": "0.28.1",
+          "httpcore": "1.0.9",
+          "h11": "0.16.0",
+          "anyio": "4.15.1",
+          "sniffio": "1.3.0",
+          "idna": "3.7",
+          "certifi": "2026.4.22",
+          "jsonschema": "4.23.0",
+          "attrs": "24.3.0",
+          "jsonschema-specifications": "2023.7.1",
+          "referencing": "0.30.2",
+          "rpds-py": "0.22.3",
+          "pydantic": "2.10.3",
+          "pydantic_core": "2.27.1",
+          "annotated-types": "0.6.0",
+          "typing_extensions": "4.16.0",
+          "openpyxl": "3.1.5",
+          "et_xmlfile": "1.1.0",
+          "psycopg": "3.2.9",
+          "psycopg-binary": "3.2.9",
+          "PyMuPDF": "1.28.2",
+          "pypdf": "6.11.0",
+          "defusedxml": "0.7.1",
+          "fastapi": "0.143.3",
+          "starlette": "1.8.0",
+          "uvicorn": "0.54.0",
+          "annotated-doc": "0.0.5",
+          "typing-inspection": "0.4.4",
+          "opentelemetry-api": "1.45.1"
+        }
+      }
+    },
+    "sentinel_http_requests": 0,
+    "source_download_unchanged": true,
+    "note": "Final build changes only the browser duplicate-open guard; final HTTP rejection also rechecked."
+  },
+  "browser_checks": {
+    "word_text_chinese_and_table_visible": true,
+    "unique_word_paragraph_highlight": true,
+    "powerpoint_reference_jumps_to_second_page": true,
+    "last_page_next_disabled": true,
+    "mobile_no_horizontal_document_overflow": true,
+    "excel_cells_and_cached_formula_value_retained": true,
+    "short_numeric_reference_not_highlighted": true,
+    "zoom_200_scrolls_inside_frame": true,
+    "external_reference_shows_explicit_fallback": true,
+    "logout_releases_image_and_clears_title": true,
+    "same_material_duplicate_click_keeps_in_progress_preview": true,
+    "no_console_errors_observed": true
+  },
+  "screenshots": {
+    "desktop-word-final.jpg": "df685e49b01d2dd0715e750517290fc3bb270437b5c9a8912c8e00f89d0d67be",
+    "mobile-powerpoint-final.jpg": "532b8be8fec883f436d266b876fe9c5e6d7ef1d7d031411b84eed8dabbc164e7"
+  },
+  "limitations": [
+    "Converted layout may differ from Microsoft Office; original evidence is retained",
+    "Unsupported active/dynamic fields and formula functions reject preview instead of being executed",
+    "Unique text matching only; short, long, repeated or absent references are not highlighted",
+    "Preview cache is not in existing backups; originals and extraction snapshots are backed up",
+    "OS/network sandbox, sustained load, production retention and business acceptance pending"
+  ],
+  "appeals_deferred": true
+}

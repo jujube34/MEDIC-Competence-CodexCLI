@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-10-17T01:22:14.745122+00:00",
+  "status": "pass",
+  "tests": 107,
+  "postgresql_tests": 33,
+  "elapsed_seconds": 92.854,
+  "command": "python -m unittest discover -s medic/tests -v",
+  "postgresql_enabled": true,
+  "test_log_sha256": "87a3c960c88561f8affa53bb99e7673ece735124aaa0c015bbad03f7a193111b",
+  "scope": "synthetic_contract_tests_not_model_quality"
+}

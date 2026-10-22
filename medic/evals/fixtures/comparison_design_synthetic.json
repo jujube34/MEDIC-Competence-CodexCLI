@@ -1,0 +1,24 @@
+{
+  "experiment_id": "synthetic-matched",
+  "provider_profile_version": "synthetic-provider",
+  "model": "synthetic-no-model-called",
+  "prompt_sha256": {
+    "single_agent": "4444444444444444444444444444444444444444444444444444444444444444",
+    "linear_workflow": "5555555555555555555555555555555555555555555555555555555555555555",
+    "multi_agent": "6666666666666666666666666666666666666666666666666666666666666666"
+  },
+  "implementation_sha256": {
+    "single_agent": "7777777777777777777777777777777777777777777777777777777777777777",
+    "linear_workflow": "8888888888888888888888888888888888888888888888888888888888888888",
+    "multi_agent": "9999999999999999999999999999999999999999999999999999999999999999"
+  },
+  "token_budget": {
+    "single_agent": 1000,
+    "linear_workflow": 1000,
+    "multi_agent": 1000
+  },
+  "budget_regime": "matched_tokens",
+  "repeats": 2,
+  "order_seed": 7,
+  "split": "test"
+}

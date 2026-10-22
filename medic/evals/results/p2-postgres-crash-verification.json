@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "run_id": "run-ee4b0cd6ca4348679e08c2f2b14d3bc9",
+  "server_version": "PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35229, 64-bit",
+  "checks": {
+    "server_restarted": true,
+    "active_connection_interrupted": true,
+    "database_unavailable_failed_closed": true,
+    "committed_task_preserved": true,
+    "uncommitted_write_rolled_back": true,
+    "reservation_preserved": true,
+    "no_report_published": true,
+    "lease_recovered_once": true,
+    "old_worker_fenced": true
+  },
+  "scope": "synthetic_database_crash_recovery_not_model_quality_or_production_HA"
+}

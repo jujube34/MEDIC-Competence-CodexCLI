@@ -1,0 +1,23 @@
+{
+  "ai_policy_version": "medic-ai-policy-260922-p0-candidate-1",
+  "status": "awaiting_business_signoff",
+  "official_assessment_allowed": false,
+  "groups": {
+    "suggest": ["M1", "M2", "M3", "D1", "D3", "I1", "I2", "C4"],
+    "clue_only": ["E1", "E3", "E4", "M4"],
+    "human_only": ["E2", "D2"],
+    "risk_scan": ["C1", "C2", "C3"]
+  },
+  "suggestion_caps": {
+    "M1": "B", "M2": "C", "M3": "B", "D1": "B",
+    "D3": "B", "I1": "B", "I2": "B", "C4": "B"
+  },
+  "conditional_caps": {
+    "D1": {"cap": "C", "requires": ["adoption_evidence", "cross_person_corroboration"]}
+  },
+  "non_suggest_grade": null,
+  "automatic_D_allowed": false,
+  "conflicts": [
+    {"code": "E3", "table_mode": "suggest", "summary_mode": "clue_only", "candidate_mode": "clue_only", "business_signoff_required": true}
+  ]
+}

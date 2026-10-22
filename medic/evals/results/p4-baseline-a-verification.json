@@ -1,0 +1,95 @@
+{
+  "status": "pass_for_a_technical_integration",
+  "checked_on": "2026-10-23",
+  "scope": "one independent Agent per repetition, 17 competencies, 68 criteria, 2 synthetic materials, 4 policy modes",
+  "unique_targeted_tests": 36,
+  "final_a_tests_rerun": 16,
+  "skips": 0,
+  "test_logs_sha256": {
+    "tests.log": "0c7bb9512b4d4697d82f1c9dbd065a1801223d8a6a33a603e0fb288068e9068f",
+    "tests-final-a.log": "82a41eb6430cf25e6f702a2aff720449023c8ef7c3b6c04237444577e4b5acd4"
+  },
+  "source_sha256": {
+    "baseline_a.py": "346a27de08a86ad1e9f6372fd3c8dc663dd0c81d8dd6f06bee5737b3b2287067",
+    "comparison.py": "044a9e3606a826b6280df54e6699e00506e3365e95515e2342c2f58bbff6f546",
+    "comparison_runtime.py": "7af04c5831853c1ab244dd307167e9ebf072835f2e2b48b199cef0d1489c3996",
+    "metrics.py": "506a65611679181dc15c0d208d8c0d3a0e32cfff77dac4cf736cc58e5c9302f6"
+  },
+  "experiment_sha256": "1e3052dead7d46fb329a7864a59c6d79a20e7926c2b35322263c0b289fa059db",
+  "runs": [
+    {
+      "repeat": 1,
+      "status": "completed",
+      "requests": 1,
+      "total_tokens": 16002,
+      "elapsed_seconds": 105.79939699172974,
+      "output_check": "pass",
+      "created": 1792703343.6016467,
+      "replay_preserves_tables_and_calls": true,
+      "binding_sha256": "5b18b8911a23821e5bb0a075f63805a353d10751767120be5b2269e53aafa446",
+      "outcome_sha256": "176a84ebc3d74976ace5bf492ac4ac0b04d9bbc7c0702c7f90d3841ebe6aa637"
+    },
+    {
+      "repeat": 2,
+      "status": "completed",
+      "requests": 1,
+      "total_tokens": 14918,
+      "elapsed_seconds": 90.66044759750366,
+      "output_check": "pass",
+      "created": 1792703252.8650396,
+      "replay_preserves_tables_and_calls": true,
+      "binding_sha256": "e249e9984a6331b9276af63a9c64225387b4039eec3b0c51a4ef839cf349894e",
+      "outcome_sha256": "4bce118321d27c832f46d09487e02ebdc84d9c941804297e0eb6ddee8a8d24d8"
+    }
+  ],
+  "ordered_a_slots_match": true,
+  "successful_model_requests": 2,
+  "successful_total_tokens": 30920,
+  "prior_experiment_sha256": "6af83c4d5cce2f663b35a98ee442f1d5fcfa7005afaf8407102dbab04aa71287",
+  "prior_failed_runs": [
+    {
+      "repeat": 1,
+      "status": "failed",
+      "requests": 1,
+      "total_tokens": 14523,
+      "elapsed_seconds": 87.55160093307495,
+      "output_check": "baseline_criterion_coverage",
+      "created": 1792702886.6197457,
+      "replay_preserves_tables_and_calls": true,
+      "binding_sha256": "3ded8b1210556466b07c3d04da7d6eecce988ee42d152add5900e879c16b24cf",
+      "outcome_sha256": "f94cf6ce97f3e42a202c2ab1288789a7a0f931c96c572a48289fc7639f93c98d"
+    },
+    {
+      "repeat": 2,
+      "status": "failed",
+      "requests": 1,
+      "total_tokens": 16491,
+      "elapsed_seconds": 114.64777445793152,
+      "output_check": "JSONDecodeError",
+      "created": 1792703019.7196681,
+      "replay_preserves_tables_and_calls": true,
+      "binding_sha256": "cdf68cf878f3b1e479b9fbdd5e9160acc529d57808469c966909cb4c55d78640",
+      "outcome_sha256": "5bba3b17492e87fe432b933bd069e73e2470876e3791a08bb3bc3b6a05248a5c"
+    }
+  ],
+  "all_attempts_model_requests": 4,
+  "all_attempts_total_tokens": 61934,
+  "source_archive_sha256": "639b0fc2308c69fb74af779ed73cc460c1c5f48a0b318fa1c8c3cc900bf4fbe3",
+  "collector_sha256": "97b417a007541c54e970d5fdb790b1d46ec175ee6224b974b8028635f2dcf43c",
+  "publication_oracle_sha256": "099e5d22e505afe87a45dfaef2b3952211e7bff863e662510b5b454bc333a627",
+  "legacy_b_audit_sha256": "371174862e2a0f332af6eabfd415a01597467f6926f102ce9589efce508c41f6",
+  "source_and_budget_sql_verified": true,
+  "terminal_replay_no_extra_calls": true,
+  "preview_historical_baseline_unchanged": true,
+  "application_manifest_unchanged": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "quality_acceptance": false,
+  "missing_bc_slots": 4,
+  "limitations": [
+    "Synthetic input was reused for prompt/schema tuning; not a held-out quality test.",
+    "B and C are explicit placeholders in these A-only technical experiments; no comparative conclusion.",
+    "The first experiment executed A repeats 1,2 rather than scheduled 2,1; its failures and costs are retained.",
+    "The v2 per-request output cap is 16384; equal aggregate budgets do not equalize actual cost.",
+    "Citation validity is checked; expert-supported attribution, behavioral grading and human effort remain unmeasured.",
+    "Local hashes and receipts do not establish provider-signed authenticity or distributed exactly-once execution."
+  ]
+}

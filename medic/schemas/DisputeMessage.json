@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "span_hash": {
+          "title": "Span Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote",
+        "span_hash"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "message_id": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "title": "Message Id",
+      "type": "string"
+    },
+    "recipient_task_id": {
+      "title": "Recipient Task Id",
+      "type": "string"
+    },
+    "challenge_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Challenge Id",
+      "type": "string"
+    },
+    "challenge_result_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Challenge Result Hash",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "question",
+        "answer"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "reply_to": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reply To"
+    },
+    "text": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Text",
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRef"
+      },
+      "maxItems": 4,
+      "title": "Evidence Refs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "message_id",
+    "recipient_task_id",
+    "challenge_id",
+    "challenge_result_hash",
+    "kind",
+    "reply_to",
+    "text",
+    "evidence_refs"
+  ],
+  "title": "DisputeMessage",
+  "type": "object"
+}

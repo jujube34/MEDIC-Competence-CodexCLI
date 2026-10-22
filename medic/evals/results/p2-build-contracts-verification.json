@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-10-17T02:19:13.149815+00:00",
+  "status": "pass",
+  "tests": 146,
+  "postgresql_tests": 50,
+  "elapsed_seconds": 297.831,
+  "test_log_sha256": "272804a3e280a614987862c715a8ce46819a377625a3a00dec2972e21a5f81cc",
+  "runtime_version": "medic-runtime-p2-v3",
+  "runtime_manifest_sha256": "4b276bfaad66043771d24a12982b41eceff083a4c4fdcb916bf40e9d20f83a1b",
+  "scope": "synthetic_contract_tests_not_model_quality",
+  "prior_attempt": {
+    "status": "failed",
+    "reason": "test_database_started_on_default_port_instead_of_55439",
+    "postgresql_connection_errors": 50,
+    "test_log_sha256": "3b38d5e4d6559f9059364a9c3bbdf0e89e36c88ed54641ae878d5736694141cb"
+  },
+  "recheck_evidence": [
+    "p2-build-live-verification.json",
+    "p2-rework-live-verification.json"
+  ]
+}

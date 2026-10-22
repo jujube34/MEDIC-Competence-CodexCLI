@@ -1,0 +1,84 @@
+{
+  "status": "failed_full_scope_technical_execution",
+  "verified_on": "2026-10-23",
+  "run_id": "run-b0fcd61fc0aa4ebcadd8fe8e7d7ac37a",
+  "plan_sha256": "b4cf30bdf8984917acc450b3d74873248041f1fad975b6565bba60cd934cfa10",
+  "runtime_version": "medic-runtime-p4-v16",
+  "manifest_sha256": "bdc3c02d9c1c79b4c68302c0b09c6ba0258da02502f32ca9bf3f0fdb0e2e89fa",
+  "full_scope": {
+    "competencies": 17,
+    "materials": 2,
+    "downstream_nodes": 225
+  },
+  "exact_graph": true,
+  "exact_edges": true,
+  "completed_attempts": 15,
+  "completed_protocols_verified": true,
+  "accounting": {
+    "request_reservations": 93,
+    "reported_settlements": 91,
+    "estimated_settlements": 2,
+    "unsettled_reservations": 0,
+    "receipt_verified_requests": 91,
+    "provider_reported_token_subtotal": 756420,
+    "total_tokens": null,
+    "charged_or_reserved_tokens": 850650,
+    "elapsed_seconds": 378.1570723056793
+  },
+  "diagnosis": {
+    "status": "reproduced_quote_validation_and_shared_budget_exhaustion",
+    "run_id": "run-b0fcd61fc0aa4ebcadd8fe8e7d7ac37a",
+    "task_id": "task-45609e86cc084493b71092d22bb54189",
+    "role": "challenger_scan",
+    "material_id": "__aggregate__",
+    "competency_id": "I2",
+    "original_reads_match_frozen_spans": true,
+    "submissions": [
+      {
+        "call_id": "call_f663c093a73c4f95a42746f8",
+        "arguments_sha256": "e0f0b201aef4999ecb6acc71b2ebe2fce721396f4bcc0192f71380bb190ba144",
+        "original_tool_response": {
+          "error": "evidence_reference_quote_not_verbatim:span-2"
+        },
+        "standalone_validation_error": "evidence_reference_quote_not_verbatim:span-2"
+      },
+      {
+        "call_id": "call_f64d86b580da4d2a9f4ddd4e",
+        "arguments_sha256": "2204c95890119d702d1bf63f9aaeb7d094fc540e10fcbe1be61166560cf8d0fc",
+        "original_tool_response": {
+          "error": "evidence_reference_quote_not_verbatim:span-3"
+        },
+        "standalone_validation_error": "evidence_reference_quote_not_verbatim:span-3"
+      },
+      {
+        "call_id": "call_2a0839b5de2545f887c1759a",
+        "arguments_sha256": "9cd709b815c804d8f1fc2f34328718fd66ac469aeb3cbea684fe1ce7a0c511f3",
+        "original_tool_response": {
+          "error": "evidence_reference_quote_not_verbatim:span-3"
+        },
+        "standalone_validation_error": "evidence_reference_quote_not_verbatim:span-3"
+      },
+      {
+        "call_id": "call_93a6fee1ba254805a52971b0",
+        "arguments_sha256": "a063ae4b49a178d96f42aa494827ed4614a61e3e7b11da73a2a30f01b22ec905",
+        "original_tool_response": {
+          "error": "result_repair_budget_exhausted"
+        },
+        "standalone_validation_error": null
+      }
+    ],
+    "receipt_tool_reported_not_submitted": true,
+    "different_from_v15_receipt_copy_failure": true,
+    "result_persisted": false,
+    "fourth_submission_passes_standalone_validation_but_original_budget_correctly_refused_it": true,
+    "new_model_calls": 0,
+    "original_run_modified": false
+  },
+  "full_execution_passed": false,
+  "report_published": false,
+  "quality_claim": false,
+  "source_and_budget_preserved": true,
+  "fault_injected": false,
+  "automatic_retry": false,
+  "budget_extended": false
+}

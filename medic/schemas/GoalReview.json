@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "GoalCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "check": {
+          "enum": [
+            "coverage",
+            "evidence",
+            "policy",
+            "adversarial_chain",
+            "disputes",
+            "boundaries",
+            "versions_execution"
+          ],
+          "title": "Check",
+          "type": "string"
+        },
+        "passed": {
+          "title": "Passed",
+          "type": "boolean"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check",
+        "passed",
+        "reason"
+      ],
+      "title": "GoalCheck",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "context_hash": {
+      "title": "Context Hash",
+      "type": "string"
+    },
+    "goal_version": {
+      "title": "Goal Version",
+      "type": "string"
+    },
+    "candidate_hash": {
+      "title": "Candidate Hash",
+      "type": "string"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/GoalCheck"
+      },
+      "maxItems": 7,
+      "minItems": 7,
+      "title": "Checks",
+      "type": "array"
+    },
+    "blocking_issues": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Blocking Issues",
+      "type": "array"
+    },
+    "verdict": {
+      "enum": [
+        "pass",
+        "rework",
+        "human_review"
+      ],
+      "title": "Verdict",
+      "type": "string"
+    },
+    "reason": {
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "next_tasks": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Next Tasks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "task_id",
+    "context_hash",
+    "goal_version",
+    "candidate_hash",
+    "checks",
+    "blocking_issues",
+    "verdict",
+    "reason",
+    "next_tasks"
+  ],
+  "title": "GoalReview",
+  "type": "object"
+}

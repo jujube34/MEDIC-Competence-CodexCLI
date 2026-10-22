@@ -1,0 +1,323 @@
+{
+  "$defs": {
+    "ChallengeResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "challenge_id": {
+          "title": "Challenge Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "accepted",
+            "rejected",
+            "unresolved"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "challenge_id",
+        "disposition",
+        "reason",
+        "evidence_refs"
+      ],
+      "title": "ChallengeResponse",
+      "type": "object"
+    },
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "criterion_id": {
+          "title": "Criterion Id",
+          "type": "string"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "claim_id",
+        "criterion_id",
+        "statement",
+        "evidence_refs"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "CriterionCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion_id": {
+          "title": "Criterion Id",
+          "type": "string"
+        },
+        "finding": {
+          "enum": [
+            "met",
+            "partial",
+            "not_observed"
+          ],
+          "title": "Finding",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "criterion_id",
+        "finding",
+        "evidence_refs",
+        "reason"
+      ],
+      "title": "CriterionCheck",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "span_hash": {
+          "title": "Span Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote",
+        "span_hash"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "PriorDisputeResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "challenge_id": {
+          "title": "Challenge Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "accepted",
+            "rejected",
+            "unresolved"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "challenge_result_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Challenge Result Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "challenge_id",
+        "disposition",
+        "reason",
+        "evidence_refs",
+        "challenge_result_hash"
+      ],
+      "title": "PriorDisputeResponse",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "context_hash": {
+      "title": "Context Hash",
+      "type": "string"
+    },
+    "competency_id": {
+      "title": "Competency Id",
+      "type": "string"
+    },
+    "material_id": {
+      "title": "Material Id",
+      "type": "string"
+    },
+    "revision": {
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "suggested",
+        "insufficient_evidence",
+        "not_applicable",
+        "clue_only",
+        "risk_signal"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "grade": {
+      "anyOf": [
+        {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Grade"
+    },
+    "criterion_checks": {
+      "items": {
+        "$ref": "#/$defs/CriterionCheck"
+      },
+      "minItems": 1,
+      "title": "Criterion Checks",
+      "type": "array"
+    },
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/Claim"
+      },
+      "title": "Claims",
+      "type": "array"
+    },
+    "attribution": {
+      "enum": [
+        "self_reported",
+        "corroborated",
+        "unclear"
+      ],
+      "title": "Attribution",
+      "type": "string"
+    },
+    "supporting_evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRef"
+      },
+      "title": "Supporting Evidence",
+      "type": "array"
+    },
+    "contradicting_evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRef"
+      },
+      "title": "Contradicting Evidence",
+      "type": "array"
+    },
+    "missing_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Evidence",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Limitations",
+      "type": "array"
+    },
+    "challenge_responses": {
+      "items": {
+        "$ref": "#/$defs/ChallengeResponse"
+      },
+      "title": "Challenge Responses",
+      "type": "array"
+    },
+    "prior_dispute_responses": {
+      "items": {
+        "$ref": "#/$defs/PriorDisputeResponse"
+      },
+      "title": "Prior Dispute Responses",
+      "type": "array"
+    }
+  },
+  "required": [
+    "task_id",
+    "context_hash",
+    "competency_id",
+    "material_id",
+    "revision",
+    "status",
+    "grade",
+    "criterion_checks",
+    "claims",
+    "attribution",
+    "supporting_evidence",
+    "contradicting_evidence",
+    "missing_evidence",
+    "limitations",
+    "challenge_responses",
+    "prior_dispute_responses"
+  ],
+  "title": "ThirdAssessment",
+  "type": "object"
+}

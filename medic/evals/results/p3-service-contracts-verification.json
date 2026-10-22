@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-10-17T05:27:37.735049+00:00",
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v5",
+  "runtime_manifest_sha256": "e9024941566d5bbae6325f59f102723af53c0d7d0d018ab9800473602649b0bc",
+  "tests": 209,
+  "postgresql_tests": 72,
+  "service_tests": 15,
+  "elapsed_seconds": 364.34,
+  "test_log_sha256": "a2f7bd19d366fdea1f530f2e79603f4f77f1a9760d608d34d67afc4ef1eb3f39",
+  "scope": "synthetic_contracts_and_real_local_postgresql_and_windows_process_ownership",
+  "initial_findings": [
+    "Windows job kill-on-close requires extended limit information",
+    "Windows competing byte lock must not read the locked byte",
+    "PostgreSQL queue tests require isolated schemas rather than assuming an empty shared database"
+  ],
+  "excluded_attempt": "initial full-suite launch was interrupted after its test database was stopped; only the complete subsequent run is counted"
+}

@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "ui_alignment_status": "partial",
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v10",
+    "manifest_sha256": "dd023235e4be644cc3b2889035e7341b49b880245b0a5c1f1001d244df3625d3",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "synthetic": true,
+  "model_calls": 0,
+  "seeded_report": true,
+  "new_human_decisions": 0,
+  "business_acceptance": false,
+  "checks": {
+    "real_pdf_upload_and_extraction": true,
+    "original_rotated_and_cropped_page_visible": true,
+    "exact_block_red_rectangle_visible": true,
+    "next_page_and_last_page_bound": true,
+    "page_number_jump": true,
+    "zoom_200_percent_scroll": true,
+    "ai_reference_opens_correct_second_page": true,
+    "mobile_390px_no_horizontal_overflow": true,
+    "logout_clears_image_and_filename": true,
+    "employee_switch_clears_image": true,
+    "office_explicit_text_fallback": true,
+    "no_browser_console_errors_observed": true
+  },
+  "screenshots": {
+    "desktop-preview.jpg": "7d65c55407e17017257d465fa20376af86dd7c0e602ba631550709e2019afbc7",
+    "mobile-preview.jpg": "fbe4d816ceca2d7b996bd354c328e42d2c51e8901e1f92fb89f43f3afa2aab1e"
+  },
+  "limitations": [
+    "PDF preview only; Office original rendering pending",
+    "no OCR or chart interpretation",
+    "whole extracted text-block highlight, not per-word highlighting",
+    "production OS/network sandbox and sustained load not accepted"
+  ],
+  "appeals_deferred": true
+}

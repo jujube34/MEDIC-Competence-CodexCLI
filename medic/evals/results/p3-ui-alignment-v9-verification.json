@@ -1,0 +1,98 @@
+{
+  "status": "partial",
+  "implemented_ui_checks": "pass",
+  "reference": {
+    "url": "https://img.medsci.cn/tob/moke/UI-v1.02.html",
+    "sha256": "dce9e2f0da10b621384a4caaa47b76aea17dcd98df62526f01e0604a902324f9",
+    "bytes": 559322,
+    "observed_date": "2026-10-23",
+    "reference_is_untrusted_data": true,
+    "demo_scripts_and_user_data_imported": false
+  },
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v9",
+    "manifest_sha256": "6eb455787290ac2aaf1ae1228a1728b1c64404d1aebc30a12abb21d86c4e9e6e",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "synthetic": true,
+  "model_calls": 0,
+  "seeded_report": true,
+  "review_revision": 2,
+  "new_review_writes": 0,
+  "business_acceptance": false,
+  "checks": {
+    "frozen_job_and_criteria_displayed": true,
+    "grade_selection_changes_draft_not_revision": true,
+    "confirmation_adjustment_independent_assessment_selection": true,
+    "missing_criterion_apply_disabled": true,
+    "draft_survives_competency_switch": true,
+    "escape_closes_and_restores_focus": true,
+    "employee_and_finalized_review_read_only": true,
+    "five_dimension_and_17_item_scope_display": true,
+    "incomplete_dimension_means_null": true,
+    "chart_keyboard_navigation_focuses_detail": true,
+    "dimension_filter_includes_explicit_out_of_scope_items": true,
+    "quoted_script_is_text_and_reference_locates": true,
+    "mobile_390px_drawer_and_charts_no_horizontal_overflow": true,
+    "logout_clears_hidden_private_content": true,
+    "no_browser_console_errors_observed": true,
+    "historical_runtime_version_preserved": true,
+    "served_assets_match_frozen_build": true,
+    "desktop_centered_criterion_sheet": true,
+    "mobile_bottom_criterion_sheet": true,
+    "final_style_grade_selection": true
+  },
+  "screenshots": {
+    "desktop-criterion-final.jpg": "f046329cbac30a6667fb4da90b1206feec9859c663b6d4e31f6a3a12a1050b9d",
+    "mobile-criterion-final.jpg": "231eeb1bca05e9ba106ecdf880c8039a5c1d2041786e2c7e05615bc33439bf2d"
+  },
+  "remaining": [
+    "native document page preview and reference boxes",
+    "chart fullscreen inspector and zoom",
+    "organization profile integration",
+    "team pagination and richer filters",
+    "recommendation configuration publishing",
+    "production login"
+  ],
+  "appeals_deferred": true,
+  "initial_interaction_manifest_sha256": "8899e1c9dfbeda95507ae389044aafcd24664a64ba6b8ac90fda71d835e19019",
+  "final_style_delta": [
+    "apps/web/alignment.css"
+  ]
+}

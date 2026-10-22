@@ -1,0 +1,7 @@
+# Frozen release manifests hash exact file bytes. Do not let core.autocrlf
+# rewrite MEDIC sources/resources when staging or checking out on another host.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Prose and Git metadata are outside the execution manifest.
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

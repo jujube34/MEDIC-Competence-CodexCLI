@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-10-17T05:34:41.535274+00:00",
+  "status": "pass",
+  "scope": "real_local_http_synthetic_upload_real_six_role_model_and_synthetic_human_review",
+  "run_id": "run-f7aabe00b502f884b00b717831eac17c",
+  "runtime_version": "medic-runtime-p3-v5",
+  "runtime_manifest_sha256": "e9024941566d5bbae6325f59f102723af53c0d7d0d018ab9800473602649b0bc",
+  "checks": {
+    "second_supervisor_rejected": true,
+    "service_waits_for_later_http_creation": true,
+    "unauthenticated_denied": true,
+    "real_upload_ready": true,
+    "verbatim_four_spans": true,
+    "original_download_hash": true,
+    "creation_replay_same_run": true,
+    "one_automatic_service_attempt": true,
+    "real_runtime_and_ingestion_verified": true,
+    "employee_cannot_self_review": true,
+    "finalize_replay_identical": true,
+    "separate_human_final": true,
+    "ai_report_unchanged": true,
+    "one_review_one_final_event": true
+  },
+  "runtime_verification_status": "pass",
+  "human_review_is_synthetic_operator_action": true,
+  "business_signoff": false,
+  "production_sso_verified": false,
+  "continuous_queue_service": true,
+  "usage": {
+    "requests": 31,
+    "charged_or_reserved_tokens": 295630,
+    "unsettled_requests": 0
+  },
+  "service_attempts": 1,
+  "service_elapsed_seconds": 418.233,
+  "service_log_sha256": "3f6aa9290de8a695e1d1d399c6326a54601c185690da06540355593f4481065b",
+  "process_log_sha256": "b7fea9df202e575c72d08c586deea4ad70bba08fa441e7bcbd02d526b5c1c473",
+  "regression_summary": "p3-service-contracts-verification.json"
+}

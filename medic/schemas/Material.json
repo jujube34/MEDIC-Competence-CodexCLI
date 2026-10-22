@@ -1,0 +1,123 @@
+{
+  "$defs": {
+    "EvidenceSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "material_id": {
+          "title": "Material Id",
+          "type": "string"
+        },
+        "material_version": {
+          "title": "Material Version",
+          "type": "string"
+        },
+        "locator": {
+          "title": "Locator",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "span_hash": {
+          "title": "Span Hash",
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "material_id",
+        "material_version",
+        "locator",
+        "quote",
+        "span_hash",
+        "quality_flags"
+      ],
+      "title": "EvidenceSpan",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "material_id": {
+      "title": "Material Id",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "sha256": {
+      "title": "Sha256",
+      "type": "string"
+    },
+    "source_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Sha256"
+    },
+    "snapshot_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Snapshot Ref"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "owner_claim": {
+      "title": "Owner Claim",
+      "type": "string"
+    },
+    "source_event_id": {
+      "minLength": 1,
+      "title": "Source Event Id",
+      "type": "string"
+    },
+    "spans": {
+      "items": {
+        "$ref": "#/$defs/EvidenceSpan"
+      },
+      "minItems": 1,
+      "title": "Spans",
+      "type": "array"
+    }
+  },
+  "required": [
+    "material_id",
+    "version",
+    "sha256",
+    "title",
+    "owner_claim",
+    "source_event_id",
+    "spans"
+  ],
+  "title": "Material",
+  "type": "object"
+}

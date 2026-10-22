@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "verified_on": "2026-10-23",
+  "runtime_version": "medic-runtime-p3-v14",
+  "manifest_sha256": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "scope": "affected modules only; not a full suite run",
+  "test_modules": [
+    "test_catalog_profiles",
+    "test_registry",
+    "test_assets",
+    "test_api",
+    "test_team_page",
+    "test_result_metrics",
+    "test_build",
+    "test_backup"
+  ],
+  "test_batches": [
+    {
+      "log": "affected-tests.log",
+      "tests": 77,
+      "postgresql": 24,
+      "seconds": 38.759,
+      "sha256": "65609d4dba12605405e5b7fd375c93d472e82913075fc8c93de1873eb639749c"
+    },
+    {
+      "log": "freeze-tests.log",
+      "tests": 2,
+      "postgresql": 1,
+      "seconds": 1.202,
+      "sha256": "37ce2559e2035c97448e37ee193d3a94570481f20a1ddd5cbfcc066c95efa8b4"
+    }
+  ],
+  "total_tests": 79,
+  "real_postgresql_tests": 25,
+  "skipped_tests": 0,
+  "independent_audit_sha256": "f84058e068190f86e6a777cd18ae8b5937be1d773393c06e036575b28995a96d",
+  "release_archive_files_verified": 103,
+  "release_archive_sha256": "dc09538cc21aeea61f042d203119ec3b20fd1316915636b763b8ee3318026cf3",
+  "test_postgresql_stopped": true,
+  "api_http_status": 200,
+  "queue_ready": true,
+  "limitations": [
+    "No production SSO or business signoff",
+    "No catalog publication workflow",
+    "No new model evaluation in this UI change"
+  ]
+}

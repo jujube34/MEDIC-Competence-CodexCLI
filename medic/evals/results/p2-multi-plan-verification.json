@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-10-17T00:57:05.979998+00:00",
+  "status": "pass",
+  "scope": "planning_only_not_full_assessment",
+  "run_id": "run-0006e537a90749799dc2f42e02421504",
+  "input_hash": "c54adad91d3759b731fd86e3ec2e7acd69fb14a128282335afb8502cbd75a328",
+  "prompt_bundle_version": "medic-p2-roles-v3",
+  "node_count": 21,
+  "checks": {
+    "real_coordinator_completed": true,
+    "exact_scope_coverage": true,
+    "no_duplicate_nodes": true,
+    "correct_scoped_dependencies": true,
+    "children_not_executed": true,
+    "no_assessment_published": true
+  },
+  "batch_tool_calls": 4,
+  "model_requests": 8,
+  "charged_or_reserved_tokens": 63302,
+  "private_snapshot_hash": "6efc3095cb7066dac77c4c1373bdab271d6b5ed81c11ad60920ea6b18f36e208"
+}

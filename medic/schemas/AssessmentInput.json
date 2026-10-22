@@ -1,0 +1,348 @@
+{
+  "$defs": {
+    "AssessmentGoal": {
+      "additionalProperties": false,
+      "properties": {
+        "goal_id": {
+          "title": "Goal Id",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "competency_scope": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Competency Scope",
+          "type": "array"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "goal_id",
+        "version",
+        "competency_scope",
+        "description"
+      ],
+      "title": "AssessmentGoal",
+      "type": "object"
+    },
+    "Criterion": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion_id": {
+          "title": "Criterion Id",
+          "type": "string"
+        },
+        "grade": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "title": "Grade",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "criterion_id",
+        "grade",
+        "description"
+      ],
+      "title": "Criterion",
+      "type": "object"
+    },
+    "EvidenceSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "material_id": {
+          "title": "Material Id",
+          "type": "string"
+        },
+        "material_version": {
+          "title": "Material Version",
+          "type": "string"
+        },
+        "locator": {
+          "title": "Locator",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "span_hash": {
+          "title": "Span Hash",
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "material_id",
+        "material_version",
+        "locator",
+        "quote",
+        "span_hash",
+        "quality_flags"
+      ],
+      "title": "EvidenceSpan",
+      "type": "object"
+    },
+    "Material": {
+      "additionalProperties": false,
+      "properties": {
+        "material_id": {
+          "title": "Material Id",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        },
+        "source_sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Sha256"
+        },
+        "snapshot_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Snapshot Ref"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "owner_claim": {
+          "title": "Owner Claim",
+          "type": "string"
+        },
+        "source_event_id": {
+          "minLength": 1,
+          "title": "Source Event Id",
+          "type": "string"
+        },
+        "spans": {
+          "items": {
+            "$ref": "#/$defs/EvidenceSpan"
+          },
+          "minItems": 1,
+          "title": "Spans",
+          "type": "array"
+        }
+      },
+      "required": [
+        "material_id",
+        "version",
+        "sha256",
+        "title",
+        "owner_claim",
+        "source_event_id",
+        "spans"
+      ],
+      "title": "Material",
+      "type": "object"
+    },
+    "Policy": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "suggest",
+            "clue_only",
+            "human_only",
+            "risk_scan"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "cap": {
+          "anyOf": [
+            {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cap"
+        },
+        "signed_off": {
+          "title": "Signed Off",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "mode",
+        "cap",
+        "signed_off"
+      ],
+      "title": "Policy",
+      "type": "object"
+    },
+    "Versions": {
+      "additionalProperties": false,
+      "properties": {
+        "competency_model_version": {
+          "title": "Competency Model Version",
+          "type": "string"
+        },
+        "job_matrix_version": {
+          "title": "Job Matrix Version",
+          "type": "string"
+        },
+        "ai_policy_version": {
+          "title": "Ai Policy Version",
+          "type": "string"
+        },
+        "prompt_bundle_version": {
+          "title": "Prompt Bundle Version",
+          "type": "string"
+        },
+        "parser_version": {
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "runtime_version": {
+          "title": "Runtime Version",
+          "type": "string"
+        },
+        "codex_revision": {
+          "title": "Codex Revision",
+          "type": "string"
+        },
+        "provider_profile_version": {
+          "title": "Provider Profile Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "competency_model_version",
+        "job_matrix_version",
+        "ai_policy_version",
+        "prompt_bundle_version",
+        "parser_version",
+        "runtime_version",
+        "codex_revision",
+        "provider_profile_version"
+      ],
+      "title": "Versions",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "tenant_id": {
+      "title": "Tenant Id",
+      "type": "string"
+    },
+    "employee_ref": {
+      "title": "Employee Ref",
+      "type": "string"
+    },
+    "period": {
+      "title": "Period",
+      "type": "string"
+    },
+    "job_key": {
+      "title": "Job Key",
+      "type": "string"
+    },
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "versions": {
+      "$ref": "#/$defs/Versions"
+    },
+    "goal": {
+      "$ref": "#/$defs/AssessmentGoal"
+    },
+    "materials": {
+      "items": {
+        "$ref": "#/$defs/Material"
+      },
+      "minItems": 1,
+      "title": "Materials",
+      "type": "array"
+    },
+    "criteria": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/Criterion"
+        },
+        "type": "array"
+      },
+      "title": "Criteria",
+      "type": "object"
+    },
+    "policies": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Policy"
+      },
+      "title": "Policies",
+      "type": "object"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "employee_ref",
+    "period",
+    "job_key",
+    "synthetic",
+    "versions",
+    "goal",
+    "materials",
+    "criteria",
+    "policies"
+  ],
+  "title": "AssessmentInput",
+  "type": "object"
+}

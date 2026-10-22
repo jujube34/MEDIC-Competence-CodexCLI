@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-10-16T23:55:58.059769+00:00",
+  "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+  "workspace_head": "43dd1e536d476905c50878b01e06cdf6d3c1bd79",
+  "source_matches_revision": true,
+  "changed_upstream_files": [],
+  "rust_toolchain_sha256": "029fd8fde748bb7dd75f20e21576e36f1f567bba8149af4602310086a2a0dc58",
+  "cargo_lock_sha256": "d8b6ac15126925e459c209115a12f38ecad202a3c3d6a0bf7d3c606586ef00e9",
+  "committed_schema_count": 318,
+  "committed_schema_manifest_sha256": "3cbb9dce3688f1abdf56995a0ed6dea9f40442bbadd482b83ed613a6c9242b99",
+  "binary": {
+    "sha256": "5a809d8387ae34f1919980fb0fdb20d044463882d2b1cec35961d59268be8307",
+    "version": "codex-cli 0.0.0"
+  },
+  "generated_schema_matches": true,
+  "deployment_ready": false,
+  "generated_contracts": {
+    "v1/InitializeParams.json": true,
+    "v1/InitializeResponse.json": true,
+    "v2/ThreadStartParams.json": true,
+    "v2/ThreadStartResponse.json": true,
+    "v2/ThreadResumeParams.json": true,
+    "v2/ThreadResumeResponse.json": true,
+    "v2/TurnStartParams.json": true,
+    "v2/TurnStartResponse.json": true,
+    "v2/TurnInterruptParams.json": true,
+    "v2/TurnInterruptResponse.json": true,
+    "v2/TurnCompletedNotification.json": true
+  },
+  "build": {
+    "exit_code": 0,
+    "profile": "debug",
+    "command": "cargo build --locked -p codex-cli --bin codex",
+    "log_sha256": "ebbf32eb63041409f557815766160123d2191abd64fcfe893d581ca78db13cef",
+    "rust_toolchain": "1.95.0"
+  },
+  "status": "pass"
+}

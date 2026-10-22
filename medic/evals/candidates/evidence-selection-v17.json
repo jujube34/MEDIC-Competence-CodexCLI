@@ -1,0 +1,25 @@
+{
+  "status": "work_in_progress_not_released",
+  "date": "2026-10-23",
+  "baseline": "medic-runtime-p4-v16",
+  "candidate": "medic-runtime-p4-v17",
+  "changed_runtime_files": [
+    "prompts/manifest.json",
+    "prompts/roles-v7.json",
+    "runtime/build.py",
+    "runtime/mailbox.py",
+    "runtime/planning.py",
+    "tools/evidence_selection.py",
+    "tools/service.py"
+  ],
+  "candidate_files": 108,
+  "sqlite_contract_tests": 9,
+  "test_skips": 0,
+  "test_log_sha256": "cdfc441c84937a84590196b3e9e94f0a7c72e6de6cefdf16032d6270e83cc934",
+  "patch_sha256": "5fa6cd1702c8a36dff1d3198d28ea6c517285d93cafa57b0ac119dbbd9520659",
+  "real_model_calls": 0,
+  "postgresql_validation": false,
+  "full_scope_validation": false,
+  "production_acceptance": false,
+  "live_application_modified": false
+}

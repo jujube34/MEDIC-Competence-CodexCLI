@@ -1,0 +1,24 @@
+{
+  "status": "verified",
+  "product": "LibreOffice",
+  "version": "26.8.1.1",
+  "build_id": "bf6ef2662401c7d6dce671ab4deb26ee0af3a7c1",
+  "official_metadata": "https://download.documentfoundation.org/libreoffice/stable/26.8.1/win/x86_64/LibreOffice_26.8.1_Win_x86-64.msi.mirrorlist",
+  "download_mirror": "https://mirrors.nju.edu.cn/tdf/libreoffice/stable/26.8.1/win/x86_64/LibreOffice_26.8.1_Win_x86-64.msi",
+  "package_sha256": "c6298b10cfa1748bcbedad94c62ce771e240e5021bfd6d7a967cd571b04b5312",
+  "authenticode_status": "Valid",
+  "authenticode_signer": "The Document Foundation",
+  "engine_manifest_sha256": "1a2c3007759ec23bfe1190424f7d1dfc1ff753f139a567154ee113fb386735fa",
+  "engine_files": 19443,
+  "archive_sha256": "7559027b33b11a7b0831274a970e55f2016b470ae793d413b23fac93ad336022",
+  "archive_bytes": 547648508,
+  "archive_members_verified": true,
+  "administrative_extraction_only": true,
+  "license_files_included": true,
+  "notes": [
+    "Archive includes hashes of bytecode created from the verified engine during setup. New conversions disable bytecode writes.",
+    "Default redirect mirror timed out; official listed NJU mirror download succeeded.",
+    "First administrative extraction used forward slashes and failed 1619; absolute Windows paths succeeded."
+  ],
+  "global_install_requested": false
+}

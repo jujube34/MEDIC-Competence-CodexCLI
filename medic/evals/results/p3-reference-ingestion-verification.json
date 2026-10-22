@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-10-17T02:30:34.493321+00:00",
+  "status": "pass",
+  "checks": {
+    "four_formats_covered": true,
+    "sources_unchanged": true,
+    "snapshots_verified": true,
+    "no_technical_parse_failure": true
+  },
+  "cases": [
+    {
+      "format": "xlsx",
+      "source_sha256": "5b8257e0149ae6c842f00d33ac242a0b95e3f4e2893b4dffe771c7fcf65402b6",
+      "source_unchanged": true,
+      "snapshot_integrity_verified": true,
+      "state": "ready",
+      "unit_count": 4,
+      "block_count": 566,
+      "issue_codes": [],
+      "parsed_snapshot_sha256": "223ee504003db12c6f0bd7a2f989112d9e540419a74f97068788e1407e5da846"
+    },
+    {
+      "format": "docx",
+      "source_sha256": "4380d2fc26c2565c30b71055dd0a61d0609ea85d26deacff75a675bd541e22ab",
+      "source_unchanged": true,
+      "snapshot_integrity_verified": true,
+      "state": "ready",
+      "unit_count": 1,
+      "block_count": 46,
+      "issue_codes": [],
+      "parsed_snapshot_sha256": "c7551dd173255457e1dd06ce4c5660b6da2f4a8fafe59b3868fc98aba9d3f897"
+    },
+    {
+      "format": "pptx",
+      "source_sha256": "1a03077863bb2690e2303350909e2ee582f7da8d9f4a89cc68322037936abff8",
+      "source_unchanged": true,
+      "snapshot_integrity_verified": true,
+      "state": "needs_review",
+      "unit_count": 20,
+      "block_count": 579,
+      "issue_codes": [
+        "embedded_content_not_extracted",
+        "slide_image_not_extracted"
+      ],
+      "parsed_snapshot_sha256": "1428ed8bd3d942f621f0d83a59782fcaca2c271ef511de87c97268697d65df8e"
+    },
+    {
+      "format": "pdf",
+      "source_sha256": "91e498064d046fdeb4878bf062cb31fa96b30255695b44dc3ac70210aafc4924",
+      "source_unchanged": true,
+      "snapshot_integrity_verified": true,
+      "state": "needs_review",
+      "unit_count": 19,
+      "block_count": 298,
+      "issue_codes": [
+        "annotations_or_forms_require_review",
+        "image_content_requires_ocr_or_review",
+        "vector_content_not_interpreted"
+      ],
+      "parsed_snapshot_sha256": "72e478c4b5098eb2ca5a7f94379aaf0ca6b1c8495cb172c55e54bef4973cb3e0"
+    }
+  ],
+  "quality_claim": false,
+  "employee_assessment_performed": false,
+  "scope": "local_read_only_reference_documents_and_private_ingestion_snapshots"
+}

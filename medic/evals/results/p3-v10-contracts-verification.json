@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v10",
+    "manifest_sha256": "dd023235e4be644cc3b2889035e7341b49b880245b0a5c1f1001d244df3625d3",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "tests": 290,
+  "passed": 290,
+  "skipped": 0,
+  "postgresql_tests": 87,
+  "seconds": 404.287,
+  "log_sha256": "d692973fb4022e92f075939b41c332552522f85b0d5fea90b1bcc1d05556375e",
+  "source_archive_sha256": "44eef2a52eb0bcfcf1033fb0aaf65cef584b25f24ee401a2fdf8b0d2f1977245",
+  "synthetic_only": true,
+  "model_calls": 0,
+  "ui_parity": "partial",
+  "business_acceptance": false,
+  "new_preview_tests": 12,
+  "geometry_subcases": 8,
+  "previous_attempts": [
+    {
+      "log": "focused-01.log",
+      "status": "failed",
+      "tests": 23,
+      "failed_subcases": 3,
+      "reason": "PDF graphics overlay shifted on cropped pages rotated 90/180/270; replaced with pixel overlay and revalidated"
+    }
+  ]
+}

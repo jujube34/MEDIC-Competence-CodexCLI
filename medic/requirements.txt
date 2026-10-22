@@ -1,0 +1,2 @@
+-r requirements-p0.txt
+pydantic==2.10.3

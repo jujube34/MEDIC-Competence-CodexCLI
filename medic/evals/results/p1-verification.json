@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-10-17T00:39:59.327605+00:00",
+  "status": "pass",
+  "run_id": "run-9c806efbcbb04b9aa7110c06fdf3b375",
+  "input_hash": "3e643655815c8f4da87275ff74b4b1e9953b9fb4bb672645cb28595eb0763f58",
+  "versions": {
+    "competency_model_version": "synthetic-rubric-v1",
+    "job_matrix_version": "synthetic-no-recommendations-v1",
+    "ai_policy_version": "synthetic-policy-v1",
+    "prompt_bundle_version": "medic-p1-roles-v2",
+    "parser_version": "synthetic-text-v1",
+    "runtime_version": "medic-runtime-p1-v1",
+    "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+    "provider_profile_version": "medic-deepseek-p0-20261017.1"
+  },
+  "checks": {
+    "synthetic_only": true,
+    "six_distinct_completed_roles": true,
+    "independent_blind_context": true,
+    "live_role_provenance": true,
+    "distinct_role_threads": true,
+    "current_hard_gate": true,
+    "stored_gate_matches": true,
+    "ready_for_human_review": true,
+    "not_final_employee_decision": true
+  },
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "execution_mode": "live",
+    "publication_scope": "synthetic_preview",
+    "final_employee_decision": false
+  },
+  "role_results": [
+    {
+      "role": "coordinator",
+      "status": "completed",
+      "result_hash": "95983174c8f14a72efb7dc0e9fd11f8a89b64c32281615ffa1f53e84477855ea",
+      "context_hash": "504108455bf634f75b2984483b5048b139bff0f603c5db630c68129183a26eba",
+      "read_spans": 0
+    },
+    {
+      "role": "evaluator",
+      "status": "completed",
+      "result_hash": "b2277f989a111ef4414a9f783235d3d4d0599047f2ad0daa4288569cc2b0c0db",
+      "context_hash": "34c6f604d3dabb525bf16ba3062febaeda5eec2ce010617821fb5bdf2678b998",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "status": "completed",
+      "result_hash": "e53c7c35c9b1fbaf637fca9cd61a2370d64d352225917144861479d6d4d77e95",
+      "context_hash": "3e890e94bb51853b3f30e8d9b24da35d7e1eb16499d75e7dec938b5bfc5b19d8",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger",
+      "status": "completed",
+      "result_hash": "353c8d342a413b024aaae60d2018067e0477275aa2b990d32ad2cf71aeea8a60",
+      "context_hash": "40144badb3ba3fa3caa80b8d49ce2526668dbc618d80184f2b4a77005849fd4f",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "status": "completed",
+      "result_hash": "6b23fe68b037f5f2f36d83476695b2d6fa4a0c1e1c6c6457e0da07be85d02b03",
+      "context_hash": "c846ca8250a1ec89bc55700885c538dc21b80e24ccc6e0f0386fc88918abb761",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "status": "completed",
+      "result_hash": "1edf9c5b71f2efac45d9c38924315a3cf2d84d0bf88f620de3de2714d71dc4ba",
+      "context_hash": "aa2915b9c9f242e1477006bd2267aec9fa78d49e7b1788d0d2aaf3a04050779a",
+      "read_spans": 4
+    }
+  ],
+  "first_grade": "B",
+  "second_grade": "B",
+  "challenge_count": 1,
+  "responded_challenge_count": 1,
+  "judge_verdict": "pass",
+  "gateway_requests": 32,
+  "charged_tokens": 267614,
+  "estimated_usage_requests": 0,
+  "private_snapshot_hash": "52fde50041892e3dccdd50fa2412a0cdeb2e544264c6c3748f6687b4e72b2578",
+  "quality_claim": "execution_and_boundary_verification_only_not_expert_accuracy"
+}

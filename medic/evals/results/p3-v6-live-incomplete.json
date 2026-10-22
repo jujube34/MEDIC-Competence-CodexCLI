@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-17T06:36:18.927019+00:00",
+  "status": "incomplete",
+  "run_id": "run-d2cb21ce35dc3af0c8c67b293f7adf0d",
+  "runtime_version": "medic-runtime-p3-v6",
+  "manifest_sha256": "ef8a27fd2e8b2857aa279d361ed60a0d87dc59acf63eb503fb8075b51681ecc9",
+  "scope": "real_model_synthetic_v6_queue_probe_failed_then_operator_recovery_interrupted",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "completed",
+      "error": "runtime_terminal"
+    },
+    {
+      "attempt": 2,
+      "status": "interrupted",
+      "error": "service_execution_interrupted"
+    }
+  ],
+  "first_attempt_local_gateway_429": true,
+  "second_supervisor_error_type": "OperationalError",
+  "second_error_root_cause_confirmed": false,
+  "database_integrity_ok": true,
+  "completed_nodes": 1,
+  "requests": 21,
+  "charged_or_reserved_tokens": 245560,
+  "unsettled_requests": 2,
+  "budget_unchanged_on_cancel": true,
+  "report_published": false,
+  "human_finalized": false,
+  "final_probe_state": "cancelled",
+  "quality_or_runtime_success_claim": false
+}

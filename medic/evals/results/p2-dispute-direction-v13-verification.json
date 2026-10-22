@@ -1,0 +1,130 @@
+{
+  "status": "partial",
+  "execution_status": "pass",
+  "checks": {
+    "prospective_input_preserved": true,
+    "frozen_build_preserved": true,
+    "budget_limits_preserved": true,
+    "all_initial_roles_completed": true,
+    "all_completed_epochs_present": true,
+    "every_current_and_archived_attempt_verified": true,
+    "prior_results_match_recorded_attempts": true,
+    "independent_threads_across_completed_attempts": true,
+    "current_graph_complete": true,
+    "no_seeded_initial_event": true,
+    "messages_bound_to_real_results": true,
+    "gate_has_no_integrity_failures": true,
+    "stored_gate_matches": true,
+    "safe_final_state": true,
+    "one_preview_publication": true,
+    "not_final_employee_decision": true
+  },
+  "coverage": {
+    "nonempty_real_challenges": false,
+    "formal_challenge_responses": false,
+    "real_mailbox_question_and_answer": false,
+    "real_coordinator_selected_third_round": false,
+    "four_real_third_round_roles": false,
+    "old_blocking_issue_explicitly_carried": false
+  },
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "execution_mode": "live",
+    "publication_scope": "synthetic_preview",
+    "final_employee_decision": false
+  },
+  "counts": {
+    "completed_attempts": 6,
+    "archived_attempts": 0,
+    "challenges": 0,
+    "responses": 0,
+    "messages": 0,
+    "pending_topics": 0,
+    "third_round_attempts": 0,
+    "carried_old_blocking_issues": 0
+  },
+  "third_round_or_human_decisions": [],
+  "created_at": "2026-10-22T19:25:45.368260+00:00",
+  "run_id": "run-d8b0a309cd0e44c494ef9799bbb14a6e",
+  "case_id": "direction-ledger-attribution",
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v13",
+    "manifest_sha256": "24e5b90a59e1c9903890bf7a19d5e39bb8bc68b3f22b7acef9c5fe9dc09aaf0c",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "scope": "all_real_initial_and_historical_roles_dispute_coverage",
+  "seeded_results": false,
+  "requests": 36,
+  "charged_or_reserved_tokens": 380827,
+  "unsettled_requests": 0,
+  "input_hash": "b4e5b7c9e1b926c5766be72a8f04991edb50432b470dff73935b905edd21c704",
+  "prospective_manifest_sha256": "257d37eb1b232e8bcf1241caf46a7bb7e87d2bfdc9490fdd72a7a14b66d9fb57",
+  "private_snapshot_sha256": "b0a92b5d39a1fdf564453014bebb8392bd07be941c4973933190c51920d9470e",
+  "quality_claim": false,
+  "business_signoff": false,
+  "auditor_sources_sha256": {
+    "medic\\evals\\dispute_cases.py": "ac2e7178e42dda301399ff1704cf9bc104c4aba883b585b75c6bc9499e2448fd",
+    "medic\\evals\\verify_dispute_live.py": "2b318e0ebadfdad6953bdeb7d1c22589346ac0137a4a0404313b0175890bfac0",
+    "medic\\tests\\test_dispute_audit.py": "f0e65cefc14e74fa61814fd2fe6d5880dd53e451ade846cd165a12f1087f33a4"
+  },
+  "gateway_admission_rejections": 0,
+  "event_counts": {
+    "run_created": 1,
+    "task_leased": 6,
+    "execution_bound": 6,
+    "tool_invoked": 69,
+    "agent_dispatched_task": 5,
+    "result_submitted": 6,
+    "task_completed": 6,
+    "preview_published": 1
+  },
+  "model_request_window_seconds": 382.526,
+  "initial_and_second_grades": [
+    "B",
+    "B"
+  ],
+  "quality_observations": [
+    {
+      "kind": "manual_spot_check_not_expert_label",
+      "finding": "The blind scan includes an open question about test administration/scope rather than only material facts. Do not interpret execution pass as expert-quality acceptance.",
+      "next_validation": "Separate test administration from future assessment goal wording; preserve this frozen case and its observed output."
+    }
+  ]
+}

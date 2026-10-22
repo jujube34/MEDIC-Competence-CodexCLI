@@ -1,0 +1,106 @@
+{
+  "status": "pass_compact_planning_technical_integration",
+  "verified_on": "2026-10-23",
+  "runtime_version": "medic-runtime-p4-v15",
+  "manifest_sha256": "a683d113996b06600e87bfe3e2b121282e9b2854fe899b0f01728968517d990b",
+  "release_files": 106,
+  "real_planning": {
+    "status": "pass_two_full_scope_real_coordinator_plans",
+    "runtime_version": "medic-runtime-p4-v15",
+    "manifest_sha256": "a683d113996b06600e87bfe3e2b121282e9b2854fe899b0f01728968517d990b",
+    "runs": [
+      {
+        "run_id": "run-742537144f4641808f9fabbd681a7ea1",
+        "status": "pass_planning_only",
+        "nodes": 225,
+        "scope_count": 17,
+        "materials": 2,
+        "coordinator_seconds": 40.514,
+        "requests": 4,
+        "total_tokens": 42761,
+        "tool_calls": [
+          "assessment_get_manifest",
+          "runtime_dispatch_plan",
+          "runtime_finish_plan"
+        ],
+        "business_input_unchanged": true,
+        "source_sha256": "9e4c5d32e55d9324714adb36ced45860a190479d9816c90086d7ae80b19bd3b2",
+        "protocol_sha256": "f6ca820c2eae0fcd13faa183c591288079599f866c86877ab214b4698d59dcc9",
+        "plan_sha256": "3433188e218e261b3578d78f52bbc356284cdf86d385a1275f37e63828cc6b7d",
+        "child_execution_count": 0,
+        "probe_retired_state": "cancelled",
+        "coordinator_thread_id": "01a165c9-011d-73d2-91a2-85e205a0f085"
+      },
+      {
+        "run_id": "run-bb43dd64dbe6453082a7edaac5cfd3ec",
+        "status": "pass_planning_only",
+        "nodes": 225,
+        "scope_count": 17,
+        "materials": 2,
+        "coordinator_seconds": 45.186,
+        "requests": 4,
+        "total_tokens": 43448,
+        "tool_calls": [
+          "assessment_get_manifest",
+          "runtime_dispatch_plan",
+          "runtime_finish_plan"
+        ],
+        "business_input_unchanged": true,
+        "source_sha256": "9e4c5d32e55d9324714adb36ced45860a190479d9816c90086d7ae80b19bd3b2",
+        "protocol_sha256": "4bc488a2c2a63179e5e3c2931bc2fac7b21b65ff52429bad53b789a59ec2e8f8",
+        "plan_sha256": "2a55a1f4f8b854b11ea93026e363b7da87ed13901d323667e1a42e4432c175eb",
+        "child_execution_count": 0,
+        "probe_retired_state": "cancelled",
+        "coordinator_thread_id": "01a165cb-10df-75d3-8a57-08b5b9d807ed"
+      }
+    ],
+    "requests": 8,
+    "total_tokens": 86209,
+    "prior_failed_zero_request_probe_retained": true,
+    "full_assessment_execution": false,
+    "quality_acceptance": false,
+    "turn_timeout_seconds": 240,
+    "limitations": [
+      "Planning only; 225 downstream role tasks were never started.",
+      "No full-scope C token/wall-clock feasibility or scoring-quality claim.",
+      "Two repeated synthetic probes are not a statistical reliability estimate."
+    ]
+  },
+  "sqlite_contracts_passed": 52,
+  "cross_backend_checks_after_harness_fix": 62,
+  "postgresql_checks_passed": 50,
+  "promoted_checks_passed": 27,
+  "promoted_postgresql_api_checks_skipped": 21,
+  "initial_harness_failures_retained": [
+    "Missing protocol schema: zero-request probe failed before model execution.",
+    "PostgreSQL driver initially used unsupported key/value connection format; corrected to URI.",
+    "Two PostgreSQL subprocess tests initially inherited main v14 cwd; corrected to candidate cwd and both passed."
+  ],
+  "logs": {
+    "tests-before.log": "98a054d203a1943c744fba9ab05a55e5e0a641db179e8c13ac186e3864f93761",
+    "tests-focused.log": "e8554f9e969263c55e4c2309c1a0d2e529840800ade1096db4c04fddf40dff69",
+    "tests-sqlite.log": "eebacac75b316cb37b62f50ae2d4712dc4cca5380f4a8bb075e3ec4e264eef54",
+    "tests-postgres.log": "824ad9a3f0fb8084adc58d714ad6b5fe64f46aaaf0fac0f44a8c7df03fec40f7",
+    "tests-postgres-02.log": "047c5d9ce5274d11f30b472bd39a85996a39448b789d4d3eef1b0007f7f8e57c",
+    "tests-postgres-03.log": "729fbf6964c7782abaf03b3609c29d4d7419abd015f53a7cf133f7c288fb08c1",
+    "tests-promoted.log": "374059d9ae8120d1232061507d4b38f37202552356119482a08cdf1c3ed73504"
+  },
+  "preview_tables_unchanged": 25,
+  "historical_runs_and_assessments_unchanged": true,
+  "preview_health": {
+    "status": "ok",
+    "synthetic_execution_only": true
+  },
+  "served_assets_match_release": true,
+  "frontend_changed": false,
+  "default_api_prompt_bundle": "medic-p2-roles-v5",
+  "compact_planning_prompt_bundle": "medic-p2-roles-v6",
+  "quality_acceptance": false,
+  "full_scope_assessment_completed": false,
+  "limitations": [
+    "No full-scope downstream evaluation or feasible total cost/wall budget demonstrated.",
+    "Compact planning remains opt-in via v6 prompt bundle; API-created runs still freeze v5 until full-budget admission is ready.",
+    "No full regression suite or new browser visual acceptance; PostgreSQL API tests were explicitly skipped in the final API batch.",
+    "No new employee assessment, human decision, business signoff, or production SSO deployment."
+  ]
+}

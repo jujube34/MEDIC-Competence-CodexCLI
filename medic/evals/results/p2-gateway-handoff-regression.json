@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-17T01:27:20.320954+00:00",
+  "status": "pass",
+  "run_id": "run-1add0e890ed948339d206bd39ec459c3",
+  "observed_worker_error": "turn_status_failed",
+  "codex_error": "response_too_many_failed_attempts_http_429",
+  "upstream_http_429_observed": false,
+  "recorded_requests_before_failure": 134,
+  "completed_tasks_preserved": 24,
+  "budget_tokens_before_recovery": 1344206,
+  "root_cause": "local_concurrency_slot_held_after_terminal_event",
+  "reproduced_before_fix": true,
+  "reproducer_before_fix_http_status": 429,
+  "reproducer_after_fix_http_status": 200,
+  "related_tests_passed": 14,
+  "limits_changed": false,
+  "prompt_changed": false,
+  "active_stream_concurrency_still_bounded": true,
+  "additional_p0_contract_tests_passed": 18,
+  "live_recovery_gate_passed": true,
+  "completed_nodes_after_recovery": 31
+}

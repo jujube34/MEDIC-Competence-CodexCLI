@@ -1,0 +1,133 @@
+{
+  "$defs": {
+    "Challenge": {
+      "additionalProperties": false,
+      "properties": {
+        "challenge_id": {
+          "title": "Challenge Id",
+          "type": "string"
+        },
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "attribution",
+            "criterion_mapping",
+            "omission",
+            "overstatement",
+            "overconservative"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "blocking",
+            "advisory"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "falsification_question": {
+          "minLength": 1,
+          "title": "Falsification Question",
+          "type": "string"
+        },
+        "explanation": {
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "challenge_id",
+        "claim_id",
+        "kind",
+        "severity",
+        "evidence_refs",
+        "falsification_question",
+        "explanation"
+      ],
+      "title": "Challenge",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "span_hash": {
+          "title": "Span Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote",
+        "span_hash"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "context_hash": {
+      "title": "Context Hash",
+      "type": "string"
+    },
+    "independent_findings_hash": {
+      "title": "Independent Findings Hash",
+      "type": "string"
+    },
+    "challenges": {
+      "items": {
+        "$ref": "#/$defs/Challenge"
+      },
+      "title": "Challenges",
+      "type": "array"
+    },
+    "checked_claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Checked Claim Ids",
+      "type": "array"
+    },
+    "conclusion": {
+      "minLength": 1,
+      "title": "Conclusion",
+      "type": "string"
+    }
+  },
+  "required": [
+    "task_id",
+    "context_hash",
+    "independent_findings_hash",
+    "challenges",
+    "checked_claim_ids",
+    "conclusion"
+  ],
+  "title": "ChallengeReport",
+  "type": "object"
+}

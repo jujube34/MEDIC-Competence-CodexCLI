@@ -1,0 +1,33 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "goal_id": {
+      "title": "Goal Id",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "competency_scope": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Competency Scope",
+      "type": "array"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    }
+  },
+  "required": [
+    "goal_id",
+    "version",
+    "competency_scope",
+    "description"
+  ],
+  "title": "AssessmentGoal",
+  "type": "object"
+}

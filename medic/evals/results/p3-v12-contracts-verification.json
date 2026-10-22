@@ -1,0 +1,123 @@
+{
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v12",
+  "full_suite": {
+    "execution_build": {
+      "runtime_version": "medic-runtime-p3-v12",
+      "manifest_sha256": "869f4d06bca1177c4ab936657a4a8e9fdab122f08e20a44ace2b280a9b8d9bae",
+      "environment": {
+        "python": "3.13.5",
+        "implementation": "CPython",
+        "platform": "win32",
+        "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+        "packages": {
+          "httpx": "0.28.1",
+          "httpcore": "1.0.9",
+          "h11": "0.16.0",
+          "anyio": "4.15.1",
+          "sniffio": "1.3.0",
+          "idna": "3.7",
+          "certifi": "2026.4.22",
+          "jsonschema": "4.23.0",
+          "attrs": "24.3.0",
+          "jsonschema-specifications": "2023.7.1",
+          "referencing": "0.30.2",
+          "rpds-py": "0.22.3",
+          "pydantic": "2.10.3",
+          "pydantic_core": "2.27.1",
+          "annotated-types": "0.6.0",
+          "typing_extensions": "4.16.0",
+          "openpyxl": "3.1.5",
+          "et_xmlfile": "1.1.0",
+          "psycopg": "3.2.9",
+          "psycopg-binary": "3.2.9",
+          "PyMuPDF": "1.28.2",
+          "pypdf": "6.11.0",
+          "defusedxml": "0.7.1",
+          "fastapi": "0.143.3",
+          "starlette": "1.8.0",
+          "uvicorn": "0.54.0",
+          "annotated-doc": "0.0.5",
+          "typing-inspection": "0.4.4",
+          "opentelemetry-api": "1.45.1"
+        }
+      }
+    },
+    "tests": 302,
+    "postgresql_tests": 89,
+    "skipped": 0,
+    "seconds": 508.934,
+    "log_sha256": "b87b722a34f29ca5f3009cc509f5e60e2707b015fdb7d2b33d8761328e5b2c8a",
+    "synthetic_office_conversion_formats": [
+      "docx",
+      "pptx",
+      "xlsx"
+    ],
+    "source_archive": "private:office-v12/full-candidate-source.zip"
+  },
+  "final_build": {
+    "execution_build": {
+      "runtime_version": "medic-runtime-p3-v12",
+      "manifest_sha256": "11ee4d2547dc46e28ff851ccaa69375e6712704e8ae51f74db9771897d28cc25",
+      "environment": {
+        "python": "3.13.5",
+        "implementation": "CPython",
+        "platform": "win32",
+        "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+        "packages": {
+          "httpx": "0.28.1",
+          "httpcore": "1.0.9",
+          "h11": "0.16.0",
+          "anyio": "4.15.1",
+          "sniffio": "1.3.0",
+          "idna": "3.7",
+          "certifi": "2026.4.22",
+          "jsonschema": "4.23.0",
+          "attrs": "24.3.0",
+          "jsonschema-specifications": "2023.7.1",
+          "referencing": "0.30.2",
+          "rpds-py": "0.22.3",
+          "pydantic": "2.10.3",
+          "pydantic_core": "2.27.1",
+          "annotated-types": "0.6.0",
+          "typing_extensions": "4.16.0",
+          "openpyxl": "3.1.5",
+          "et_xmlfile": "1.1.0",
+          "psycopg": "3.2.9",
+          "psycopg-binary": "3.2.9",
+          "PyMuPDF": "1.28.2",
+          "pypdf": "6.11.0",
+          "defusedxml": "0.7.1",
+          "fastapi": "0.143.3",
+          "starlette": "1.8.0",
+          "uvicorn": "0.54.0",
+          "annotated-doc": "0.0.5",
+          "typing-inspection": "0.4.4",
+          "opentelemetry-api": "1.45.1"
+        }
+      }
+    },
+    "changed_after_full_suite": [
+      "apps/web/app.js"
+    ],
+    "change": "Ignore duplicate material-open clicks while the same preview is already rendering; evidence-reference changes are not ignored.",
+    "affected_tests": 48,
+    "postgresql_tests": 20,
+    "skipped": 0,
+    "seconds": 28.91,
+    "log_sha256": "f1636852163a3121c1dd916a06507048f6cb618938bd7942ed8052e8c017edb6"
+  },
+  "model_calls": 0,
+  "new_human_decisions": 0,
+  "historical_runs_builds_budgets_unchanged": true,
+  "known_limitations": [
+    "Office uses a derived rendering, not Microsoft Office native pagination",
+    "OS/network sandbox and sustained-load acceptance pending",
+    "Derived caches excluded from existing backups; original sources remain covered"
+  ],
+  "first_attempt_notes": [
+    "Parent/worker PYTHONNOUSERSITE mismatch was rejected; inherited application environment restored without passing provider credentials.",
+    "New bytecode files triggered engine integrity rejection; untracked bytecode removed and conversion bytecode writes disabled.",
+    "AutoCheckEnabled required a typed property; now startup reads actual macro/update configuration and rejects mismatches."
+  ]
+}

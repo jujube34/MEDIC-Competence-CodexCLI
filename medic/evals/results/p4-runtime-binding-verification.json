@@ -1,0 +1,69 @@
+{
+  "status": "pass",
+  "checked_on": "2026-10-23",
+  "scope": "prospective synthetic C-arm binding and repeated execution; A/B not implemented",
+  "tests": 32,
+  "skips": 0,
+  "tests_seconds": 4.595,
+  "test_log_sha256": "658ade1fbdde088ca5236eb681595fef744af419d666dbce1e65af8eb45c68bc",
+  "source_sha256": {
+    "comparison.py": "044a9e3606a826b6280df54e6699e00506e3365e95515e2342c2f58bbff6f546",
+    "comparison_runtime.py": "7af04c5831853c1ab244dd307167e9ebf072835f2e2b48b199cef0d1489c3996",
+    "runtime_measurements.py": "d2c5a3ef2b8a899fa3ba8fe74b63328647739c711f9cbdc6e9bb812439964d1d",
+    "metrics.py": "506a65611679181dc15c0d208d8c0d3a0e32cfff77dac4cf736cc58e5c9302f6"
+  },
+  "source_archive_sha256": "bda15d12b73ac74c61c136e4b0fab6d886b8b1a32502a44965f816e8b2a4cdbf",
+  "oracle_sha256": "1d357a4eca5f4668bb605370e601ef30f86bfec7516fc17b04052a961aeeeec4",
+  "experiment_sha256": "cf99845312c742584af75f559fbf71b181563aca6c9a704e19c3e5063a26bec1",
+  "expected_slots": 6,
+  "observed_slots": 2,
+  "runs": [
+    {
+      "run_id": "run-96b11e255332a1764c068e67c33ce81f",
+      "repeat": 1,
+      "status": "completed",
+      "execution_audit_status": "pass",
+      "completed_roles": 6,
+      "requests": 34,
+      "reported_tokens": 321228,
+      "charged_or_reserved_tokens": 321228,
+      "elapsed_seconds": 267.8644516468048,
+      "export_sha256": "916e0d4ebaecfc41cde4677ce65b36f871a618388791ce31e111559513fcf3a4",
+      "input_and_budget_unchanged": true,
+      "source_tables_unchanged": true,
+      "binding_sha256": "738c374c61521ebfa4452e7d00d08f6bc8c0dd50595a5ab156f18ddaa06bf249"
+    },
+    {
+      "run_id": "run-993e24aec6f87f76089356204a0ec1d0",
+      "repeat": 2,
+      "status": "completed",
+      "execution_audit_status": "pass",
+      "completed_roles": 6,
+      "requests": 33,
+      "reported_tokens": 297867,
+      "charged_or_reserved_tokens": 297867,
+      "elapsed_seconds": 240.26249957084656,
+      "export_sha256": "938f49006d7b8c9fc375f7b6a5aec57d31bb3bc0874d95fb3707d71e23b30618",
+      "input_and_budget_unchanged": true,
+      "source_tables_unchanged": true,
+      "binding_sha256": "046aefbb0d89d6f9f53a5849d9e15aef93f6738d87554b49e053d72fdd44a46e"
+    }
+  ],
+  "separate_threads_across_runs": 12,
+  "input_and_budget_sql_verified": true,
+  "preview_baseline_unchanged": true,
+  "application_manifest_unchanged": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "initial_failed_slots_retained": 2,
+  "initial_failed_model_requests": 0,
+  "startup_regression": "252-character Codex home failed SQLite initialization; single full-hash workspace passed actual initialize and execution",
+  "observations_sha256": "47dfd1d0e50d14d98f132b6e05f2a798270136a1f8332edfe3bdccda8d577827",
+  "report_sha256": "20caa250f04a434700a7c3465113f00a6ee9bc852f16453a975e017427714031",
+  "quality_acceptance": false,
+  "limitations": [
+    "Synthetic technical labels only; no expert accuracy claim.",
+    "A/B design hashes are explicit placeholders; their four missing slots are retained.",
+    "Two C repetitions ran concurrently; this is not a completed randomized comparative study.",
+    "Anchor support, transport retry count and human review time remain unknown.",
+    "Canonical workspace uniqueness is local; no distributed multi-machine execution lock."
+  ]
+}

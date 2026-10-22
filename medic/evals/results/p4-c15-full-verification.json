@@ -1,0 +1,64 @@
+{
+  "status": "failed_full_execution_with_verified_accounting",
+  "verified_on": "2026-10-23",
+  "run_id": "run-5d973278326f433799868174f273faa8",
+  "plan_sha256": "430a13d669a642363dc8498d177e047d35c6fc8128843721f6e2cf968fe3d478",
+  "runtime_version": "medic-runtime-p4-v15",
+  "manifest_sha256": "a683d113996b06600e87bfe3e2b121282e9b2854fe899b0f01728968517d990b",
+  "scope": {
+    "competencies": 17,
+    "materials": 2,
+    "planned_downstream_nodes": 225,
+    "exact_nodes_and_dependencies_verified": true,
+    "completed_attempts_verified": 10,
+    "total_tasks": 226,
+    "states": {
+      "completed": 10,
+      "failed": 3,
+      "queued": 213
+    }
+  },
+  "diagnosis": {
+    "primary_error": "finalization_repair_budget_exhausted",
+    "role": "challenger_scan",
+    "material_id": "__aggregate__",
+    "competency_id": "I2",
+    "submitted_result_hash": "8964afc4ff3f062414717b878a78d39edb122610e46873f9936be9eeb8692ae6",
+    "tool_receipt_matches_database": true,
+    "final_receipts": 3,
+    "all_final_receipts_repeat_one_extra_character": true,
+    "execution_identity_chain_verified": true,
+    "result_rejections": 0,
+    "automatic_relaunch": false,
+    "budget_extended": false
+  },
+  "accounting": {
+    "request_reservations": 65,
+    "reported_settlements": 64,
+    "estimated_settlements": 1,
+    "unsettled_reservations": 0,
+    "receipt_verified_requests": 64,
+    "provider_reported_token_subtotal": 504795,
+    "total_tokens": null,
+    "charged_or_reserved_tokens": 544390,
+    "elapsed_seconds": 262.1008400917053
+  },
+  "frozen_limits": {
+    "requests": 2000,
+    "total_tokens": 18000000,
+    "concurrency": 3,
+    "wall_seconds": 7200
+  },
+  "report_published": false,
+  "complete_execution_passed": false,
+  "quality_claim": false,
+  "readonly_replay_database_unchanged": true,
+  "archive_files_verified": 106,
+  "collector_sha256": "4dc2350be7d8a5d31f851e27f85ac63a8e8247491e6230b286917bd7985aa6b5",
+  "limitations": [
+    "Synthetic tuning input, not an expert-labelled or independent test set.",
+    "Ten completed attempts verified; no full assessment report.",
+    "One estimated usage settlement keeps actual total tokens unknown.",
+    "No automatic full-run retry or budget extension."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "pass_for_controller_contracts",
+  "checked_on": "2026-10-23",
+  "targeted_tests": 72,
+  "controller_tests": 10,
+  "skips": 0,
+  "model_calls_in_contract_tests": 0,
+  "source_sha256": {
+    "comparison_suite.py": "f7c2257125b6330f5ad969ac20fe27980a0e4055d2fe8aa3fb57d1c2b04f9e8b",
+    "baseline_a.py": "346a27de08a86ad1e9f6372fd3c8dc663dd0c81d8dd6f06bee5737b3b2287067",
+    "baseline_b.py": "c156ae270a6bbb5dd46ac3a7b59554519753af727c033c0f4726f2fc2a45a5ff",
+    "comparison_runtime.py": "7af04c5831853c1ab244dd307167e9ebf072835f2e2b48b199cef0d1489c3996"
+  },
+  "test_source_sha256": "6cb2fdfe1f55cb1b0a0f97ff770a84010200199d1c7f6e19f1424e8d1a9d22c4",
+  "tests_log_sha256": "19b96957c4cd01cfa815aad6589920ae6262bf58c1e40681993828453c37fcd7",
+  "initial_failure_log_sha256": "5c125f5493718bb011f88f0cea704f1a5be76afa8bf787323675418af0a5b9a0",
+  "initial_failure": "SQLite context managers did not close handles; explicit closing now covers controller read and test setup.",
+  "checks": [
+    "All slots bound before execution",
+    "Frozen serial ordering",
+    "Failed observations retain costs",
+    "Backend replay before trusting checkpoints",
+    "Interrupted mode cannot create fresh C work",
+    "Missing/live A ledger cannot be replayed as new execution",
+    "Wrong slot and reused execution ID rejected before checkpoint",
+    "Concurrent campaign and nonprefix checkpoints rejected",
+    "Checkpoint tampering rejected"
+  ],
+  "application_manifest_sha256": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "campaign_experiment_sha256": "763b353a5cce1f73acceedee3e8cf47ca725785d315acd91df781c839386273b",
+  "campaign_status": "separate_real_execution_in_progress",
+  "quality_acceptance": false,
+  "limitations": [
+    "Synthetic fixtures only; controller tests do not prove model quality.",
+    "Interrupted C without terminal artifacts requires explicit same-run recovery; no automatic restart.",
+    "Windows process lifecycle uses existing runtime child handshake; no production isolation claim."
+  ]
+}

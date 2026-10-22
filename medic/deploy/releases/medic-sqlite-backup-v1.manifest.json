@@ -1,0 +1,9 @@
+{
+  "format": "medic-sqlite-backup-v1",
+  "runtime_version": "medic-runtime-p3-v5",
+  "files": {
+    "deploy/backup.py": "b1c99382eb2390a15368db7b6ec4208306f5a350e7ce4f1a91caac7622ab170a",
+    "evals/backup_probe.py": "9c3e6c19eb34e95f8a983c65db6bff52ddd17b4486296d84f841cad64c7f76cb",
+    "tests/test_backup.py": "d90375d3f53090b432eb053b097542a893cfeb3112ae0eff0b8ceef0abae5343"
+  }
+}

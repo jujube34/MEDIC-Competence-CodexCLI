@@ -1,0 +1,73 @@
+{
+  "status": "pass",
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v9",
+    "manifest_sha256": "6eb455787290ac2aaf1ae1228a1728b1c64404d1aebc30a12abb21d86c4e9e6e",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "synthetic_only": true,
+  "model_calls": 0,
+  "business_acceptance": false,
+  "ui_parity": "partial",
+  "full_regression": {
+    "tests": 278,
+    "passed": 278,
+    "skipped": 0,
+    "postgresql_tests": 84,
+    "seconds": 399.551,
+    "manifest_sha256": "8899e1c9dfbeda95507ae389044aafcd24664a64ba6b8ac90fda71d835e19019",
+    "log_sha256": "a2dd3403081e0b019be535dd596f2479cf75c28f7229e7c22746b06187bb3921",
+    "source_archive_sha256": "b89a3f44b35513bf23cbc0baae049709d6023e47d47a25dc8654c287e9c8cd13"
+  },
+  "final_style_delta": [
+    "apps/web/alignment.css"
+  ],
+  "all_other_executable_files_unchanged": true,
+  "final_affected_regression": {
+    "tests": 31,
+    "passed": 31,
+    "skipped": 0,
+    "postgresql_tests": 15,
+    "seconds": 16.154,
+    "manifest_sha256": "6eb455787290ac2aaf1ae1228a1728b1c64404d1aebc30a12abb21d86c4e9e6e",
+    "log_sha256": "cac05059ea88e89177b37ae2aa2497f563da0b48547bd3073aff434461efa25c"
+  },
+  "final_browser_check": "desktop centered criterion sheet and mobile bottom sheet; grade draft selection passed",
+  "source_archive_sha256": "7432be6c172dbce119ed95a540bdfb973acb0bbc7a408b017b4530f0ab97f27d"
+}

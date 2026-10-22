@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS runs(run_id TEXT PRIMARY KEY,input_json TEXT NOT NULL,input_hash TEXT NOT NULL,state TEXT NOT NULL,mode TEXT NOT NULL,created DOUBLE PRECISION NOT NULL,report_json TEXT);
+CREATE TABLE IF NOT EXISTS tasks(task_id TEXT PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(run_id),role TEXT NOT NULL,material_id TEXT NOT NULL,competency_id TEXT NOT NULL,dependencies TEXT NOT NULL,status TEXT NOT NULL,lease_epoch INTEGER NOT NULL DEFAULT 0,lease_until DOUBLE PRECISION,token_hash TEXT,context_hash TEXT,candidate_hash TEXT,context_json TEXT,execution_mode TEXT,thread_id TEXT,turn_id TEXT,result_hash TEXT,error TEXT,created_seq BIGSERIAL UNIQUE,UNIQUE(run_id,role,material_id,competency_id));
+CREATE TABLE IF NOT EXISTS results(task_id TEXT NOT NULL REFERENCES tasks(task_id),lease_epoch INTEGER NOT NULL,value_json TEXT NOT NULL,result_hash TEXT NOT NULL,receipt TEXT NOT NULL,PRIMARY KEY(task_id,lease_epoch));
+CREATE TABLE IF NOT EXISTS events(seq BIGSERIAL PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(run_id),task_id TEXT,kind TEXT NOT NULL,data_json TEXT NOT NULL,created DOUBLE PRECISION NOT NULL);
+CREATE TABLE IF NOT EXISTS reads(task_id TEXT NOT NULL REFERENCES tasks(task_id),lease_epoch INTEGER NOT NULL,evidence_id TEXT NOT NULL,PRIMARY KEY(task_id,lease_epoch,evidence_id));
+CREATE TABLE IF NOT EXISTS outbox(id BIGSERIAL PRIMARY KEY,task_id TEXT NOT NULL REFERENCES tasks(task_id),kind TEXT NOT NULL,delivered INTEGER NOT NULL DEFAULT 0,UNIQUE(task_id,kind));
+CREATE TABLE IF NOT EXISTS run_limits(run_id TEXT PRIMARY KEY REFERENCES runs(run_id),limits_json TEXT NOT NULL,deadline DOUBLE PRECISION NOT NULL);
+CREATE TABLE IF NOT EXISTS model_requests(request_id TEXT PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(run_id),estimate BIGINT NOT NULL,started DOUBLE PRECISION NOT NULL,active_until DOUBLE PRECISION NOT NULL,status TEXT NOT NULL,charged BIGINT,settled DOUBLE PRECISION);
+CREATE INDEX IF NOT EXISTS tasks_run_status ON tasks(run_id,status);
+CREATE INDEX IF NOT EXISTS events_run_seq ON events(run_id,seq);
+CREATE INDEX IF NOT EXISTS requests_run ON model_requests(run_id);
+CREATE TABLE IF NOT EXISTS mailbox(seq BIGSERIAL PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(run_id),material_id TEXT NOT NULL,competency_id TEXT NOT NULL,message_id TEXT NOT NULL,payload_hash TEXT NOT NULL,value_json TEXT NOT NULL,UNIQUE(run_id,message_id));
+CREATE INDEX IF NOT EXISTS mailbox_scope ON mailbox(run_id,material_id,competency_id);
+CREATE TABLE IF NOT EXISTS task_cycles(task_id TEXT PRIMARY KEY REFERENCES tasks(task_id),business_round INTEGER NOT NULL,attempts INTEGER NOT NULL,baseline_json TEXT);
+CREATE TABLE IF NOT EXISTS task_history(task_id TEXT NOT NULL REFERENCES tasks(task_id),lease_epoch INTEGER NOT NULL,task_json TEXT NOT NULL,PRIMARY KEY(task_id,lease_epoch));
+CREATE TABLE IF NOT EXISTS rework_plans(run_id TEXT PRIMARY KEY REFERENCES runs(run_id),status TEXT NOT NULL,candidates_json TEXT NOT NULL,decisions_json TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS run_builds(run_id TEXT PRIMARY KEY REFERENCES runs(run_id),identity_json TEXT NOT NULL);

@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "source": "https://github.com/tesseract-ocr/tessdata_fast",
+  "release_tag": "4.1.0",
+  "commit": "65727574dfcd264acbb0c3e07860e4e9e9b22185",
+  "files": {
+    "eng.traineddata": {
+      "bytes": 4113088,
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+    },
+    "chi_sim.traineddata": {
+      "bytes": 2469156,
+      "sha256": "a5fcb6f0db1e1d6d8522f39db4e848f05984669172e584e8d76b6b3141e1f730"
+    },
+    "LICENSE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    }
+  },
+  "archive_sha256": "01e76a54c45a4e8cf68218bd4410a8f5ce70a4e4caa7850556257be15144a7fa",
+  "archive_bytes": 3711770,
+  "all_archive_members_verified": true,
+  "runtime_downloads": false,
+  "installed_global_software": false,
+  "license": "Apache-2.0; included unchanged"
+}

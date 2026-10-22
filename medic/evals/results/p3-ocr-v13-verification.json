@@ -1,0 +1,145 @@
+{
+  "status": "pass",
+  "ui_alignment_status": "partial",
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v13",
+    "manifest_sha256": "24e5b90a59e1c9903890bf7a19d5e39bb8bc68b3f22b7acef9c5fe9dc09aaf0c",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "upload_snapshot_build": {
+    "runtime_version": "medic-runtime-p3-v13",
+    "manifest_sha256": "55cd4390d6a37da9be8998f0ebdafd1139f5af8a1022994c5448a20f53af5e8d",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "synthetic": true,
+  "model_calls": 0,
+  "new_assessments": 0,
+  "new_human_decisions": 0,
+  "http": {
+    "synthetic": true,
+    "blocks": 3,
+    "source_download_hash_verified": true,
+    "ocr_page_only": "ocr_page_only",
+    "preview_without_auth": 401,
+    "assessment_rejection": 409,
+    "assessment_error": "material_requires_review",
+    "historical_runs_builds_budgets_unchanged": true,
+    "model_calls": 0,
+    "new_assessments": 0,
+    "new_human_decisions": 0
+  },
+  "browser": {
+    "synthetic": true,
+    "uploadAndOCR": true,
+    "unverifiedTextLabel": true,
+    "pageOnlyNoGuessedHighlight": true,
+    "qualityCheckboxDoesNotEnableAssessment": true,
+    "mobileWidth": 390,
+    "documentWidth": 375,
+    "zoom150Contained": true,
+    "friendlyPageParagraphLabels": true,
+    "logout": {
+      "employeeCleared": true,
+      "evidenceEmpty": true,
+      "previewEmpty": true
+    },
+    "modelCalls": 0,
+    "newHumanDecisions": 0
+  },
+  "screenshots_sha256": {
+    "desktop-ocr-final.jpg": "aa829aa83f557282149b0462c3dfb3c4a143bbd24f39ebb7a9abc992c7f04cb1",
+    "mobile-ocr-final.jpg": "72a43abf65986b4e1bc891109f25cda670db2109c98f29c2a994588498f75eac"
+  },
+  "history_unchanged": true,
+  "limits": {
+    "languages": "chi_sim+eng",
+    "image_only_pdf_pages": true,
+    "max_ocr_pages": 5,
+    "max_pixels_per_page": 4000000,
+    "dpi_range": [
+      100,
+      200
+    ],
+    "whole_document_seconds": 30,
+    "job_memory_mib": 768
+  },
+  "known_limitations": [
+    "OCR text always requires human review; no quality-signoff API",
+    "No confidence score exposed by chosen engine API",
+    "Mixed pages, Office embedded images and chart semantics unsupported",
+    "Synthetic examples do not establish production OCR accuracy",
+    "OS/network isolation and customer deployment acceptance pending"
+  ]
+}

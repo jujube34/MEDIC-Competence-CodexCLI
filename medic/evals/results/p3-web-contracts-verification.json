@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-10-17T04:21:23.938548+00:00",
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v4",
+  "runtime_manifest_sha256": "855078810b34a9d118776c08185c60a155b16fca68f369c4263cdb8f8287507d",
+  "tests": 194,
+  "postgresql_tests": 65,
+  "api_tests": 28,
+  "elapsed_seconds": 380.41,
+  "test_log_sha256": "62b3be96167488d4d6e9d57f746614c1e5b807caf72760b64e8fe1116734ce84",
+  "scope": "synthetic_contracts_and_actual_local_resource_enforcement_not_expert_quality"
+}

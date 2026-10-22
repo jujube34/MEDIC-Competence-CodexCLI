@@ -1,0 +1,105 @@
+{
+  "created_at": "2026-10-16T23:56:05.993261+00:00",
+  "status": "pass",
+  "publication_status": "awaiting_business_signoff",
+  "source_hashes": {
+    "legacy_model": "ff3e6fe2ced00f2de756bd2e293bb95ef8b35cbfec3163963118b328fed6dfa3",
+    "delivery_model": "5b8257e0149ae6c842f00d33ac242a0b95e3f4e2893b4dffe771c7fcf65402b6",
+    "matrix_260914": "4578384c83fbd4dbd8151d296ebba7e6a766bf09ed3bf34bc4c0d0977d1fa152",
+    "demo_260908": "4dde273724962cff73b047424b1d0783d3d81070dec782495329e8839f689a97",
+    "policy_260922": "28fd325072e3b42e2a17b968512ac6de255060a9b346ef54a53742104cde2681"
+  },
+  "checks": {
+    "model_17": true,
+    "matrix_49_833": true,
+    "policy_partition": true
+  },
+  "counts": {
+    "legacy_model": 16,
+    "delivery_model": 17,
+    "matrix_jobs": 49,
+    "matrix_rows": 833,
+    "demo_jobs": 41,
+    "demo_rows": 697
+  },
+  "legacy_missing_codes": [
+    "E4"
+  ],
+  "dimension_definition_changes": [
+    "E"
+  ],
+  "legacy_changed_fields": {
+    "E3": [
+      "definition",
+      "concept_A",
+      "concept_B",
+      "concept_C",
+      "concept_D",
+      "execution_A",
+      "execution_B",
+      "execution_C",
+      "execution_D"
+    ]
+  },
+  "demo_changed_fields": {
+    "E3": [
+      "execution_A",
+      "execution_B",
+      "execution_C",
+      "execution_D"
+    ],
+    "E4": [
+      "execution_A",
+      "execution_B",
+      "execution_C",
+      "execution_D"
+    ]
+  },
+  "matrix_delta": {
+    "added_pairs": 204,
+    "removed_pairs": 68,
+    "changed_common_pairs": 50
+  },
+  "policy_groups": {
+    "suggest": [
+      "M1",
+      "M2",
+      "M3",
+      "D1",
+      "D3",
+      "I1",
+      "I2",
+      "C4"
+    ],
+    "clue_only": [
+      "E1",
+      "E3",
+      "E4",
+      "M4"
+    ],
+    "human_only": [
+      "E2",
+      "D2"
+    ],
+    "risk_scan": [
+      "C1",
+      "C2",
+      "C3"
+    ]
+  },
+  "policy_conflicts": [
+    {
+      "code": "E3",
+      "table": "suggest",
+      "summary": "clue_only",
+      "candidate_resolution": "clue_only",
+      "requires_business_signoff": true
+    }
+  ],
+  "issues": {
+    "legacy": [],
+    "model": [],
+    "matrix": [],
+    "policy": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "synthetic_only": true,
+  "legacy_source_sha256": "b6180789ae63154b7e0595d92355d7f37afc86e06cb4de1399a58b6922cc0958",
+  "case": "one_formula_only_cell_without_cache",
+  "sheet_rows": 0,
+  "formula_uncached_warning": false,
+  "finding": "formula_only_row_skipped_before_missing_cache_check",
+  "legacy_not_migrated": true
+}

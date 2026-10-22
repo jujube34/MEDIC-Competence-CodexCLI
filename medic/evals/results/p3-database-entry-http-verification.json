@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-10-17T06:22:20.841284+00:00",
+  "status": "pass",
+  "scope": "real_postgresql_api_cli_environment_http_upload_creation_restart_no_model",
+  "checks": {
+    "database_uri_absent_from_process_arguments": true,
+    "api_initialized_real_postgres_tables": true,
+    "http_created_run_in_postgres": true,
+    "http_state_preserved_after_restart": true,
+    "original_available_after_restart": true,
+    "run_and_execution_identity_preserved": true,
+    "unsettled_budget_and_deadline_preserved": true,
+    "no_sqlite_runtime_fallback": true,
+    "no_model_task_started": true,
+    "owned_test_database_removed": true
+  },
+  "runtime_version": "medic-runtime-p3-v6",
+  "manifest_sha256": "ef8a27fd2e8b2857aa279d361ed60a0d87dc59acf63eb503fb8075b51681ecc9",
+  "model_requests_sent": 0,
+  "synthetic_ledger_reservations": 1,
+  "synthetic_reserved_tokens": 1234,
+  "production_signoff": false
+}

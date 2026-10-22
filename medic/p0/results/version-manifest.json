@@ -1,0 +1,13 @@
+{
+  "scope": "P0 feasibility / synthetic only; no approved business registry",
+  "competency_model_version": "candidate-sha256:5b8257e0149ae6c842f00d33ac242a0b95e3f4e2893b4dffe771c7fcf65402b6",
+  "job_matrix_version": "candidate-sha256:4578384c83fbd4dbd8151d296ebba7e6a766bf09ed3bf34bc4c0d0977d1fa152",
+  "ai_policy_version": "medic-ai-policy-260922-p0-candidate-1",
+  "prompt_bundle_version": "p0-synthetic-v1",
+  "parser_version": "p0-assets-v1",
+  "runtime_version": "p0-probes-v1",
+  "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+  "provider_profile_version": "medic-deepseek-p0-20261017.1",
+  "policy_candidate_sha256": "c0a23e73f4f4ba5a47b8ef3da76eb32223835e9c32867952d34d4e25cdc19b26",
+  "business_signoff": false
+}

@@ -1,0 +1,121 @@
+{
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v13",
+  "parser_version": "medic-extraction-v3",
+  "full_candidate": {
+    "execution_build": {
+      "runtime_version": "medic-runtime-p3-v13",
+      "manifest_sha256": "55cd4390d6a37da9be8998f0ebdafd1139f5af8a1022994c5448a20f53af5e8d",
+      "environment": {
+        "python": "3.13.5",
+        "implementation": "CPython",
+        "platform": "win32",
+        "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+        "packages": {
+          "httpx": "0.28.1",
+          "httpcore": "1.0.9",
+          "h11": "0.16.0",
+          "anyio": "4.15.1",
+          "sniffio": "1.3.0",
+          "idna": "3.7",
+          "certifi": "2026.4.22",
+          "jsonschema": "4.23.0",
+          "attrs": "24.3.0",
+          "jsonschema-specifications": "2023.7.1",
+          "referencing": "0.30.2",
+          "rpds-py": "0.22.3",
+          "pydantic": "2.10.3",
+          "pydantic_core": "2.27.1",
+          "annotated-types": "0.6.0",
+          "typing_extensions": "4.16.0",
+          "openpyxl": "3.1.5",
+          "et_xmlfile": "1.1.0",
+          "psycopg": "3.2.9",
+          "psycopg-binary": "3.2.9",
+          "PyMuPDF": "1.28.2",
+          "pypdf": "6.11.0",
+          "defusedxml": "0.7.1",
+          "fastapi": "0.143.3",
+          "starlette": "1.8.0",
+          "uvicorn": "0.54.0",
+          "annotated-doc": "0.0.5",
+          "typing-inspection": "0.4.4",
+          "opentelemetry-api": "1.45.1"
+        }
+      }
+    },
+    "tests": 311,
+    "seconds": 517.613,
+    "postgresql_tests": 90,
+    "skipped": 0,
+    "log_sha256": "fcf832012879f95ad1b1d981ab52b1926e80a2e536f399d73d34e206741d6370",
+    "source_archive_sha256": "fca75aff750b1489fa184a145d225c2e9cd0f987f3563bbbe9afc3f461e768ad"
+  },
+  "final_build": {
+    "execution_build": {
+      "runtime_version": "medic-runtime-p3-v13",
+      "manifest_sha256": "24e5b90a59e1c9903890bf7a19d5e39bb8bc68b3f22b7acef9c5fe9dc09aaf0c",
+      "environment": {
+        "python": "3.13.5",
+        "implementation": "CPython",
+        "platform": "win32",
+        "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+        "packages": {
+          "httpx": "0.28.1",
+          "httpcore": "1.0.9",
+          "h11": "0.16.0",
+          "anyio": "4.15.1",
+          "sniffio": "1.3.0",
+          "idna": "3.7",
+          "certifi": "2026.4.22",
+          "jsonschema": "4.23.0",
+          "attrs": "24.3.0",
+          "jsonschema-specifications": "2023.7.1",
+          "referencing": "0.30.2",
+          "rpds-py": "0.22.3",
+          "pydantic": "2.10.3",
+          "pydantic_core": "2.27.1",
+          "annotated-types": "0.6.0",
+          "typing_extensions": "4.16.0",
+          "openpyxl": "3.1.5",
+          "et_xmlfile": "1.1.0",
+          "psycopg": "3.2.9",
+          "psycopg-binary": "3.2.9",
+          "PyMuPDF": "1.28.2",
+          "pypdf": "6.11.0",
+          "defusedxml": "0.7.1",
+          "fastapi": "0.143.3",
+          "starlette": "1.8.0",
+          "uvicorn": "0.54.0",
+          "annotated-doc": "0.0.5",
+          "typing-inspection": "0.4.4",
+          "opentelemetry-api": "1.45.1"
+        }
+      }
+    },
+    "tests": 50,
+    "seconds": 31.023,
+    "postgresql_tests": 21,
+    "skipped": 0,
+    "log_sha256": "1ae62b83c8f91c2d1b9ef4b6f06f98772eb7137f387c27a5f4686ede79299b24",
+    "changed_after_full_suite": [
+      "apps/web/app.js"
+    ],
+    "change": "Display human-readable PDF page/paragraph labels and explain mixed parser versions without rewriting old snapshots."
+  },
+  "focused": {
+    "tests": 26,
+    "seconds": 11.187,
+    "postgresql_tests": 0,
+    "skipped": 0,
+    "log_sha256": "af7a7f2947319c6ce8e32ffd3372a75f00ff8807774bb0b1e10582a8383597e5"
+  },
+  "new_test_methods": 9,
+  "model_calls": 0,
+  "new_assessments": 0,
+  "new_human_decisions": 0,
+  "tests_sha256": {
+    "medic\\tests\\test_ocr.py": "52204f90bed1046b57cd06181a95182bf07bab31ef55ea078b961e659094a63c",
+    "medic\\tests\\test_api.py": "ef6dae7233b18cf86d25f19f8e89250af2ae053f03ac52fab6ff5d48f1a0bc94"
+  }
+}

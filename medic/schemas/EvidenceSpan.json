@@ -1,0 +1,48 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "evidence_id": {
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "material_id": {
+      "title": "Material Id",
+      "type": "string"
+    },
+    "material_version": {
+      "title": "Material Version",
+      "type": "string"
+    },
+    "locator": {
+      "title": "Locator",
+      "type": "string"
+    },
+    "quote": {
+      "minLength": 1,
+      "title": "Quote",
+      "type": "string"
+    },
+    "span_hash": {
+      "title": "Span Hash",
+      "type": "string"
+    },
+    "quality_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "material_id",
+    "material_version",
+    "locator",
+    "quote",
+    "span_hash",
+    "quality_flags"
+  ],
+  "title": "EvidenceSpan",
+  "type": "object"
+}

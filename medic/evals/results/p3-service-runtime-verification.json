@@ -1,0 +1,165 @@
+{
+  "created_at": "2026-10-17T05:34:41.430506+00:00",
+  "status": "pass",
+  "run_id": "run-f7aabe00b502f884b00b717831eac17c",
+  "input_hash": "71a7fb77cfa90f5850b364ba9b5e444b8d69e645ff950a00a9d130584a01d40c",
+  "versions": {
+    "competency_model_version": "synthetic-rubric-v1",
+    "job_matrix_version": "synthetic-no-recommendations-v1",
+    "ai_policy_version": "synthetic-policy-v1",
+    "prompt_bundle_version": "medic-p2-roles-v5",
+    "parser_version": "medic-extraction-v2",
+    "runtime_version": "medic-runtime-p3-v5",
+    "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+    "provider_profile_version": "medic-deepseek-p0-20261017.1"
+  },
+  "checks": {
+    "synthetic_only": true,
+    "required_graph_completed": true,
+    "independent_blind_context": true,
+    "worker_protocol_and_prompt_provenance": true,
+    "live_role_provenance": true,
+    "distinct_role_threads": true,
+    "current_hard_gate": true,
+    "stored_gate_matches": true,
+    "ready_for_human_review": true,
+    "not_final_employee_decision": true,
+    "frozen_application_build_provenance": true,
+    "six_distinct_completed_roles": true,
+    "frozen_file_extraction_matches_assessed_materials": true
+  },
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "execution_mode": "live",
+    "publication_scope": "synthetic_preview",
+    "final_employee_decision": false
+  },
+  "required_task_count": 6,
+  "role_results": [
+    {
+      "role": "coordinator",
+      "material_id": "material-c8a639c9d6ac48eea1fad52cc750d225",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "84cd1cf82587bc81429dd47550e7aa305c625bfa7b87e9a4099a4d4f55e6371e",
+      "context_hash": "f65ccd1cdda6a39236483dc4baedb99ce21cdea22673949fa5199047698f599d",
+      "read_spans": 0
+    },
+    {
+      "role": "evaluator",
+      "material_id": "material-c8a639c9d6ac48eea1fad52cc750d225",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "08090d70a29297ea9e918a600c8f4586e6b78010b58ee51c59734a820d873d3e",
+      "context_hash": "daf2d78433d453d0f2242816f4fa822739491c4229f5656f2d6a8ecfd910735b",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger_scan",
+      "material_id": "material-c8a639c9d6ac48eea1fad52cc750d225",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "f21e07b7e1bee9db817d1f6d3f30ea18e9495c5d42a2c25a46dc9470179ab03d",
+      "context_hash": "a7839db9f210f92e8810ad7eee9ca5ab40133cc8d9e13a496ba10a1af15e0d00",
+      "read_spans": 4
+    },
+    {
+      "role": "challenger",
+      "material_id": "material-c8a639c9d6ac48eea1fad52cc750d225",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "7b39b6744ccf3341182fc942b3be9ba76d6af8c206561020eca352be5f957507",
+      "context_hash": "4f421d32e0773158e1845f247ca6c1cae67203fdd046952d206941118bf211f2",
+      "read_spans": 4
+    },
+    {
+      "role": "reevaluator",
+      "material_id": "material-c8a639c9d6ac48eea1fad52cc750d225",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "1bf2f667aca3ea18837fa0cef6fef8ae499396bd59336038dabb45956ebf88b0",
+      "context_hash": "8048837a0500dc232fa8b870f91b75d463ca5b05d13eafb0ecfad785ed4c6128",
+      "read_spans": 4
+    },
+    {
+      "role": "judge",
+      "material_id": "material-c8a639c9d6ac48eea1fad52cc750d225",
+      "competency_id": "M2",
+      "attempt": 1,
+      "status": "completed",
+      "result_hash": "d622cc78897951cd30fe83ab54cdab3524d6414d0e87bd02847cc8427662a026",
+      "context_hash": "c7f5d923b9180a5dd306ceefe6e401f78753da3c508baee189ae51baa101cb75",
+      "read_spans": 4
+    }
+  ],
+  "first_grade": "B",
+  "second_grade": "B",
+  "challenge_count": 0,
+  "responded_challenge_count": 0,
+  "judge_verdict": "pass",
+  "gateway_requests": 31,
+  "charged_tokens": 295630,
+  "run_total_requests": 31,
+  "run_charged_or_reserved_tokens": 295630,
+  "run_estimated_usage_requests": 0,
+  "run_unsettled_requests": 0,
+  "estimated_usage_requests": 0,
+  "private_snapshot_hash": "47f133973741e0cf3759b369277ab85cddc2ec7b710b63de8b06ffa0d63057af",
+  "quality_claim": "execution_and_boundary_verification_only_not_expert_accuracy",
+  "frozen_application_build_verified": true,
+  "execution_build": {
+    "environment": {
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "implementation": "CPython",
+      "packages": {
+        "PyMuPDF": "1.28.2",
+        "annotated-doc": "0.0.5",
+        "annotated-types": "0.6.0",
+        "anyio": "4.7.0",
+        "attrs": "24.3.0",
+        "certifi": "2026.4.22",
+        "defusedxml": "0.7.1",
+        "et_xmlfile": "1.1.0",
+        "fastapi": "0.143.3",
+        "h11": "0.16.0",
+        "httpcore": "1.0.9",
+        "httpx": "0.28.1",
+        "idna": "3.7",
+        "jsonschema": "4.23.0",
+        "jsonschema-specifications": "2023.7.1",
+        "openpyxl": "3.1.5",
+        "opentelemetry-api": "1.45.1",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "pypdf": "6.11.0",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "sniffio": "1.3.0",
+        "starlette": "1.8.0",
+        "typing-inspection": "0.4.4",
+        "typing_extensions": "4.16.0",
+        "uvicorn": "0.54.0"
+      },
+      "platform": "win32",
+      "python": "3.13.5"
+    },
+    "manifest_sha256": "e9024941566d5bbae6325f59f102723af53c0d7d0d018ab9800473602649b0bc",
+    "runtime_version": "medic-runtime-p3-v5"
+  },
+  "scope": "synthetic_docx_to_frozen_evidence_to_real_six_role_assessment",
+  "ingestion": {
+    "materials": 1,
+    "spans": 4,
+    "source_hashes": [
+      "715d2a01f67dff8b9c87e6b4e6c4bb88a12682904ac119aad5109b0f7bb9486e"
+    ]
+  }
+}

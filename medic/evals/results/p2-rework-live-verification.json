@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-17T02:04:51.223320+00:00",
+  "status": "pass",
+  "run_id": "run-5231dc30a4a84c9685b4c095efdfdc8d",
+  "scope": "real_rework_and_mailbox_protocol_on_seeded_baseline_not_full_live_assessment",
+  "initial_results_are_model_outputs": false,
+  "quality_claim": false,
+  "checks": {
+    "synthetic_seeded_baseline_explicit": true,
+    "unexecuted_initial_roles_still_fixture": true,
+    "four_real_third_round_roles_completed": true,
+    "four_distinct_real_threads": true,
+    "worker_protocol_and_prompt_verified": true,
+    "real_coordinator_selected_rework": true,
+    "real_challenger_answered_mailbox": true,
+    "old_blocking_dispute_explicitly_addressed": true,
+    "previous_results_archived": true,
+    "fixture_not_misrepresented_as_full_live_success": true,
+    "stored_gate_matches": true
+  },
+  "current_gate": {
+    "passed": false,
+    "failures": [
+      "result_integrity:synthetic-material-1:M2:challenger_scan",
+      "result_integrity:synthetic-material-1:M2:evaluator"
+    ],
+    "execution_mode": "live",
+    "publication_scope": "synthetic_preview",
+    "final_employee_decision": false
+  },
+  "third_round_grade": "B",
+  "third_round_judge": "pass",
+  "old_dispute_dispositions": [
+    "rejected"
+  ],
+  "mailbox_messages": 2,
+  "real_answer_count": 1,
+  "total_requests": 26,
+  "charged_or_reserved_tokens": 313643,
+  "private_snapshot_hash": "062797bf875cbbf7c882a1c0a5d4680c3bc4d6d04a547103a3526da06f2bb636"
+}

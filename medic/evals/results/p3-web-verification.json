@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-17T04:21:23.938548+00:00",
+  "status": "pass",
+  "runtime_version": "medic-runtime-p3-v4",
+  "runtime_manifest_sha256": "855078810b34a9d118776c08185c60a155b16fca68f369c4263cdb8f8287507d",
+  "scope": "synthetic_browser_fixture_not_model_execution",
+  "model_requests": 0,
+  "fixture_run_is_not_a_current_release_execution_proof": true,
+  "browser": "Codex in-app browser",
+  "automated_regression": "p3-web-contracts-verification.json",
+  "observed_browser_checks": [
+    "employee_upload_docx_and_exact_text_locator",
+    "literal_script_text_not_executed",
+    "reload_requires_new_login",
+    "employee_has_no_review_editor",
+    "manager_explicit_scope_and_review_permission",
+    "exact_ai_reference_highlight_and_human_citation",
+    "incomplete_review_blocks_finalization",
+    "unresolved_risk_blocks_finalization",
+    "null_grades_and_gaps_preserved",
+    "finalized_review_preserves_failed_original_ai_gate",
+    "finalized_review_has_no_editor",
+    "switch_employee_clears_prior_detail_and_evidence",
+    "director_only_sees_explicitly_granted_employee",
+    "desktop_and_390px_mobile_no_body_horizontal_overflow",
+    "mobile_table_scroll_is_local",
+    "final_reload_browser_error_log_empty"
+  ],
+  "database_checks": {
+    "human_status": "finalized",
+    "revision": 6,
+    "decision_history_rows": 4,
+    "ai_report_hash_unchanged": true,
+    "original_ai_gate_passed": false,
+    "final_employee_decision": false,
+    "null_human_grades_preserved": [
+      "E2",
+      "C1"
+    ],
+    "risk_resolved": "not_present"
+  },
+  "screenshots_sha256": {
+    "desktop-final.jpg": "107c0118c93f148f9f958f66ac2437cd6775d370f9c14b0ab9f264d69d40b5f8",
+    "director-final.jpg": "be212a3e1f61440aba07ed1ad17c93fbbbd65e06257bcf9b75921fd11447cb43",
+    "employee-evidence.jpg": "cf75d93e63193f81b17d687e5a8a135250e3494b54ab2870336795532274a89a",
+    "final-preview.jpg": "3b95ca2908833fd409d92390a51ea3dd2f4fc4623655cf33c562ba7bdf4941a2",
+    "mobile-final.jpg": "e231685158fda4116e085869416e9dbf0b7a731a34df2ace0bdb1c262cfa6948",
+    "result-preview.jpg": "8c890b7d7e4ab503f07e0138949b68f222ab689d6970be66ef041df5f75d481b"
+  },
+  "final_dom_sha256": "3f9d97d81263820734dc8b5fa4c9f22dd1c301de155d0ea8b08f8c6457a6a2a9",
+  "limitations": [
+    "browser report is explicitly seeded fixture; no model quality claim",
+    "real HTTP/model evidence remains frozen p3-v3",
+    "no customer signoff or production SSO",
+    "continuous worker dispatch and embedded source-page preview remain pending"
+  ]
+}

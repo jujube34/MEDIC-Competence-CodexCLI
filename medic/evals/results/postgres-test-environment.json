@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-10-17T01:20:24.885188+00:00",
+  "server_version": "17.11",
+  "binary_package": {
+    "source": "https://sbp.enterprisedb.com/getfile.jsp?fileid=1260616",
+    "bytes": 381531864,
+    "sha256": "80379b2c04d51c30225532e0ae04509899141e9957ed096fe749d7fd9df8f82f"
+  },
+  "test_only": true,
+  "system_service_installed": false,
+  "listen_scope": "loopback",
+  "driver": "psycopg[binary]==3.2.9",
+  "isolation": "separate_local_test_database",
+  "production_acceptance": false
+}

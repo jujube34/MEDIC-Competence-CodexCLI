@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-10-17T06:16:54.398349+00:00",
+  "status": "pass",
+  "tests": 11,
+  "real_postgresql_tests": 11,
+  "duration_seconds": 21.142,
+  "log_sha256": "584b657446232e9197c81c312c4a98c07abd25636b103b07f8f453ff70911bfb",
+  "release": {
+    "format": "medic-postgres-backup-v1",
+    "verified_runtime_version": "medic-runtime-p3-v5",
+    "files": {
+      "deploy/postgres_backup.py": "6270c4abe747e8d3b69d467b0984b2d648160fd5e5255e088c1b0f4492dcf066",
+      "deploy/backup.py": "b1c99382eb2390a15368db7b6ec4208306f5a350e7ce4f1a91caac7622ab170a",
+      "evals/postgres_backup_probe.py": "3c5b3661fd49e89ab9dc45807813c6b51f632a1aaef40ae8520ecc81820359f4",
+      "tests/test_postgres_backup.py": "7b09421ad9fbef6c46032da2c2901a066867db8d0e1e5946fc3a3d7e9696a552"
+    }
+  },
+  "native_tools": {
+    "pg_dump": {
+      "sha256": "eaa2d00935e0dd55a6ad7aa2f106d013dcb4e793b7e7d2c6df64bf5b60fbdcd7",
+      "version": "pg_dump (PostgreSQL) 17.11"
+    },
+    "pg_restore": {
+      "sha256": "b91271bd574183dadd17b7dc996dd793805de3eab676e7f9991a067360edf4ce",
+      "version": "pg_restore (PostgreSQL) 17.11"
+    }
+  },
+  "execution_manifest_sha256": "e9024941566d5bbae6325f59f102723af53c0d7d0d018ab9800473602649b0bc",
+  "model_requests": 0,
+  "report_cases_are_explicit_fixtures": true,
+  "production_recovery_objectives_verified": false
+}

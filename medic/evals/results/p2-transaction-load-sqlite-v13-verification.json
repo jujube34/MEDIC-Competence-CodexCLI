@@ -1,0 +1,208 @@
+{
+  "status": "pass",
+  "scope": "local_transaction_soak_not_production_service_or_model_throughput",
+  "backend": "sqlite",
+  "config": {
+    "duration_seconds": 300.0,
+    "arrival_interval_seconds": 2.0,
+    "lease_seconds": 3.0,
+    "workers": 4,
+    "max_arrival_lag_seconds": 5,
+    "drain_seconds": 90,
+    "limits": {
+      "requests": 3,
+      "total_tokens": 300,
+      "concurrency": 2,
+      "wall_seconds": 450
+    },
+    "synthetic": true,
+    "model_calls": 0,
+    "workload": "coordinator_lease_transactions_only",
+    "budget_units": "simulated_accounting_units_not_model_tokens",
+    "harness_sha256": "5762c615dca5c213349ecd0338c727164c16e92e3dad1618a1f8eac1ca3d15cf",
+    "source_sha256": "a492fc661f0e2d0ab877260d6c88262ccd14046985d6726ab4150572234e5ad3"
+  },
+  "execution_build": {
+    "runtime_version": "medic-runtime-p3-v13",
+    "manifest_sha256": "24e5b90a59e1c9903890bf7a19d5e39bb8bc68b3f22b7acef9c5fe9dc09aaf0c",
+    "environment": {
+      "python": "3.13.5",
+      "implementation": "CPython",
+      "platform": "win32",
+      "executable_sha256": "cec2fab4b3258900cc330346de8c664e57fa04227406920a6edb06f0efeeebb1",
+      "packages": {
+        "httpx": "0.28.1",
+        "httpcore": "1.0.9",
+        "h11": "0.16.0",
+        "anyio": "4.15.1",
+        "sniffio": "1.3.0",
+        "idna": "3.7",
+        "certifi": "2026.4.22",
+        "jsonschema": "4.23.0",
+        "attrs": "24.3.0",
+        "jsonschema-specifications": "2023.7.1",
+        "referencing": "0.30.2",
+        "rpds-py": "0.22.3",
+        "pydantic": "2.10.3",
+        "pydantic_core": "2.27.1",
+        "annotated-types": "0.6.0",
+        "typing_extensions": "4.16.0",
+        "openpyxl": "3.1.5",
+        "et_xmlfile": "1.1.0",
+        "psycopg": "3.2.9",
+        "psycopg-binary": "3.2.9",
+        "PyMuPDF": "1.28.2",
+        "pypdf": "6.11.0",
+        "defusedxml": "0.7.1",
+        "fastapi": "0.143.3",
+        "starlette": "1.8.0",
+        "uvicorn": "0.54.0",
+        "annotated-doc": "0.0.5",
+        "typing-inspection": "0.4.4",
+        "opentelemetry-api": "1.45.1"
+      }
+    }
+  },
+  "observations_sha256": "e9297180dfbc11754d28c6d5473279aaf4b555e17bfc60e76bd784c09e80ac59",
+  "checks": {
+    "configured_arrivals_completed": true,
+    "sustained_arrival_window": true,
+    "arrival_lag_within_declared_limit": true,
+    "all_runs_cancelled_after_three_attempts": true,
+    "exactly_three_unique_leases_per_run": true,
+    "two_natural_recoveries_per_run": true,
+    "no_early_recovery": true,
+    "attempt_budget_denial_before_cancel": true,
+    "immutable_input_build_limits_and_deadline": true,
+    "idempotent_single_run_and_outbox": true,
+    "no_results_reports_or_execution_identity": true,
+    "no_stale_callback_damage": true,
+    "all_callbacks_including_killed_worker_fenced": true,
+    "budget_preserved_including_killed_reservation": true,
+    "fault_happened_during_load_with_live_lease": true,
+    "actual_process_death_confirmed": true,
+    "fault_reservation_matches_claim_and_ledger": true,
+    "replacement_claimed_work": true,
+    "all_worker_generations_exercised": true,
+    "no_unexpected_worker_or_operation_failures": true,
+    "read_polling_and_cross_run_fencing_observed": true,
+    "build_unchanged_during_probe": true,
+    "harness_unchanged_during_probe": true
+  },
+  "run_count": 150,
+  "lease_count": 450,
+  "simulated_reserved_units": 45000,
+  "unsettled_simulated_reservations": 1,
+  "actual_model_calls": 0,
+  "reports_published": 0,
+  "operation_latency": {
+    "idempotent_create": {
+      "count": 1792,
+      "p50_ms": 125.522,
+      "p95_ms": 243.918,
+      "max_ms": 489.992
+    },
+    "claim": {
+      "count": 1792,
+      "p50_ms": 0.74,
+      "p95_ms": 22.886,
+      "max_ms": 325.264
+    },
+    "reserve": {
+      "count": 450,
+      "p50_ms": 20.453,
+      "p95_ms": 21.516,
+      "max_ms": 162.491
+    },
+    "settle": {
+      "count": 449,
+      "p50_ms": 0.931,
+      "p95_ms": 1.083,
+      "max_ms": 145.433
+    },
+    "settle_replay": {
+      "count": 449,
+      "p50_ms": 0.467,
+      "p95_ms": 0.576,
+      "max_ms": 64.024
+    },
+    "cross_run_authorize": {
+      "count": 448,
+      "p50_ms": 19.792,
+      "p95_ms": 81.219,
+      "max_ms": 165.329
+    },
+    "stale_authorize": {
+      "count": 450,
+      "p50_ms": 20.123,
+      "p95_ms": 40.971,
+      "max_ms": 183.958
+    },
+    "stale_complete": {
+      "count": 450,
+      "p50_ms": 19.67,
+      "p95_ms": 20.665,
+      "max_ms": 57.869
+    },
+    "stale_fail": {
+      "count": 450,
+      "p50_ms": 0.501,
+      "p95_ms": 0.977,
+      "max_ms": 80.562
+    },
+    "queue_pending": {
+      "count": 2928,
+      "p50_ms": 0.907,
+      "p95_ms": 1.242,
+      "max_ms": 33.076
+    },
+    "snapshot": {
+      "count": 2927,
+      "p50_ms": 1.362,
+      "p95_ms": 1.68,
+      "max_ms": 19.494
+    },
+    "budget_snapshot": {
+      "count": 2927,
+      "p50_ms": 0.699,
+      "p95_ms": 0.858,
+      "max_ms": 17.305
+    }
+  },
+  "limitations": [
+    "Only Coordinator lease transactions; no full task DAG or role execution.",
+    "Bounded local duration and arrival rate; no customer capacity/SLO acceptance.",
+    "Queue discovery polled; production serve() and gateway not executed.",
+    "One worker job killed; database and machine remain available."
+  ],
+  "independent_database_audit": {
+    "status": "pass",
+    "backend": "sqlite",
+    "runs": 150,
+    "leases": 450,
+    "current_database_matches_observed_inputs_budgets_builds_and_deadlines": true,
+    "all_tasks_cancelled_after_three_attempts": true,
+    "no_results_or_reports": true,
+    "unsettled_simulated_reservations": 1,
+    "observations_sha256": "e9297180dfbc11754d28c6d5473279aaf4b555e17bfc60e76bd784c09e80ac59"
+  },
+  "independent_audit_source_sha256": "11ad2a13aa09269501b007bd3209adca8c5121687fc418752f413a781fd84188",
+  "observed_claim_races_lost": 1342,
+  "fenced_old_callbacks": 450,
+  "fault_offset_seconds": 100.152,
+  "max_arrival_lag_seconds": 0.051,
+  "harness_revision_note": "300-second run used the archived harness before PostgreSQL-only URI fix. Final harness passed a fresh 12-second SQLite smoke with all 23 checks.",
+  "final_harness_smoke": {
+    "status": "pass",
+    "harness_sha256": "1a8147928b4891006fab9855c37ef7f9f1ba664567e5f328ac90b78917acdea9",
+    "checks": 23
+  },
+  "preview_tables_unchanged": [
+    "runs",
+    "tasks",
+    "model_requests",
+    "run_limits",
+    "run_builds",
+    "app_assessments"
+  ]
+}

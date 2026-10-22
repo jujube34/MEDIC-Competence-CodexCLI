@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "checked_on": "2026-10-23",
+  "scope": "offline comparison accounting with synthetic observations only",
+  "tests": 20,
+  "test_skips": 0,
+  "test_log_sha256": "0a2b3b7881aa0d28c7c2cf1341713ab5e43e4d7b365d83fcac45b1e27d2bd757",
+  "source_sha256": {
+    "evals/comparison.py": "2a891f1e24f66d6cc872eef2301baff89c07f3587397b15d05f0706fa3e109e5",
+    "evals/metrics.py": "506a65611679181dc15c0d208d8c0d3a0e32cfff77dac4cf736cc58e5c9302f6",
+    "tests/test_comparison.py": "f4116486583797ce050e5354a8aa84a1733461bf9ddc6dec2b26686bb48bae2b",
+    "tests/test_metrics.py": "bc6030f3901300fa4ccaf5d0fbbdd35097a5f3cef530461e6664cd7c782a8a0f"
+  },
+  "experiment_sha256": "fb39325a77b3af7b345878b68cb8c2fd69d6d0dbecbb4b5611fc26c56dc3154c",
+  "cli_checks": {
+    "scheduled_18_observed_17": true,
+    "single_errors_hand_calculated": true,
+    "single_run_cost_not_tripled": true,
+    "linear_cancelled_and_overbudget_preserved": true,
+    "linear_policy_error_and_quality_denominator": true,
+    "multi_missing_failed_abstention_separate": true,
+    "multi_coverage_not_hidden_by_perfect_paired_accuracy": true,
+    "multi_failed_cost_included": true,
+    "missing_review_time_not_zero": true,
+    "paired_error_denominators": true,
+    "all_job_repeat_dimension_groups_present": true,
+    "no_quality_acceptance": true
+  },
+  "report_sha256": "161164218f4133f9ec6be3d7740e918a3aaa1a2d5f09d8a7f422dafb635f23c2",
+  "observation_sha256": "66f207663a9074b1e5bd0d0ffd36055e8e2a2be9b0e64df4fb2c9f0c5ebc63e4",
+  "analysis_archive_sha256": "ca74cfdeb582dfbc2da9ab318ca0c9f6b36c60ff71f3a6578a2fd8125f68fb5d",
+  "oracle_sha256": "708b8edad3dc912760afcddf47bc8a115c0f9f9f6c429b117c95699de1718b54",
+  "model_calls": 0,
+  "expert_quality_acceptance": "not_assessed",
+  "application_build_unchanged": "4ebd7ef77892f02716f83b6962616f606fba4bcb8a3ee9cbdaab4cfeed9175ff",
+  "local_api_http_status": 200,
+  "limitations": [
+    "No actual A/B/C execution adapters in this tool",
+    "No expert labels or signed quality thresholds",
+    "No authenticated provider traces or independent annotation verification",
+    "No production quality or statistical significance claim"
+  ]
+}
