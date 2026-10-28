@@ -64,7 +64,7 @@ def parse_file(path, *, kind=None, limits=None):
         raise ParseError('unsupported_format')
     if path.stat().st_size > limits.input_bytes:
         raise ParseError('input_size_exceeded')
-    identity = build.verify(build.VERSION)
+    identity = build.verify_once(build.VERSION)
     environment = {k:v for k,v in os.environ.items() if k.upper() in
                    ('PATH','SYSTEMROOT','WINDIR','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PYTHONNOUSERSITE','MEDIC_OCR_DATA_ROOT')}
     environment.update(PYTHONUTF8='1', PYTHONIOENCODING='utf-8')
@@ -72,17 +72,22 @@ def parse_file(path, *, kind=None, limits=None):
         output = Path(temp)/'extraction.json'
         process = subprocess.Popen([sys.executable, '-m', 'medic.ingestion.worker'], cwd=ROOT, env=environment,
             stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            start_new_session=os.name != 'nt',
             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         job = None
         try:
             if os.name == 'nt':
                 job = WindowsJob(process, limits.memory_bytes)
+            else:
+                from medic.ingestion.posix import ProcessGroupGuard
+                job = ProcessGroupGuard(process, limits.memory_bytes)
             request = {'path': str(path), 'kind': kind, 'limits': limits.model_dump(), 'output': str(output), 'build': identity,
                        'job_name': job.name if job else None}
             try:
                 process.communicate(json.dumps(request).encode('utf-8'), timeout=limits.seconds)
             except subprocess.TimeoutExpired:
                 raise ParseError('parser_timeout') from None
+            if os.name != 'nt': job.check()
             if process.returncode != 0 or not output.exists():
                 raise ParseError('parser_process_failed')
             if output.stat().st_size > 32*1024*1024:

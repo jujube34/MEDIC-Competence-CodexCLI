@@ -34,10 +34,9 @@ def main():
         limits=ParseLimits.model_validate(request['limits'])
         if os.name=='nt': join_job(request['job_name'])
         else:
-            import resource
-            resource.setrlimit(resource.RLIMIT_AS,(limits.memory_bytes,limits.memory_bytes))
-            resource.setrlimit(resource.RLIMIT_CPU,(limits.seconds,limits.seconds+1))
-        identity=build.verify(build.VERSION)
+            from medic.ingestion.posix import child_limits
+            child_limits(limits)
+        identity=build.verify_once(build.VERSION)
         if identity!=request['build']: raise ParseError('preview_build_mismatch')
         from medic.ingestion.preview import render_pdf
         with Path(request['path']).open('rb') as source:data=source.read(limits.input_bytes+1)

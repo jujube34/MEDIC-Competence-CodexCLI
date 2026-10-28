@@ -213,7 +213,7 @@ class Gateway:
                             raise ProbeError("total_token_budget_exhausted")
                         gateway.reserved_tokens += estimate
                         reserved = estimate
-                    with httpx.Client(trust_env=False, follow_redirects=False, timeout=httpx.Timeout(45, connect=15),
+                    with httpx.Client(trust_env=False, follow_redirects=False, timeout=httpx.Timeout(request_timeout, connect=min(15, request_timeout)),
                                       transport=gateway.transport) as client:
                         with client.stream("POST", upstream.base_url + "/responses",
                                            headers={"Authorization": "Bearer " + upstream.token}, json=body) as res:
@@ -232,6 +232,10 @@ class Gateway:
                                 self.close_connection = True
                                 def watch_disconnect():
                                     while not stop_monitor.wait(0.05):
+                                        if time.monotonic() - started >= request_timeout:
+                                            record["error"] = "gateway_deadline"
+                                            res.close()
+                                            return
                                         try:
                                             readable, _, _ = select.select([self.connection], [], [], 0)
                                             if readable and self.connection.recv(1, socket.MSG_PEEK) == b"":
@@ -267,7 +271,7 @@ class Gateway:
                                         self.wfile.write(data_bytes)
                                     self.wfile.flush()
                                 if record["terminal"] == "not_observed":
-                                    raise ProbeError("upstream_stream_incomplete")
+                                    raise ProbeError(record.get("error", "upstream_stream_incomplete"))
                             else:
                                 obj = mapper.response(res.json())
                                 terminal_data = json.dumps(obj).encode()
@@ -294,7 +298,7 @@ class Gateway:
                 except Exception as exc:
                     code = str(exc) if isinstance(exc, ProbeError) else type(exc).__name__
                     if not record.get("client_disconnected"):
-                        record["error"] = code
+                        record.setdefault("error", code)
                     if not headers_sent:
                         self.error(400 if code != 'gateway_accounting_incomplete' and isinstance(exc, (ProbeError, ValueError, KeyError)) else 502, code)
                     else:

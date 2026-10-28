@@ -6,10 +6,13 @@ from medic.domain.graph import scoped_spans
 from medic.domain.disputes import pending_topics
 from medic.domain.validation import validate_refs
 from medic.p0.common import digest
+from medic.runtime import lite
 
 
 def enabled(source):
-    return source.versions.prompt_bundle_version in ('medic-p2-roles-v5','medic-p2-roles-v6')
+    if lite.enabled():
+        return False
+    return source.versions.prompt_bundle_version in ('medic-p2-roles-v5','medic-p2-roles-v6','medic-p2-roles-v7','medic-p2-roles-v8')
 
 
 def messages(db, run, material=None, code=None):

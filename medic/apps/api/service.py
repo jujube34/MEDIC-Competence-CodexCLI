@@ -121,7 +121,7 @@ class Service:
                 source=AssessmentInput.model_validate({'tenant_id':p.tenant,'employee_ref':request.employee_ref,'period':request.period,
                     'job_key':employee['job_key'],'synthetic':True,'versions':{
                         **{k:getattr(catalog,k) for k in ('competency_model_version','job_matrix_version','ai_policy_version')},
-                        'prompt_bundle_version':'medic-p2-roles-v5','parser_version':next(iter(parsers)),
+                        'prompt_bundle_version':'medic-p2-roles-v8','parser_version':next(iter(parsers)),
                         'runtime_version':build.VERSION,'codex_revision':baseline['codex_revision'],
                         'provider_profile_version':provider['provider_profile_version']},
                     'goal':{'goal_id':'application-preassessment','version':'application-goal-v1','competency_scope':codes,
@@ -132,7 +132,7 @@ class Service:
                 # Verify admission before committing an intent; recommendations stay outside agent input.
                 from medic.domain.validation import verify_input
                 verify_input(AssessmentInput.model_validate(source))
-                build.verify(build.VERSION)
+                build.verify_once(build.VERSION)
                 ident='assessment-'+uuid.uuid4().hex
                 db.execute('INSERT INTO app_assessments VALUES(?,?,?,?,?,?,?,NULL,1,?,NULL,?)',
                     (ident,p.tenant,request.employee_ref,request.period,request.registry_id,json.dumps(source,ensure_ascii=False),
@@ -146,7 +146,14 @@ class Service:
     def _ensure_run(self, p, row):
         if row['run_id']: return row['run_id']
         # A crash after runtime creation is recovered with the same run and budget.
-        run=self.runtime.create_run(json.loads(row['source_json']),creation_key=row['assessment_id'])
+        source=json.loads(row['source_json'])
+        from medic.domain.graph import required_graph
+        nodes=len(required_graph(AssessmentInput.model_validate(source)))
+        # A full 17-item graph cannot fit the historic 80-request smoke budget.
+        # Freeze the full-scope technical budget at creation, never on resume.
+        limits=({'requests':2000,'total_tokens':18000000,'concurrency':3,'wall_seconds':7200}
+                if nodes>10 else None)
+        run=self.runtime.create_run(source,creation_key=row['assessment_id'],limits=limits)
         with self.db.transaction(p.tenant) as db:
             current=self._assessment(db,p,row['assessment_id'])
             if current['run_id'] and current['run_id']!=run: raise AppError('run_link_conflict',409)
@@ -209,7 +216,7 @@ class Service:
     def assessments(self, p):
         with self.db.transaction(p.tenant) as db:
             user=self.db.user(db,p)
-            return [dict(r) for r in db.execute('SELECT a.assessment_id,a.employee_ref,a.period,a.revision,a.human_status,a.run_id FROM app_assessments a WHERE a.tenant=? AND (a.employee_ref=? OR EXISTS (SELECT 1 FROM app_grants g WHERE g.tenant=a.tenant AND g.employee_ref=a.employee_ref AND g.user_id=?)) ORDER BY a.created',(p.tenant,user['employee_ref'],p.user_id))]
+            return [dict(r) for r in db.execute('SELECT a.assessment_id,a.employee_ref,a.period,a.revision,a.human_status,a.run_id,COALESCE(r.state,\'creation_pending\') AS runtime_state FROM app_assessments a LEFT JOIN runs r ON r.run_id=a.run_id WHERE a.tenant=? AND (a.employee_ref=? OR EXISTS (SELECT 1 FROM app_grants g WHERE g.tenant=a.tenant AND g.employee_ref=a.employee_ref AND g.user_id=?)) ORDER BY a.created',(p.tenant,user['employee_ref'],p.user_id))]
 
     def review(self, p, ident, request, key):
         self.key(key); body={'operation':'review','assessment':ident,'request':request.model_dump()}

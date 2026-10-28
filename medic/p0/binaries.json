@@ -1,0 +1,16 @@
+{
+  "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
+  "binaries": [
+    {
+      "platform": "darwin",
+      "sha256": "779170089a76358c27be942da16531302fd75ed6562d9bd926f451333e8bb730",
+      "version": "codex-cli 0.0.0",
+      "generated_contracts_verified": true,
+      "source_matches_revision": true,
+      "provenance": "built_from_pinned_source",
+      "toolchain": "rustc 1.94.1 (e408947bf 2026-03-25)",
+      "lifecycle_probe_sha256": "fa2c808121011b12745d550652ec2daf836ca15fb0bb4121be4688c41d53488a",
+      "schema_probe_sha256": "60be3b9c1d407e4eefc45d02feccdfeab972b3ca3d5d5694a5395de1f0d3317f"
+    }
+  ]
+}

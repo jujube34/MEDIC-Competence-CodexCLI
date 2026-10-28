@@ -1,0 +1,21 @@
+{
+  "runtime_version": "medic-runtime-p4-v17.3",
+  "manifest_sha256": "a6c553a73afdd7721cc13809d46008b9f124e90608adb008b0258bc687a926a1",
+  "tests": 591,
+  "passed": 585,
+  "failed": 0,
+  "skipped": 6,
+  "postgres_tests": 148,
+  "postgres_failed": 0,
+  "postgres_skipped": 0,
+  "skips": [
+    "test_windows_process_memory_limit_is_enforced (test_ingestion.IsolatedParser.test_windows_process_memory_limit_is_enforced) ... skipped 'Windows Job Object memory contract'",
+    "test_real_child_rejects_external_reference_before_engine_start (test_office_preview.OfficeProcess.test_real_child_rejects_external_reference_before_engine_start) ... skipped 'Windows converter harness'",
+    "test_real_conversion_all_three_formats_preserves_original_and_extraction (test_office_preview.OfficeProcess.test_real_conversion_all_three_formats_preserves_original_and_extraction) ... skipped 'Windows converter harness'",
+    "test_timeout_closes_whole_converter_job (test_office_preview.OfficeProcess.test_timeout_closes_whole_converter_job) ... skipped 'Windows converter harness'",
+    "test_child_never_executes_without_parent_start (test_service.ProcessOwnership.test_child_never_executes_without_parent_start) ... skipped 'Windows process ownership'",
+    "test_job_close_kills_real_interpreter_and_descendant (test_service.ProcessOwnership.test_job_close_kills_real_interpreter_and_descendant) ... skipped 'Windows process ownership'"
+  ],
+  "log_sha256": "3fb1104eb8c475b53be7ea1d1e7c078ff09c502250da997d560f8d08a9ca6d5d",
+  "real_model_validation": "tracked_separately"
+}

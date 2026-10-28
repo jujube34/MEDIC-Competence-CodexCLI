@@ -60,6 +60,7 @@ def main():
     elif args.command == "schema":
         from .baseline import generate
         report = generate(args.binary, args.generated)
+        report['status'] = 'pass' if report['source_matches_revision'] and report['generated_schema_matches'] else 'fail'
         save(args.out, report)
     elif args.command == "baseline":
         from .baseline import inspect

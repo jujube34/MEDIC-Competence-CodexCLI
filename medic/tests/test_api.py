@@ -55,6 +55,14 @@ class ApplicationContracts(unittest.TestCase):
     def auth(token, key=None):
         return {'Authorization':'Bearer '+token,**({'Idempotency-Key':key} if key else {})}
 
+    def test_list_preserves_execution_state_without_exposing_other_employee(self):
+        assessment = self.create()
+        self.service.runtime.cancel(assessment['run_id'])
+        rows = self.client.get('/assessments', headers=self.auth(self.employee)).json()
+        self.assertEqual(rows[0]['runtime_state'], 'cancelled')
+        self.assertEqual(rows[0]['human_status'], 'pending')
+        self.assertEqual(self.client.get('/assessments', headers=self.auth(self.other)).json(), [])
+
     def upload(self, *, data=None, filename='synthetic.docx',period='Q4',token=None,employee='E1'):
         return self.client.post('/employees/'+employee+'/materials',params={'filename':filename,'period':period},
                                 content=word('Synthetic exact evidence for software tests only.') if data is None else data,

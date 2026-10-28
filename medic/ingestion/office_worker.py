@@ -15,7 +15,7 @@ def main():
     request=json.loads(sys.stdin.buffer.read(16384));output=Path(request['output'])
     try:
         join_job(request['job_name'])
-        identity=build.verify(build.VERSION)
+        identity=build.verify_once(build.VERSION)
         if identity!=request['build']: raise ParseError('office_build_mismatch')
         from medic.ingestion.office import verify_engine,font_identity,MAX_PDF_BYTES,OFFICE_VERSION
         from medic.ingestion.office_preflight import check_office

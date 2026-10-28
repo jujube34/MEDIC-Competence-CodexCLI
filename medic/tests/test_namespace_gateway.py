@@ -84,6 +84,26 @@ class NamespaceContracts(unittest.TestCase):
         self.assertTrue(gateway.trace[0]["client_disconnected"])
         self.assertTrue(gateway.trace[0]["finished"])
 
+    def test_silent_stream_deadline_closes_upstream_without_success(self):
+        closed = threading.Event()
+        class SilentStream(httpx.SyncByteStream):
+            def __iter__(self):
+                yield b'event: response.created\ndata: {"type":"response.created"}\n\n'
+                closed.wait(1)
+            def close(self):
+                closed.set()
+        with Gateway(Config("https://example.invalid", "x"), httpx.MockTransport(
+                lambda request: httpx.Response(200, headers={"content-type":"text/event-stream"}, stream=SilentStream())),
+                request_timeout=0.1) as gateway:
+            with httpx.Client(trust_env=False, timeout=3) as client:
+                response = client.post(gateway.config.base_url+"/responses", json={**self.body(),"stream":True},
+                                       headers={"Authorization":"Bearer "+gateway.token})
+        self.assertTrue(closed.is_set())
+        self.assertEqual(gateway.trace[0].get("error"), "gateway_deadline")
+        self.assertLess(gateway.trace[0]["elapsed_seconds"], 0.8)
+        self.assertNotIn('response.completed', response.text)
+        self.assertEqual(gateway.trace[0]["usage_source"], "conservative_estimate")
+
     def test_token_budget_blocks_before_upstream_and_reservations_are_released(self):
         seen = []
         def upstream(request):

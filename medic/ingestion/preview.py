@@ -94,7 +94,7 @@ def render_file(path, *, page_number, width, source_sha256, highlight=None, limi
     limits=ParseLimits.model_validate(limits or {})
     path=Path(path).resolve()
     if path.stat().st_size>limits.input_bytes: raise ParseError('input_size_exceeded')
-    identity=build.verify(build.VERSION)
+    identity=build.verify_once(build.VERSION)
     environment={k:v for k,v in os.environ.items() if k.upper() in
                  ('PATH','SYSTEMROOT','WINDIR','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PYTHONNOUSERSITE')}
     environment.update(PYTHONUTF8='1',PYTHONIOENCODING='utf-8')
@@ -102,15 +102,20 @@ def render_file(path, *, page_number, width, source_sha256, highlight=None, limi
         output=Path(temp)
         process=subprocess.Popen([sys.executable,'-m','medic.ingestion.preview_worker'],cwd=ROOT,env=environment,
             stdin=subprocess.PIPE,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
+            start_new_session=os.name!='nt',
             creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         job=None
         try:
             if os.name=='nt': job=WindowsJob(process,limits.memory_bytes)
+            else:
+                from medic.ingestion.posix import ProcessGroupGuard
+                job=ProcessGroupGuard(process,limits.memory_bytes)
             request={'path':str(path),'output':str(output),'build':identity,'limits':limits.model_dump(),
                      'job_name':job.name if job else None,'page_number':page_number,'width':width,
                      'source_sha256':source_sha256,'highlight':highlight}
             try: process.communicate(json.dumps(request).encode(),timeout=limits.seconds)
             except subprocess.TimeoutExpired: raise ParseError('preview_timeout') from None
+            if os.name!='nt': job.check()
             result_path=output/'result.json';image_path=output/'page.png'
             if process.returncode!=0 or not result_path.is_file(): raise ParseError('preview_process_failed')
             if result_path.stat().st_size>16384: raise ParseError('preview_output_limit_exceeded')

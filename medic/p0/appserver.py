@@ -40,6 +40,7 @@ def isolated_config(config, work):
     quote = json.dumps
     text = f'''model = {quote(config.model)}
 model_provider = "medic_p0"
+model_reasoning_effort = "low"
 approval_policy = "never"
 sandbox_mode = "read-only"
 web_search = "disabled"
@@ -54,7 +55,7 @@ requires_openai_auth = false
 supports_websockets = false
 request_max_retries = 0
 stream_max_retries = 0
-stream_idle_timeout_ms = 45000
+stream_idle_timeout_ms = 240000
 
 [analytics]
 enabled = false

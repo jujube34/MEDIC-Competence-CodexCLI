@@ -4,6 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 import subprocess
+import os
 from unittest.mock import patch
 
 from medic.evals.comparison import digest,freeze,compare
@@ -136,20 +137,25 @@ class ComparisonRuntime(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'not_created_for_comparison_slot'): collect(folder,root=self.root)
 
     def test_real_codex_initializes_in_generated_worker_workspace(self):
-        from medic.p0.appserver import isolated_config
+        from medic.p0.appserver import isolated_config, Client
         from medic.p0.provider import Config
-        binary=build.ROOT.parent/'codex-rs/target/debug/codex.exe'
+        binary=build.ROOT.parent/'codex-rs/target/debug'/('codex.exe' if os.name=='nt' else 'codex')
         if not binary.is_file(): self.skipTest('local verified Codex executable required')
         startup_root=tempfile.TemporaryDirectory(dir=build.ROOT/'artifacts',prefix='cmp-check-')
         self.addCleanup(startup_root.cleanup)
         folder=workspace(self.experiment,'synthetic-runtime',1,Path(startup_root.name))/'workers'/('task-'+'a'*32)/'1'
         cwd,env,_=isolated_config(Config('http://127.0.0.1:1/v1','synthetic-not-a-secret'),folder)
-        request={'id':1,'method':'initialize','params':{'clientInfo':{'name':'medic_comparison_probe','version':'1'},'capabilities':{'experimentalApi':False}}}
-        result=subprocess.run([str(binary),'app-server','--listen','stdio://'],input=json.dumps(request)+'\n',
-            cwd=cwd,env=env,capture_output=True,text=True,encoding='utf-8',timeout=15)
-        self.assertEqual(result.returncode,0,'app-server must initialize in the generated worker directory')
-        replies=[json.loads(line) for line in result.stdout.splitlines()]
-        self.assertTrue(any(r.get('id')==1 and 'result' in r for r in replies))
+        # Wait for the schema-validated reply before closing stdin. Sending EOF
+        # with the first request races async dispatch on the native POSIX binary.
+        client=Client(binary,cwd,env)
+        try:
+            client.initialize()
+            self.assertIn({'direction':'client','method':'initialize'},client.trace)
+            self.assertIsNone(client.process.poll())
+        finally:
+            client.close()
+            client.process.stdout.close()
+            client.process.stderr.close()
 
 
 if __name__=='__main__': unittest.main()

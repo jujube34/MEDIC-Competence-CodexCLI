@@ -8,9 +8,9 @@
     "competency_model_version": "synthetic-rubric-v1",
     "job_matrix_version": "synthetic-no-recommendations-v1",
     "ai_policy_version": "synthetic-policy-v1",
-    "prompt_bundle_version": "medic-p2-roles-v5",
+    "prompt_bundle_version": "medic-p2-roles-v8",
     "parser_version": "synthetic-text-v1",
-    "runtime_version": "medic-runtime-p4-v16",
+    "runtime_version": "medic-runtime-p4-v17.4",
     "codex_revision": "221e4e7c05386d06aa7b91da2a9b04f7f2bd921f",
     "provider_profile_version": "medic-deepseek-p0-20261017.1"
   },

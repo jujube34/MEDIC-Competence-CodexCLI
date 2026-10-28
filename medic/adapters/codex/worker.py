@@ -36,18 +36,36 @@ def parse_receipt(text):
 
 def wait_for_task(client, store, binding, thread, turn, timeout=240):
     deadline = time.monotonic() + timeout
+    grace_used = False
     while True:
         # Poll the authoritative lease even during a silent or long model request.
         with store.read(binding['run_id']) as db:
-            store.authorize(db, binding)
+            task, _ = store.authorize(db, binding)
         matches = [e["params"]["turn"] for e in client.events if e["method"] == "turn/completed"
                    and e["params"]["threadId"] == thread and e["params"]["turn"]["id"] == turn]
         if matches:
             if matches[0]["status"] != "completed":
                 raise ProbeError("turn_status_" + matches[0]["status"])
             return
-        if time.monotonic() >= deadline:
-            raise ProbeError("turn_timeout")
+        now = time.monotonic()
+        if now >= deadline:
+            # A valid result is not completion. Wait only for the SAME turn's
+            # verified final receipt, within the unchanged task lease/budget.
+            submitted = False
+            if not grace_used and task['status'] == 'submitted':
+                with store.read(binding['run_id']) as db:
+                    task, _ = store.authorize(db, binding)
+                    result = db.execute('SELECT result_hash FROM results WHERE task_id=? AND lease_epoch=?',
+                                        (binding['task_id'], binding['lease_epoch'])).fetchone()
+                    submitted = task['status'] == 'submitted' and result and result['result_hash'] == task['result_hash']
+            if submitted:
+                remaining = task['lease_until'] - time.time()
+                deadline = min(deadline + 30, now + remaining)
+                grace_used = True
+                if deadline <= now:
+                    raise ProbeError('turn_timeout')
+            else:
+                raise ProbeError("turn_timeout")
         try:
             client.pump(min(deadline, time.monotonic() + 0.5))
         except ProbeError as exc:
@@ -60,9 +78,8 @@ class CodexWorker:
         self.binary, self.provider, self.store = str(Path(binary).resolve()), provider, store
         self.work_root = Path(work_root).resolve()
         self.prompt_bundles = load_bundles()
-        lock = json.loads((ROOT / "medic/p0/results/baseline.lock.json").read_text(encoding="utf-8"))
-        if digest(Path(self.binary).read_bytes()) != lock["binary"]["sha256"]:
-            raise ValueError("codex_binary_not_p0_verified")
+        from medic.p0.binaries import verify_binary
+        verify_binary(self.binary)
 
     def run(self, task_id, binding=None):
         binding = binding or self.store.lease(task_id)
@@ -121,7 +138,7 @@ PYTHONUTF8 = "1"
                 with self.store.read(binding['run_id']) as db:
                     leased, _ = self.store.authorize(db, binding)
                     remaining = max(0, leased['lease_until'] - time.time())
-                wait_for_task(client, self.store, binding, thread, turn, timeout=min(240, remaining))
+                wait_for_task(client, self.store, binding, thread, turn, timeout=min(420, remaining))
                 try:
                     receipt = parse_receipt(client.final_text(thread, turn))
                     self.store.complete(binding, receipt, thread, turn)

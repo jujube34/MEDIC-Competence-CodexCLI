@@ -1,0 +1,50 @@
+{
+  "runtime_version": "medic-runtime-p4-v17.1",
+  "status": "not_passed",
+  "reason": "Full scope canceled after isolated C1 probe exposed 150 second gateway deadline. Original attempts preserved.",
+  "full_execution_passed": false,
+  "quality_claim": false,
+  "runs": [
+    {
+      "run_id": "run-ce25fca5fa094313994614fd1395650e",
+      "state": "failed",
+      "scope": 1,
+      "material_count": 1,
+      "task_states": {
+        "completed": 2,
+        "failed": 1,
+        "queued": 3
+      },
+      "report_published": false,
+      "failure_codes": [
+        "turn_status_failed"
+      ],
+      "request_count": 13,
+      "charged_or_reserved_tokens": 132159,
+      "unsettled_requests": 0,
+      "actual_total_tokens": null,
+      "gateway_errors": {
+        "gateway_deadline": 1
+      },
+      "run_snapshot_sha256": "a795533688538f2cd6b72efd77963358354f1252a724d65e5f830af4b7be3597"
+    },
+    {
+      "run_id": "run-fe8e7f017d463928fb4a16841b3521aa",
+      "state": "cancelled",
+      "scope": 17,
+      "material_count": 2,
+      "task_states": {
+        "completed": 19,
+        "cancelled": 207
+      },
+      "report_published": false,
+      "failure_codes": [],
+      "request_count": 105,
+      "charged_or_reserved_tokens": 1020945,
+      "unsettled_requests": 3,
+      "actual_total_tokens": null,
+      "gateway_errors": {},
+      "run_snapshot_sha256": "cd9acf4b585aeea22f25227ace4b8135b80932e2e5ef5e06e45ff270b0fc2da6"
+    }
+  ]
+}

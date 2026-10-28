@@ -12,15 +12,14 @@ def main():
     request = json.loads(sys.stdin.buffer.read(16384))
     limits = ParseLimits.model_validate(request['limits'])
     if os.name != 'nt':
-        import resource
-        resource.setrlimit(resource.RLIMIT_AS, (limits.memory_bytes, limits.memory_bytes))
-        resource.setrlimit(resource.RLIMIT_CPU, (limits.seconds, limits.seconds+1))
+        from medic.ingestion.posix import child_limits
+        child_limits(limits)
     output = Path(request['output'])
     try:
         if os.name == 'nt':
             from medic.ingestion.preview_worker import join_job
             join_job(request['job_name'])
-        identity = build.verify(build.VERSION)
+        identity = build.verify_once(build.VERSION)
         if identity != request['build']:
             raise ParseError('parser_build_mismatch')
         with Path(request['path']).open('rb') as source:

@@ -60,7 +60,7 @@ def convert_file(path, *, kind, source_sha256, limits=None):
     path=Path(path).resolve()
     if path.stat().st_size>limits.input_bytes: raise ParseError('input_size_exceeded')
     if not engine_available(): raise ParseError('office_engine_unavailable')
-    identity=build.verify(build.VERSION)
+    identity=build.verify_once(build.VERSION)
     env={k:v for k,v in os.environ.items() if k.upper() in ('SYSTEMROOT','WINDIR','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PYTHONNOUSERSITE')}
     env.update(PYTHONUTF8='1',PYTHONIOENCODING='utf-8')
     with tempfile.TemporaryDirectory(prefix='medic-office-') as temp:

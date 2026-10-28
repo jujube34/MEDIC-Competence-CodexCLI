@@ -35,11 +35,11 @@ function renderHome(){
   const own=state.assessments.filter(a=>a.employee_ref===state.employee),latest=own.at(-1),employee=state.user.role==='employee';
   const final=latest?.human_status==='finalized',count=state.assessments.filter(a=>a.human_status==='finalized').length;
   const box=$('home-task');box.replaceChildren();const content=node('div');
-  content.append(node('span',employee?(latest?textLabel(latest.human_status):'尚未提交'):'授权范围内 '+state.employees.length+' 名员工','status-badge status-info'),node('h2',employee?(final?'查看能力结果':latest?'跟进评估与复核进度':'提交阶段性工作产物'):'查看团队完成状态'),node('p',employee?'上传工作产物，查看原文证据与评价进度。':'从团队列表进入员工记录，核对材料、评价依据与人工处理。','muted'));
+  content.append(node('span',employee?(latest?assessmentLabel(latest):'尚未提交'):'授权范围内 '+state.employees.length+' 名员工','status-badge status-info'),node('h2',employee?(final?'查看能力结果':latest?'跟进评估与复核进度':'提交阶段性工作产物'):'查看团队完成状态'),node('p',employee?'上传工作产物，查看原文证据与评价进度。':'从团队列表进入员工记录，核对材料、评价依据与人工处理。','muted'));
   const go=node('button',employee?(latest?'查看能力结果':'提交工作产物'):'查看团队员工','btn btn-primary');go.type='button';action(go,async()=>{switchView(employee?(latest?'result':'upload'):'overview');if(employee&&latest)await loadDetail(latest.assessment_id);else if(!employee)renderOverview();});box.append(content,go);
   const catalog=state.catalogs.find(c=>c.registry_id===$('registry').value),person=state.employees.find(e=>e.employee_ref===state.employee);
   $('home-stats').replaceChildren(...(employee?[
-    stat(latest?textLabel(latest.human_status):'未提交','评价状态',latest?.period||'等待上传材料'),
+    stat(latest?assessmentLabel(latest):'未提交','评价状态',latest?.period||'等待上传材料'),
     stat(Object.keys(catalog?.recommendations[person?.job_key]||{}).length,'岗位推荐项',person?.job_key||'未配置岗位'),
     stat(Object.values(catalog?.policies||{}).filter(p=>p.mode==='suggest').length,'AI 建议评分项','以当前标准与策略版本为准'),stat(state.materials.length,'已上传材料','仅展示当前员工材料')
   ]:[stat(state.employees.length,'授权员工'),stat(state.assessments.length,'评估记录'),stat(count,'已定稿记录'),stat(state.assessments.length-count,'未定稿记录')]));
@@ -79,9 +79,9 @@ function renderOverview(){
     const button=node('button',latest?'查看评估':'查看材料','btn btn-soft');button.type='button';button.setAttribute('aria-label',(latest?'查看评估':'查看材料')+' '+e.employee_ref);
     action(button,async()=>{state.employee=e.employee_ref;$('employee').value=e.employee_ref;await refreshEmployee();if(!state.user||state.employee!==e.employee_ref)return;switchView(latest?(state.user.role==='manager'?'review':'result'):'upload');if(latest)await loadDetail(latest.assessment_id);});return button;
   };
-  $('overview-table').replaceChildren(result.total?table(['员工','岗位职级','最新周期','评估状态','操作'],result.items.map(item=>[item.employee.employee_ref,item.employee.job_key,item.latest?.period||'—',item.latest?textLabel(item.latest.human_status):'未提交',entryButton(item)])):node('p','未找到匹配员工，请调整搜索或筛选条件。','empty'));
+  $('overview-table').replaceChildren(result.total?table(['员工','岗位职级','最新周期','评估状态','操作'],result.items.map(item=>[item.employee.employee_ref,item.employee.job_key,item.latest?.period||'—',item.latest?assessmentLabel(item.latest):'未提交',entryButton(item)])):node('p','未找到匹配员工，请调整搜索或筛选条件。','empty'));
   $('team-mobile').replaceChildren(...(result.total?result.items.map(item=>{
-    const card=node('article',null,'team-person');card.append(node('h3',item.employee.employee_ref),node('p',item.employee.job_key),node('p',(item.latest?.period||'当前筛选周期')+' · '+(item.latest?textLabel(item.latest.human_status):'未提交'),'small muted'),entryButton(item));return card;
+    const card=node('article',null,'team-person');card.append(node('h3',item.employee.employee_ref),node('p',item.employee.job_key),node('p',(item.latest?.period||'当前筛选周期')+' · '+(item.latest?assessmentLabel(item.latest):'未提交'),'small muted'),entryButton(item));return card;
   }):[node('p','未找到匹配员工，请调整搜索或筛选条件。','empty')]));
 }
 function catalogSelection(c,{family='',track='',job='',preferredJob=''}={}){

@@ -43,12 +43,16 @@ class SupervisorLock:
                 self.connection.close(); self.connection = None
                 raise RuntimeError('queue_supervisor_already_running')
         else:
-            import msvcrt
             self.file = open(self.store.path+'.supervisor.lock', 'a+b')
             try:
                 if os.fstat(self.file.fileno()).st_size==0: self.file.write(b'0'); self.file.flush()
                 self.file.seek(0)
-                msvcrt.locking(self.file.fileno(), msvcrt.LK_NBLCK, 1)
+                if os.name == 'nt':
+                    import msvcrt
+                    msvcrt.locking(self.file.fileno(), msvcrt.LK_NBLCK, 1)
+                else:
+                    import fcntl
+                    fcntl.flock(self.file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
             except OSError:
                 self.file.close(); self.file = None
                 raise RuntimeError('queue_supervisor_already_running') from None
@@ -127,7 +131,7 @@ def run_child(store, lock, run, attempt, *, binary, api_example, output, stop):
                 '--resume-run',run,'--database-env','MEDIC_SERVICE_DATABASE','--binary',str(Path(binary).resolve()),
                 '--api-example',str(Path(api_example).resolve()),'--output',str(target)],
                 cwd=build.ROOT.parent,env=env,stdin=subprocess.PIPE,stdout=log,stderr=log,
-                creationflags=subprocess.CREATE_NO_WINDOW)
+                creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0),start_new_session=os.name!='nt')
             job.assign(process)
             process.stdin.write(b'start\n'); process.stdin.close()
             while process.poll() is None:
@@ -155,9 +159,8 @@ def run_child(store, lock, run, attempt, *, binary, api_example, output, stop):
 
 
 def serve(store, *, binary, api_example, output, stop=None, poll_seconds=2, once=False):
-    if os.name!='nt': raise RuntimeError('service_requires_windows_job_support')
     if not 0.1<=poll_seconds<=60: raise ValueError('invalid_poll_interval')
-    build.verify(build.VERSION)
+    build.verify_once(build.VERSION)
     from medic.p0.provider import Config
     from medic.p0.common import digest
     provider=Config.load(api_example)
@@ -165,14 +168,14 @@ def serve(store, *, binary, api_example, output, stop=None, poll_seconds=2, once
     baseline=json.loads((build.ROOT/'p0/results/baseline.lock.json').read_text(encoding='utf-8'))
     if digest(provider.base_url)!=profile['upstream_endpoint_sha256'] or provider.model!=profile['model']:
         raise ValueError('service_provider_not_verified')
-    if digest(Path(binary).read_bytes())!=baseline['binary']['sha256']:
-        raise ValueError('service_binary_not_verified')
+    from medic.p0.binaries import verify_binary
+    verify_binary(binary)
     stop=stop or threading.Event()
     with SupervisorLock(store) as lock:
         queue=Queue(store); queue.abandon_previous()
         print(json.dumps({'event':'service_ready','runtime_version':build.VERSION}),flush=True)
         while not stop.is_set():
-            lock.check(); build.verify(build.VERSION)
+            lock.check(); build.verify_once(build.VERSION)
             for run in queue.pending():
                 if stop.is_set(): break
                 attempt=queue.start(run)

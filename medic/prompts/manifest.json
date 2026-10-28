@@ -18,5 +18,13 @@
   "medic-p2-roles-v6": {
     "file": "roles-v6.json",
     "sha256": "162d7760c192d3983f0ba4a0e97d25413b604d3058933a4739c7b81a83db9c21"
+  },
+  "medic-p2-roles-v7": {
+    "file": "roles-v7.json",
+    "sha256": "ce3d8542e72b9397456d66eb8a8b2f5ed41526083f635e9428cae48984ae400a"
+  },
+  "medic-p2-roles-v8": {
+    "file": "roles-v8.json",
+    "sha256": "79995331d5c0ec73ed13b33ce6771ef51f0d001994bcc195a4b52327656b19a6"
   }
 }

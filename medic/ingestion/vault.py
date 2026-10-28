@@ -56,7 +56,7 @@ class Vault:
         kind = path.suffix.lower().lstrip('.')
         if kind not in ('pdf','docx','pptx','xlsx'):
             raise ParseError('unsupported_format')
-        identity = build.verify(build.VERSION)
+        identity = build.verify_once(build.VERSION)
         with path.open('rb') as source:
             data = source.read(limits.input_bytes+1)
         if len(data) > limits.input_bytes:

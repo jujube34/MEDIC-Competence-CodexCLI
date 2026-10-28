@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-28",
+  "runtime_version": "medic-runtime-p4-v17",
+  "run_id": "run-6e9becbc61557ac89c0d3916474cbe45",
+  "status": "failed_full_scope_technical_execution",
+  "manifest_sha256": "f6ac49c9bb2c8a33b1113aa367fc4b6ee863bb16fe213fdb83c9ed50857d8633",
+  "input_sha256": "08f1e331662c39bb4b86efabf423357f17e1eb0b0d128cdbb7d6e384b06e5671",
+  "competencies": 17,
+  "materials": 2,
+  "criteria": 68,
+  "planned_downstream_nodes": 225,
+  "completed_tasks": 20,
+  "full_execution_passed": false,
+  "report_published": false,
+  "quality_claim": false,
+  "diagnosis": {
+    "failing_role": "evaluator",
+    "competency_id": "C1",
+    "first_rejection": "non_scoring_policy_grade",
+    "valid_submission_seconds": 236.97,
+    "failure_seconds": 240.52,
+    "failure_code": "turn_timeout",
+    "historical_I2_aggregate_quote_failure_recurred": false
+  },
+  "accounting": {
+    "request_count": 105,
+    "charged_or_reserved_tokens": 1090885,
+    "unsettled_requests": 3,
+    "reported_token_subtotal": 898064,
+    "actual_total_tokens": null
+  },
+  "original_run_modified": false,
+  "budget_increased": false,
+  "source_preserved": true,
+  "run_snapshot_sha256": "08846d30efdd39eeb4c5612f3749a41d7db1dc9d9f4597f0e6b44ae3b93827f9",
+  "gateway_summary_sha256": "10db6ca03b25a5169fa2c041339e356a6974496e56c3971da5c0b2e391a74139"
+}

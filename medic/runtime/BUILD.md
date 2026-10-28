@@ -1,6 +1,8 @@
 # 应用发布与运行身份
 
-当前服务为 `medic-runtime-p4-v16`，106 文件清单 hash `bdc3c02d9c1c79b4c68302c0b09c6ba0258da02502f32ca9bf3f0fdb0e2e89fa`。该版增加当前任务/租约的只读提交回执查询及补正提示，完整评分校验、最终回执精确匹配和预算不变。真实受控故障探针与发布验证见 [v16 记录](../evals/results/p4-receipt-recovery-verification.json)；随后完整范围评估因引用校验拒绝而失败，不能据此认定通过。以下版本段落为历史发布记录。
+2026-10-28：当前开发为 v17 系列，每个真实运行使用 `artifacts/releases/<version>/deployment` 独立副本；命名清单保存在 `deploy/releases/`，新增 macOS 二进制索引也纳入受管清单。当前进度、测试与失败记录见[开发状态](../DEVELOPMENT_STATUS.md)。已有运行只从对应原版恢复，禁止在原部署目录覆盖新代码。
+
+历史 v16 服务为 `medic-runtime-p4-v16`，106 文件清单 hash `bdc3c02d9c1c79b4c68302c0b09c6ba0258da02502f32ca9bf3f0fdb0e2e89fa`。该版增加当前任务/租约的只读提交回执查询及补正提示，完整评分校验、最终回执精确匹配和预算不变。真实受控故障探针与发布验证见 [v16 记录](../evals/results/p4-receipt-recovery-verification.json)；随后完整范围评估因引用校验拒绝而失败，不能据此认定通过。以下版本段落为历史发布记录。
 
 从 `medic-runtime-p2-v3` 起，新 run 在数据库 `run_builds` 中冻结应用身份，旧运行不追溯补写。冻结内容包括：
 

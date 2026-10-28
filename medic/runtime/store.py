@@ -281,7 +281,7 @@ class Store:
             from medic.runtime.mailbox import messages, enabled
             if enabled(source):
                 context['mailbox_participants'] = [dict(t) for t in db.execute(
-                    "SELECT task_id,role FROM tasks WHERE run_id=? AND material_id=? AND competency_id=? AND role IN ('challenger','reevaluator')",
+                    "SELECT task_id,role FROM tasks WHERE run_id=? AND material_id=? AND competency_id=? AND role IN ('challenger','reevaluator') ORDER BY task_id",
                     (row['run_id'], row['material_id'], row['competency_id']))]
                 context['mailbox'] = messages(db, row['run_id'], row['material_id'], row['competency_id'])
                 if context['mailbox']:

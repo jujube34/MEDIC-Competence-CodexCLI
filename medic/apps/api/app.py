@@ -19,7 +19,7 @@ from medic.ingestion.contracts import ParseError, ParseLimits
 
 def create_app(database, vault, *, upload_policy=None):
     from medic.runtime import build
-    build.verify(build.VERSION)
+    build.verify_once(build.VERSION)
     service=Service(database,vault)
     uploads=UploadAdmission(service.vault,upload_policy)
     app=FastAPI(title='MEDIC local synthetic verification',debug=False,docs_url=None,redoc_url=None,
@@ -66,7 +66,7 @@ def create_app(database, vault, *, upload_policy=None):
 
     @app.get('/assets/{name}',include_in_schema=False)
     def asset(name: str):
-        if name not in ('app.js','app.css','demo-theme.css','alignment.css','navigation.js','results.js','preview.js'): raise AppError('resource_not_found',404)
+        if name not in ('app.js','app.css','demo-theme.css','alignment.css','navigation.js','results.js','preview.js','monitoring.js'): raise AppError('resource_not_found',404)
         return FileResponse(build.ROOT/'apps/web'/name)
 
     @app.get('/me')
@@ -166,5 +166,11 @@ def create_app(database, vault, *, upload_policy=None):
 
     @app.get('/assessments/{ident}/history')
     def history(ident: str,p=Depends(principal)): return service.history(p,ident)
+
+    @app.get('/assessments/{ident}/execution')
+    def execution(ident: str,after: int=Query(default=0,ge=0),
+                  limit: int=Query(default=100,ge=1,le=200),p=Depends(principal)):
+        from medic.apps.api.monitoring import execution_log
+        return execution_log(service,p,ident,after,limit)
 
     return app

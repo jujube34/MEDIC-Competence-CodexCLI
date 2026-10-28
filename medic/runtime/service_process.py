@@ -7,12 +7,17 @@ the entire assessment tree. This is lifecycle management, not a security sandbox
 import ctypes
 import os
 import uuid
+import signal
 
 
 class ProcessJob:
     def __init__(self, name=None):
         if os.name != 'nt':
-            raise RuntimeError('service_requires_windows_job_support')
+            self.name = 'posix'
+            self.process = None
+            if name and (name != 'posix' or os.getpgrp() != os.getpid()):
+                raise RuntimeError('service_process_group_not_isolated')
+            return
         from ctypes import wintypes as w
         class Basic(ctypes.Structure):
             _fields_ = [('process_time', ctypes.c_int64), ('job_time', ctypes.c_int64),
@@ -46,9 +51,20 @@ class ProcessJob:
                 self.close(); raise RuntimeError('service_job_configuration_failed')
 
     def assign(self, process):
+        if os.name != 'nt':
+            if os.getpgid(process.pid) != process.pid:
+                raise RuntimeError('service_process_group_not_isolated')
+            self.process = process
+            return
         if not self.api.AssignProcessToJobObject(self.handle, int(process._handle)):
             raise RuntimeError('service_job_assignment_failed')
 
     def close(self):
+        if os.name != 'nt':
+            if self.process is not None:
+                try: os.killpg(self.process.pid, signal.SIGKILL)
+                except ProcessLookupError: pass
+                self.process = None
+            return
         if self.handle:
             self.api.CloseHandle(self.handle); self.handle = None

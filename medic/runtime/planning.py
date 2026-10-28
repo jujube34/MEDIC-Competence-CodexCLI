@@ -11,7 +11,7 @@ def dispatch_plan(store,binding,value):
     with store.connect(binding['run_id']) as db:
         task,source=store.authorize(db,binding)
         if task['role']!='coordinator': raise Denied('dispatch_coordinator_only')
-        if source.versions.prompt_bundle_version!='medic-p2-roles-v6': raise Denied('compact_plan_not_enabled')
+        if source.versions.prompt_bundle_version not in ('medic-p2-roles-v6','medic-p2-roles-v7','medic-p2-roles-v8'): raise Denied('compact_plan_not_enabled')
         if json.loads(task['context_json']).get('rework_plan'): raise Denied('initial_plan_forbidden_during_rework')
         expanded=expand(source,plan)
         existing={(t['material_id'],t['competency_id'],t['role']):t['task_id'] for t in

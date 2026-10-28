@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-28",
+  "status": "expanded_contracts_passed_not_released",
+  "repository": "jujube34/MEDIC-Competence-CodexCLI",
+  "branch": "main",
+  "base_commit": "cb176c19202a7317115f5e204a934d53209bdf77",
+  "baseline": "medic-runtime-p4-v16",
+  "candidate": "medic-runtime-p4-v17",
+  "original_patch_sha256": "5fa6cd1702c8a36dff1d3198d28ea6c517285d93cafa57b0ac119dbbd9520659",
+  "extension_patch_sha256": "6038b0da418f589a52c70521d439841e862a5e3706d1fa0a64f6930bfba5ca3e",
+  "selection_batch": {
+    "passed": 33,
+    "failed": 0,
+    "skipped": 24,
+    "skip_reason": "MEDIC_TEST_POSTGRES_DSN is not configured",
+    "log_sha256": "41c24ca30a60414d5602920f06a428db4fc8b37cdff9930036b59351fc2a9278"
+  },
+  "affected_runtime_batch": {
+    "passed": 83,
+    "failed": 0,
+    "skipped": 0,
+    "log_sha256": "99f2bd6571ce8c5e0d21af1ab74aa00c8fe8fc1dc84edc9d293f0b22ec6af1ca"
+  },
+  "counts_include_reused_and_inherited_contracts": true,
+  "first_selection_batch": {
+    "ran": 33,
+    "errors": 2,
+    "cause": "new third-round fixture retained legacy v5 bundle; fixture corrected to create v7 runs"
+  },
+  "v16_baseline_macOS_batch": {
+    "ran": 105,
+    "passed": 80,
+    "failed": 4,
+    "skipped": 21,
+    "failure_scope": "API preview tests returned 422 preview_unavailable; root cause not diagnosed"
+  },
+  "real_model_calls": 0,
+  "postgresql_validation": false,
+  "full_scope_validation": false,
+  "quality_acceptance": false,
+  "production_acceptance": false,
+  "v16_execution_files_modified": false,
+  "release_promoted": false
+}

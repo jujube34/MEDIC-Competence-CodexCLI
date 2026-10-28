@@ -53,7 +53,7 @@ def main():
     print(json.dumps({"run_id": run, "state": store.snapshot(run)["state"]}), flush=True)
     ledger = BudgetLedger(store, run)
     limits = ledger.snapshot()["limits"]
-    with Gateway(provider, max_requests=limits["requests"], max_output_tokens=4096, request_timeout=150,
+    with Gateway(provider, max_requests=limits["requests"], max_output_tokens=4096, request_timeout=210,
                  max_total_tokens=limits["total_tokens"], max_concurrency=limits["concurrency"], ledger=ledger) as gateway:
         worker = CodexWorker(args.binary, gateway.config, store, output / "workers")
         final = execute(store, run, worker, concurrency=limits["concurrency"], progress=lambda x: print(json.dumps(x), flush=True), stop_after_plan=args.plan_only)

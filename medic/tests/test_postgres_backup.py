@@ -27,15 +27,19 @@ from medic.tests.test_postgres import database
 class PostgreSQLBackupContracts(unittest.TestCase):
     def setUp(self):
         configured = database()
-        if conninfo_to_dict(configured).get('host') not in ('127.0.0.1','localhost','::1'):
+        host=conninfo_to_dict(configured).get('host','')
+        local_socket=os.name!='nt' and host.startswith('/') and ',' not in host
+        if host not in ('127.0.0.1','localhost','::1') and not local_socket:
             raise ValueError('backup_tests_require_loopback')
         def uri(database_name):
             parsed=urlsplit(configured)
             if parsed.scheme not in ('postgres','postgresql'): raise ValueError('test_postgres_uri_required')
-            return urlunsplit(parsed._replace(path='/'+database_name))
+            value=urlunsplit(parsed._replace(path='/'+database_name))
+            # urllib omits the empty authority for PostgreSQL Unix-socket URIs.
+            return value if parsed.netloc else parsed.scheme+'://'+value.split(':',1)[1]
         self.admin = uri('postgres')
         self.bin = Path(os.environ.get('MEDIC_TEST_POSTGRES_BIN',''))
-        if not (self.bin/'pg_dump.exe').is_file():
+        if not (self.bin/('pg_dump.exe' if os.name=='nt' else 'pg_dump')).is_file():
             raise unittest.SkipTest('MEDIC_TEST_POSTGRES_BIN is not configured')
         self.tag = uuid.uuid4().hex[:16]
         self.source_name = 'medic_backup_'+self.tag+'_test'
