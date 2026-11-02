@@ -10,7 +10,7 @@ import sys
 import tempfile
 import uuid
 
-from medic.runtime import build
+from medic.runtime import build, lite
 from medic.ingestion.contracts import Extraction, ParseError, ParseLimits
 from medic.p0.common import ROOT, digest
 
@@ -64,6 +64,12 @@ def parse_file(path, *, kind=None, limits=None):
         raise ParseError('unsupported_format')
     if path.stat().st_size > limits.input_bytes:
         raise ParseError('input_size_exceeded')
+    if lite.enabled():
+        # Lite keeps the extraction core but skips the process-isolation and
+        # OCR machinery. It is for local synthetic development, not untrusted
+        # production uploads.
+        from medic.ingestion.parser import extract
+        return extract(path.read_bytes(), kind, limits.model_dump(), ocr=False)
     identity = build.verify_once(build.VERSION)
     environment = {k:v for k,v in os.environ.items() if k.upper() in
                    ('PATH','SYSTEMROOT','WINDIR','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PYTHONNOUSERSITE','MEDIC_OCR_DATA_ROOT')}

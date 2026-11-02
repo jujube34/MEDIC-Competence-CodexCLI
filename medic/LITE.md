@@ -16,6 +16,10 @@
 - mailbox 跨角色问答（`runtime_read_messages` / `runtime_post_message`）
 - 第三轮 business rework（Judge 的 `rework` 结论不再触发自动返工，按人工处理）
 - 热路径上的逐文件 build 校验
+- OCR（`ingestion/ocr.py`）和 PDF 扫描页识别
+- 独立解析子进程、Windows Job / POSIX 进程组资源限制（lite 直接在 API 进程内解析）
+- PDF 原页预览、Office 转换预览和 `preview.js` 相关路由（lite 返回 `preview_not_supported`）
+- 上传日配额、跨进程文件锁和准入 SQLite 表（lite 只保留临时文件和大小检查）
 
 ## 启动
 
@@ -40,6 +44,8 @@ python -m medic.runtime.service \
 ```
 
 `MEDIC_BUILD_VERIFY=off` 只影响本进程的构建清单校验；需要审计时去掉该变量，并确保 `runtime/build-manifest.json` 与当前源码一致。
+
+Lite 的解析在 API 进程内执行，只适用于受信任的合成材料。不要用 lite 模式接收客户原始材料或不可信上传。
 
 ## 当前边界
 

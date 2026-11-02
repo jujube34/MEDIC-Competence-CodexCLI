@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import sys
 
-from medic.runtime import build
+from medic.runtime import build, lite
 from medic.ingestion.contracts import ParseError, ParseLimits
 
 
@@ -25,7 +25,7 @@ def main():
         with Path(request['path']).open('rb') as source:
             data = source.read(limits.input_bytes+1)
         from medic.ingestion.parser import extract
-        extracted = extract(data, request['kind'], limits.model_dump(), ocr=True)
+        extracted = extract(data, request['kind'], limits.model_dump(), ocr=not lite.enabled())
         result = {'extraction': extracted.model_dump(), 'build': identity}
         encoded = json.dumps(result, ensure_ascii=False)
         if len(encoded.encode('utf-8')) > 32*1024*1024:

@@ -60,10 +60,17 @@ class Service:
 
     @staticmethod
     def material_summary(s):
-        from medic.ingestion.office import engine_available
+        from medic.runtime import lite
+        if lite.enabled():
+            preview={'supported':False,'derived':False,
+                     'page_count':sum(u.get('kind')=='page' for u in s['extraction']['units']) if s['format']=='pdf' else None}
+        else:
+            from medic.ingestion.office import engine_available
+            preview={'supported':s['format']=='pdf' or engine_available(),'derived':s['format']!='pdf',
+                     'page_count':sum(u.get('kind')=='page' for u in s['extraction']['units']) if s['format']=='pdf' else None}
         return {**{k:s[k] for k in ('snapshot_id','original_name','period','source_sha256','format','created_at')},
                 'state':s['extraction']['state'],'parser_version':s['extraction']['parser_version'],
-                'preview':{'supported':s['format']=='pdf' or engine_available(),'derived':s['format']!='pdf','page_count':sum(u.get('kind')=='page' for u in s['extraction']['units']) if s['format']=='pdf' else None},
+                'preview':preview,
                 'block_count':len(s['extraction']['blocks']),'issues':s['extraction']['issues']}
 
     def _material(self, db, p, ident, employee=None, period=None):

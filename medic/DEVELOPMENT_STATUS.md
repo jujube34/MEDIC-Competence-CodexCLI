@@ -5,14 +5,21 @@
 
 v17.4 的完整 17 项试运行已暂停：运行 `run-f43a49a1d19990f893d91df4b16307f5` 在 96/226 完成后取消（505 次请求、4,828,175 tokens），保留原运行、任务和取消记录，不追认为通过。
 
-第一批精简：
+第一批精简（提交 `13522247`，已推送到 `origin/refactor/lite-architecture`）：
 
 - build 校验改为进程内单次缓存 `build.verify_once`；本地开发可设 `MEDIC_BUILD_VERIFY=off` 跳过逐文件清单校验。API 创建、service 主循环和 ingestion 不再反复计算 116 个文件的 hash。
 - 运行时版本升至 `medic-runtime-p4-v18`，重新生成 `runtime/build-manifest.json`，并生成 `deploy/releases/medic-runtime-p4-v18.manifest.json` 与 `artifacts/releases/medic-runtime-p4-v18/source.zip`。
 - v8 角色包不再暴露旧 `assessment_submit_result`，只保留 `assessment_submit_by_evidence_id`；旧版本 run 仍按版本使用旧工具。
 - 新增 `MEDIC_LITE=1` profile：关闭 mailbox 跨角色问答和第三轮 rework，保留完整任务图、证据选择、策略约束、预算和结果校验。
 
-验证：597 项测试全部通过（其中 157 项按环境跳过），0 失败。本轮尚未提交或推送。
+阶段 1 精简（未提交）：
+
+- lite 直接在 API 进程内解析 DOCX/PPTX/XLSX/PDF 文本，不再启动解析子进程，不使用 Windows Job 或 POSIX 进程组限制。
+- lite 关闭 OCR、PDF 原页预览和 Office 转换预览；`/materials/{id}/preview` 返回 `preview_not_supported`，材料摘要标记 `preview.supported=false`。
+- lite 上传改为 `LiteUploadAdmission`：只用临时文件和大小检查，不维护日配额、跨进程锁或准入 SQLite 表。
+- 新增 `medic/tests/test_lite.py` 覆盖进程内解析、临时文件清理和预览关闭。
+
+验证：600 项测试全部通过（其中 157 项按环境跳过），0 失败。阶段 1 尚未提交或推送。
 
 ## v17.2 当前验证（2026-10-28）
 

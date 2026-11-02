@@ -13,6 +13,7 @@ import sqlite3
 import tempfile
 import threading
 import time
+from types import SimpleNamespace
 import uuid
 
 from medic.apps.api.database import AppError
@@ -156,3 +157,43 @@ class UploadPermit:
             return function(*args)
         finally:
             with self.mutex: self._finish()
+
+
+class LiteUploadPermit:
+    """No quota or cross-process lock; one temporary file per upload."""
+
+    def __init__(self, incoming):
+        self.incoming = incoming
+        self.path = None
+
+    def temporary_path(self, filename):
+        self.incoming.mkdir(parents=True, exist_ok=True)
+        handle, name = tempfile.mkstemp(prefix='upload-', suffix=Path(filename).suffix.lower(), dir=self.incoming)
+        os.close(handle)
+        self.path = Path(name)
+        return self.path
+
+    def received(self, size):
+        if size > ParseLimits().input_bytes:
+            raise AppError('upload_too_large', 413)
+
+    def cancel_pending(self):
+        if self.path is not None and self.path.exists():
+            self.path.unlink()
+
+    def process(self, function, *args):
+        try:
+            return function(*args)
+        finally:
+            self.cancel_pending()
+
+
+class LiteUploadAdmission:
+    policy = SimpleNamespace(receive_seconds=60)
+
+    def __init__(self, vault):
+        self.incoming = vault.root/'incoming'
+        self.incoming.mkdir(parents=True, exist_ok=True)
+
+    def acquire(self, tenant, user):
+        return LiteUploadPermit(self.incoming)

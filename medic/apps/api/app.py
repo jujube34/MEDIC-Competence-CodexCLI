@@ -13,15 +13,16 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 from medic.apps.api.contracts import CreateAssessment, ReviewRequest, FinalizeRequest
 from medic.apps.api.database import AppError
 from medic.apps.api.service import Service
-from medic.apps.api.uploads import UploadAdmission
+from medic.apps.api.uploads import LiteUploadAdmission, UploadAdmission
 from medic.ingestion.contracts import ParseError, ParseLimits
+from medic.runtime import lite
 
 
 def create_app(database, vault, *, upload_policy=None):
     from medic.runtime import build
     build.verify_once(build.VERSION)
     service=Service(database,vault)
-    uploads=UploadAdmission(service.vault,upload_policy)
+    uploads=LiteUploadAdmission(service.vault) if lite.enabled() else UploadAdmission(service.vault,upload_policy)
     app=FastAPI(title='MEDIC local synthetic verification',debug=False,docs_url=None,redoc_url=None,
                 telemetry={'tracing':False,'metrics':False,'logs':False,'operation_spans':False,'auto_configure':False})
     app.state.service=service
@@ -121,6 +122,7 @@ def create_app(database, vault, *, upload_policy=None):
     def material_preview(ident: str,page: int=Query(default=1,ge=1,le=500),
                          width: int=Query(default=1200,ge=320,le=1600),
                          evidence_id: str | None=Query(default=None,max_length=200),p=Depends(principal)):
+        if lite.enabled(): raise AppError('preview_not_supported',415)
         from medic.apps.api.preview import preview
         info,png=preview(service,p,ident,page,width,evidence_id)
         return Response(png,media_type='image/png',headers={'X-Preview-Info':json.dumps(info,separators=(',',':'))})
