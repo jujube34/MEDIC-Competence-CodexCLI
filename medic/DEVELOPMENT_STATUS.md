@@ -19,7 +19,12 @@ v17.4 的完整 17 项试运行已暂停：运行 `run-f43a49a1d19990f893d91df4b
 - lite 上传改为 `LiteUploadAdmission`：只用临时文件和大小检查，不维护日配额、跨进程锁或准入 SQLite 表。
 - 新增 `medic/tests/test_lite.py` 覆盖进程内解析、临时文件清理和预览关闭。
 
-验证：600 项测试全部通过（其中 157 项按环境跳过），0 失败。阶段 1 尚未提交或推送。
+阶段 2 部分完成（未提交）：
+
+- `tools/service.py`、`runtime/planning.py`、`runtime/mailbox.py` 不再按 prompt bundle 版本决定是否启用 compact plan、evidence selection 或 mailbox；所有已加载 bundle 使用同一工具面。
+- 旧 prompt bundle 文件仍保留，供 legacy 测试和只读重放；文件归档和 research 工具外移待做。
+
+验证：600 项测试全部通过（其中 157 项按环境跳过），0 失败。阶段 1 已提交并推送；阶段 2 改动尚未提交。
 
 ## v17.2 当前验证（2026-10-28）
 

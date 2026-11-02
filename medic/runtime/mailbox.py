@@ -10,9 +10,7 @@ from medic.runtime import lite
 
 
 def enabled(source):
-    if lite.enabled():
-        return False
-    return source.versions.prompt_bundle_version in ('medic-p2-roles-v5','medic-p2-roles-v6','medic-p2-roles-v7','medic-p2-roles-v8')
+    return not lite.enabled()
 
 
 def messages(db, run, material=None, code=None):

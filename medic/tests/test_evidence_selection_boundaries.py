@@ -16,9 +16,9 @@ from medic.tools.service import ToolService
 
 
 class SelectionBoundaries(selection.EvidenceSelectionContracts):
-    def test_old_prompt_bundles_do_not_gain_selection_tool(self):
+    def test_all_loaded_prompt_bundles_expose_selection_tool(self):
         manifest = json.loads((test_runtime.ROOT / 'medic/prompts/manifest.json').read_text())
-        for version in sorted(set(manifest) - {'medic-p2-roles-v7', 'medic-p2-roles-v8'}):
+        for version in sorted(manifest):
             with self.subTest(version=version):
                 source = test_runtime.fixture()
                 source['versions']['prompt_bundle_version'] = version
@@ -26,12 +26,10 @@ class SelectionBoundaries(selection.EvidenceSelectionContracts):
                 coordinator = self.store.claim_next(run)
                 task = self.store.dispatch(coordinator, {
                     'role': 'evaluator', 'material_id': 'synthetic-material-1',
-                    'competency_id': 'M2', 'dependencies': [], 'reason': 'Legacy isolation test'})
+                    'competency_id': 'M2', 'dependencies': [], 'reason': 'Bundle surface test'})
                 binding = self.store.lease(task['task_id'])
                 service = ToolService(self.store, binding)
-                self.assertNotIn(TOOL, {item['name'] for item in service.definitions()})
-                with self.assertRaisesRegex(Denied, 'tool_not_authorized'):
-                    service.call(TOOL, {})
+                self.assertIn(TOOL, {item['name'] for item in service.definitions()})
 
     def test_selection_consumes_real_tool_budget(self):
         binding, service = self.evaluator()

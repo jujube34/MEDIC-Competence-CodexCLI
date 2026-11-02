@@ -30,8 +30,11 @@ class ToolService:
             self.material_id = task["material_id"]
             self.business_round = json.loads(task['context_json']).get('business_round', 1)
             self.rework_mode = self.role == 'coordinator' and bool(json.loads(task['context_json']).get('rework_plan'))
-            self.compact_plan_enabled = source.versions.prompt_bundle_version in ('medic-p2-roles-v6', 'medic-p2-roles-v7', 'medic-p2-roles-v8')
-            self.evidence_selection_enabled = source.versions.prompt_bundle_version in ('medic-p2-roles-v7', 'medic-p2-roles-v8')
+            # The active runtime no longer branches on historical bundle names.
+            # Older bundles remain loadable for replay, but every loaded bundle
+            # gets the compact planner and whole-span selection surface.
+            self.compact_plan_enabled = True
+            self.evidence_selection_enabled = True
             self.policy_bound = source.versions.prompt_bundle_version == 'medic-p2-roles-v8'
             self.policy = source.policies[task['competency_id']].model_dump()
 

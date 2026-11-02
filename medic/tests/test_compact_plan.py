@@ -183,11 +183,11 @@ class CompactPlan(unittest.TestCase):
             with self.subTest(mode=mode),self.assertRaises(ValueError): self.call(plan)
             self.assertEqual(self.state()['tasks'],before['tasks']);self.assertEqual(self.state()['outbox'],before['outbox'])
 
-    def test_old_prompt_bundle_keeps_legacy_tool_surface(self):
+    def test_loaded_bundles_share_the_compact_planner_surface(self):
         old=copy.deepcopy(self.source);old['versions']['prompt_bundle_version']='medic-p2-roles-v5'
         run=self.store.create_run(old);binding=self.store.claim_next(run);service=ToolService(self.store,binding)
         names={t['name'] for t in service.definitions()}
-        self.assertNotIn('runtime_dispatch_plan',names)
+        self.assertIn('runtime_dispatch_plan',names)
         self.assertTrue({'runtime_dispatch_batch','runtime_dispatch_task'}<=names)
 
 
